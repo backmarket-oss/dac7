@@ -1,0 +1,73 @@
+[
+    {
+        "residence_country_code": "FR",
+        "tax_identification_numbers": [
+            {
+                "issued_by": "FR",
+                "value": "52484162312345"
+            }
+        ],
+        "other_identification_numbers": [
+            {
+                "issued_by": "FR",
+                "type": "Other",
+                "value": "52484162312345"
+            }
+        ],
+        "vat_number": "FR32524841623",
+        "legal_names": [
+            "SCI de la rue Mouffetard"
+        ],
+        "addresses": [
+            {
+                "country_code": "FR",
+                "street": "10 place du G\u00e9n\u00e9ral de Gaulle",
+                "post_code": "33000",
+                "city": "Bordeaux"
+            }
+        ],
+        "financial_identifiers": [
+            {
+                "type": "IBAN",
+                "account_number": "FR7630001007941234567890185"
+            }
+        ],
+        "establishment_country_codes": [
+            "IT"
+        ],
+        "immovable_properties": [
+            {
+                "address": {
+                    "legal_type": "OECD303",
+                    "country_code": "FR",
+                    "street": "10 rue Mouffetard",
+                    "post_code": "75005",
+                    "city": "Paris"
+                },
+                "land_registration_number": "1051234567F",
+                "currency_code": "EUR",
+                "consideration_amount_q1": 5000,
+                "consideration_amount_q2": 4567,
+                "consideration_amount_q3": 2345,
+                "consideration_amount_q4": 3454,
+                "activities_number_q1": 6,
+                "activities_number_q2": 5,
+                "activities_number_q3": 3,
+                "activities_number_q4": 2,
+                "fees_amount_q1": 400,
+                "fees_amount_q2": 300,
+                "fees_amount_q3": 250,
+                "fees_amount_q4": 100,
+                "taxes_amount_q1": 300,
+                "taxes_amount_q2": 200,
+                "taxes_amount_q3": 150,
+                "taxes_amount_q4": 100,
+                "property_type": "DPI901",
+                "rented_days": 200
+            }
+        ],
+        "version": 1,
+        "updated": true,
+        "seller_id": "03349c99-fb08-4179-9cca-05260a8b54d0"
+    }
+]

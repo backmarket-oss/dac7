@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dpi:DPI_OECD xmlns:dpi="urn:oecd:ties:dpi" xmlns:stf="urn:oecd:ties:dpistf" version="1.0">
+    <dpi:MessageSpec>
+        <dpi:TransmittingCountry>FR</dpi:TransmittingCountry>
+        <dpi:ReceivingCountry>FR</dpi:ReceivingCountry>
+        <dpi:MessageType>DPI</dpi:MessageType>
+        <dpi:MessageRefId>OP_2023_632777120_d1</dpi:MessageRefId>
+        <dpi:MessageTypeIndic>DPI403</dpi:MessageTypeIndic>
+        <dpi:ReportingPeriod>2023-12-31</dpi:ReportingPeriod>
+        <dpi:Timestamp>2024-01-16T11:22:59.456</dpi:Timestamp>
+    </dpi:MessageSpec>
+    <dpi:DPIBody>
+        <dpi:PlatformOperator>
+            <dpi:ResCountryCode>FR</dpi:ResCountryCode>
+            <dpi:TIN issuedBy="FR">632777120</dpi:TIN>
+            <dpi:IN issuedBy="FR" INType="BRN">632777120</dpi:IN>
+            <dpi:VAT>FR58632777120</dpi:VAT>
+            <dpi:Name>Francaise des Services</dpi:Name>
+            <dpi:PlatformBusinessName>QuickService.fr</dpi:PlatformBusinessName>
+            <dpi:Address legalAddressType="OECD304">
+                <dpi:CountryCode>FR</dpi:CountryCode>
+                <dpi:AddressFix>
+                    <dpi:Street>Quai des Grands Augustins</dpi:Street>
+                    <dpi:BuildingIdentifier>15</dpi:BuildingIdentifier>
+                    <dpi:FloorIdentifier>RDC</dpi:FloorIdentifier>
+                    <dpi:PostCode>75006</dpi:PostCode>
+                    <dpi:City>Paris</dpi:City>
+                </dpi:AddressFix>
+            </dpi:Address>
+            <dpi:Nexus>RPONEX1</dpi:Nexus>
+            <dpi:AssumedReporting>true</dpi:AssumedReporting>
+            <dpi:DocSpec>
+                <stf:DocTypeIndic>OECD1</stf:DocTypeIndic>
+                <stf:DocRefId>OP_2023_632777120_v1</stf:DocRefId>
+            </dpi:DocSpec>
+        </dpi:PlatformOperator>
+        <dpi:OtherPlatformOperators>
+            <dpi:AssumingPlatformOperator>
+                <dpi:ResCountryCode>DE</dpi:ResCountryCode>
+                <dpi:TIN issuedBy="DE">HRB 12345</dpi:TIN>
+                <dpi:Name>QuickService.de</dpi:Name>
+                <dpi:Address legalAddressType="OECD304">
+                    <dpi:CountryCode>DE</dpi:CountryCode>
+                    <dpi:AddressFix>
+                        <dpi:Street>Haupstrasse</dpi:Street>
+                        <dpi:BuildingIdentifier>5</dpi:BuildingIdentifier>
+                        <dpi:PostCode>53111</dpi:PostCode>
+                        <dpi:City>Bonn</dpi:City>
+                    </dpi:AddressFix>
+                </dpi:Address>
+                <dpi:DocSpec>
+                    <stf:DocTypeIndic>OECD1</stf:DocTypeIndic>
+                    <stf:DocRefId>OP_2023_632777120_HRB12345_v1</stf:DocRefId>
+                </dpi:DocSpec>
+            </dpi:AssumingPlatformOperator>
+        </dpi:OtherPlatformOperators>
+    </dpi:DPIBody>
+</dpi:DPI_OECD>

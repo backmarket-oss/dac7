@@ -1,0 +1,33 @@
+name: pre-commit
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+jobs:
+  style-check:
+    name: Style Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4
+
+      - name: Install pre-commit
+        run: pip install poetry==1.8.3
+
+      - uses: actions/setup-python@82c7e631bb3cdc910f68e0081d67478d79c6982d # v5
+        with:
+          python-version: '3.12'
+          cache: 'poetry'
+
+      - name: Install dependencies
+        run: poetry install
+
+      - uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4
+        env:
+          cache-name: cache-pre-commit
+        with:
+          path: ~/.cache/pre-commit
+          key: ${{ env.cache-name }}-${{ hashFiles('.pre-commit-config.yaml') }}
+
+      - name: Run pre-commit
+        run: SKIP=poetry-lock poetry run pre-commit run --show-diff-on-failure --all-files

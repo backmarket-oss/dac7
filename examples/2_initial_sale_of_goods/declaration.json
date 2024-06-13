@@ -1,0 +1,421 @@
+{
+    "@xmlns:dpi": "urn:oecd:ties:dpi",
+    "@xmlns:stf": "urn:oecd:ties:dpistf",
+    "@version": "1.0",
+    "dpi:MessageSpec": {
+        "dpi:TransmittingCountry": "FR",
+        "dpi:ReceivingCountry": "FR",
+        "dpi:MessageType": "DPI",
+        "dpi:MessageRefId": "OP_2023_123456789_d1",
+        "dpi:MessageTypeIndic": "DPI401",
+        "dpi:ReportingPeriod": "2023-12-31",
+        "dpi:Timestamp": "2024-01-25T12:55:02.003"
+    },
+    "dpi:DPIBody": {
+        "dpi:PlatformOperator": {
+            "dpi:ResCountryCode": "FR",
+            "dpi:TIN": [
+                {
+                    "@issuedBy": "FR",
+                    "$": "123456789"
+                }
+            ],
+            "dpi:IN": [
+                {
+                    "@issuedBy": "FR",
+                    "@INType": "BRN",
+                    "$": "123456789"
+                }
+            ],
+            "dpi:VAT": "FR3252172345678990",
+            "dpi:Name": [
+                {
+                    "$": "Paris Vide Grenier SA"
+                }
+            ],
+            "dpi:Address": [
+                {
+                    "@legalAddressType": "OECD304",
+                    "dpi:CountryCode": "FR",
+                    "dpi:AddressFix": {
+                        "dpi:Street": "52 avenue Napoleon",
+                        "dpi:BuildingIdentifier": "Immeuble Paris Business",
+                        "dpi:PostCode": "75000",
+                        "dpi:City": "Paris"
+                    }
+                }
+            ],
+            "dpi:PlatformBusinessName": [
+                "Kiventou.com"
+            ],
+            "dpi:Nexus": "RPONEX1",
+            "dpi:AssumedReporting": false,
+            "dpi:DocSpec": {
+                "stf:DocTypeIndic": "OECD1",
+                "stf:DocRefId": "OP_2023_123456789_v1"
+            }
+        },
+        "dpi:ReportableSeller": [
+            {
+                "dpi:Identity": {
+                    "dpi:EntitySeller": {
+                        "dpi:Standard": {
+                            "dpi:EntSellerID": {
+                                "dpi:ResCountryCode": "FR",
+                                "dpi:TIN": [
+                                    {
+                                        "@issuedBy": "FR",
+                                        "$": "52484162312345"
+                                    }
+                                ],
+                                "dpi:IN": [
+                                    {
+                                        "@issuedBy": "FR",
+                                        "@INType": "BRN",
+                                        "$": "52484162312345"
+                                    }
+                                ],
+                                "dpi:Name": [
+                                    {
+                                        "$": "SCI de la rue Mouffetard"
+                                    }
+                                ],
+                                "dpi:Address": [
+                                    {
+                                        "@legalAddressType": "OECD302",
+                                        "dpi:CountryCode": "FR",
+                                        "dpi:AddressFix": {
+                                            "dpi:Street": "10 place du G\u00e9n\u00e9ral de Gaulle",
+                                            "dpi:PostCode": "33000",
+                                            "dpi:City": "BORDEAUX"
+                                        }
+                                    }
+                                ]
+                            },
+                            "dpi:FinancialIdentifier": [
+                                {
+                                    "dpi:Identifier": {
+                                        "@AccountNumberType": "IBAN",
+                                        "$": "FR34567890098765045"
+                                    },
+                                    "dpi:AccountHolderName": "Paul Chopin",
+                                    "dpi:OtherInfo": "Compte joint"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "dpi:RelevantActivities": {
+                    "dpi:SaleOfGoods": {
+                        "dpi:Consideration": {
+                            "dpi:ConsQ1": {
+                                "@currCode": "EUR",
+                                "$": 20
+                            },
+                            "dpi:ConsQ2": {
+                                "@currCode": "EUR",
+                                "$": 800
+                            },
+                            "dpi:ConsQ3": {
+                                "@currCode": "EUR",
+                                "$": 500
+                            },
+                            "dpi:ConsQ4": {
+                                "@currCode": "EUR",
+                                "$": 0
+                            }
+                        },
+                        "dpi:NumberOfActivities": {
+                            "dpi:NumbQ1": 1,
+                            "dpi:NumbQ2": 20,
+                            "dpi:NumbQ3": 12,
+                            "dpi:NumbQ4": 0
+                        },
+                        "dpi:Fees": {
+                            "dpi:FeesQ1": {
+                                "@currCode": "EUR",
+                                "$": 3
+                            },
+                            "dpi:FeesQ2": {
+                                "@currCode": "EUR",
+                                "$": 68
+                            },
+                            "dpi:FeesQ3": {
+                                "@currCode": "EUR",
+                                "$": 101
+                            },
+                            "dpi:FeesQ4": {
+                                "@currCode": "EUR",
+                                "$": 0
+                            }
+                        },
+                        "dpi:Taxes": {
+                            "dpi:TaxesQ1": {
+                                "@currCode": "EUR",
+                                "$": 1
+                            },
+                            "dpi:TaxesQ2": {
+                                "@currCode": "EUR",
+                                "$": 22
+                            },
+                            "dpi:TaxesQ3": {
+                                "@currCode": "EUR",
+                                "$": 13
+                            },
+                            "dpi:TaxesQ4": {
+                                "@currCode": "EUR",
+                                "$": 0
+                            }
+                        }
+                    }
+                },
+                "dpi:DocSpec": {
+                    "stf:DocTypeIndic": "OECD1",
+                    "stf:DocRefId": "OP_2023_123456789_5683da9c-2ea0-427b-ab86-578ebdb545ba_v1"
+                }
+            },
+            {
+                "dpi:Identity": {
+                    "dpi:EntitySeller": {
+                        "dpi:Standard": {
+                            "dpi:EntSellerID": {
+                                "dpi:ResCountryCode": "ES",
+                                "dpi:TIN": [
+                                    {
+                                        "@issuedBy": "FR",
+                                        "$": "B12345678"
+                                    }
+                                ],
+                                "dpi:IN": [
+                                    {
+                                        "@issuedBy": "FR",
+                                        "@INType": "BRN",
+                                        "$": "B12345678"
+                                    }
+                                ],
+                                "dpi:Name": [
+                                    {
+                                        "$": "Rainie Tower"
+                                    }
+                                ],
+                                "dpi:Address": [
+                                    {
+                                        "@legalAddressType": "OECD302",
+                                        "dpi:CountryCode": "ES",
+                                        "dpi:AddressFix": {
+                                            "dpi:Street": "Calle Betis",
+                                            "dpi:BuildingIdentifier": "Num 7",
+                                            "dpi:PostCode": "28001",
+                                            "dpi:City": "MADRID"
+                                        }
+                                    }
+                                ]
+                            },
+                            "dpi:FinancialIdentifier": [
+                                {
+                                    "dpi:Identifier": {
+                                        "@AccountNumberType": "IBAN",
+                                        "$": "ES13 8765 3092 7065"
+                                    },
+                                    "dpi:AccountHolderName": "Jacques Vert"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "dpi:RelevantActivities": {
+                    "dpi:SaleOfGoods": {
+                        "dpi:Consideration": {
+                            "dpi:ConsQ1": {
+                                "@currCode": "EUR",
+                                "$": 8177
+                            },
+                            "dpi:ConsQ2": {
+                                "@currCode": "EUR",
+                                "$": 5695
+                            },
+                            "dpi:ConsQ3": {
+                                "@currCode": "EUR",
+                                "$": 6391
+                            },
+                            "dpi:ConsQ4": {
+                                "@currCode": "EUR",
+                                "$": 1235
+                            }
+                        },
+                        "dpi:NumberOfActivities": {
+                            "dpi:NumbQ1": 892,
+                            "dpi:NumbQ2": 969,
+                            "dpi:NumbQ3": 1077,
+                            "dpi:NumbQ4": 510
+                        },
+                        "dpi:Fees": {
+                            "dpi:FeesQ1": {
+                                "@currCode": "EUR",
+                                "$": 1500
+                            },
+                            "dpi:FeesQ2": {
+                                "@currCode": "EUR",
+                                "$": 820
+                            },
+                            "dpi:FeesQ3": {
+                                "@currCode": "EUR",
+                                "$": 908
+                            },
+                            "dpi:FeesQ4": {
+                                "@currCode": "EUR",
+                                "$": 155
+                            }
+                        },
+                        "dpi:Taxes": {
+                            "dpi:TaxesQ1": {
+                                "@currCode": "EUR",
+                                "$": 300
+                            },
+                            "dpi:TaxesQ2": {
+                                "@currCode": "EUR",
+                                "$": 90
+                            },
+                            "dpi:TaxesQ3": {
+                                "@currCode": "EUR",
+                                "$": 133
+                            },
+                            "dpi:TaxesQ4": {
+                                "@currCode": "EUR",
+                                "$": 28
+                            }
+                        }
+                    }
+                },
+                "dpi:DocSpec": {
+                    "stf:DocTypeIndic": "OECD1",
+                    "stf:DocRefId": "OP_2023_123456789_2a1d15af-aef0-4b77-8c0c-7341ee5e7ae1_v1"
+                }
+            },
+            {
+                "dpi:Identity": {
+                    "dpi:IndividualSeller": {
+                        "dpi:Standard": {
+                            "dpi:IndSellerID": {
+                                "dpi:ResCountryCode": "SE",
+                                "dpi:TIN": [
+                                    {
+                                        "@issuedBy": "SE",
+                                        "$": "598022-6588"
+                                    }
+                                ],
+                                "dpi:Name": {
+                                    "@nameType": "OECD202",
+                                    "dpi:FirstName": {
+                                        "@xnlNameType": "Prenom d\u2019usage",
+                                        "$": "Olga"
+                                    },
+                                    "dpi:LastName": {
+                                        "@xnlNameType": "Nom d\u2019usage",
+                                        "$": "Andersson"
+                                    }
+                                },
+                                "dpi:Address": [
+                                    {
+                                        "@legalAddressType": "OECD301",
+                                        "dpi:CountryCode": "SE",
+                                        "dpi:AddressFix": {
+                                            "dpi:Street": "Stj\u00e4rnor torg 25",
+                                            "dpi:PostCode": "111 52",
+                                            "dpi:City": "Stockholm"
+                                        }
+                                    }
+                                ],
+                                "dpi:BirthInfo": {
+                                    "dpi:BirthDate": "1997-11-08",
+                                    "dpi:BirthPlace": {
+                                        "dpi:City": "Nykvarn",
+                                        "dpi:CountryInfo": {
+                                            "dpi:CountryCode": "SE"
+                                        }
+                                    }
+                                }
+                            },
+                            "dpi:FinancialIdentifier": [
+                                {
+                                    "dpi:Identifier": {
+                                        "@AccountNumberType": "IBAN",
+                                        "$": "SE1240001520960911132345"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "dpi:RelevantActivities": {
+                    "dpi:SaleOfGoods": {
+                        "dpi:Consideration": {
+                            "dpi:ConsQ1": {
+                                "@currCode": "SEK",
+                                "$": 5755
+                            },
+                            "dpi:ConsQ2": {
+                                "@currCode": "SEK",
+                                "$": 5831
+                            },
+                            "dpi:ConsQ3": {
+                                "@currCode": "SEK",
+                                "$": 6008
+                            },
+                            "dpi:ConsQ4": {
+                                "@currCode": "SEK",
+                                "$": 1378
+                            }
+                        },
+                        "dpi:NumberOfActivities": {
+                            "dpi:NumbQ1": 33,
+                            "dpi:NumbQ2": 34,
+                            "dpi:NumbQ3": 44,
+                            "dpi:NumbQ4": 12
+                        },
+                        "dpi:Fees": {
+                            "dpi:FeesQ1": {
+                                "@currCode": "SEK",
+                                "$": 899
+                            },
+                            "dpi:FeesQ2": {
+                                "@currCode": "SEK",
+                                "$": 900
+                            },
+                            "dpi:FeesQ3": {
+                                "@currCode": "SEK",
+                                "$": 980
+                            },
+                            "dpi:FeesQ4": {
+                                "@currCode": "SEK",
+                                "$": 165
+                            }
+                        },
+                        "dpi:Taxes": {
+                            "dpi:TaxesQ1": {
+                                "@currCode": "SEK",
+                                "$": 85
+                            },
+                            "dpi:TaxesQ2": {
+                                "@currCode": "SEK",
+                                "$": 88
+                            },
+                            "dpi:TaxesQ3": {
+                                "@currCode": "SEK",
+                                "$": 105
+                            },
+                            "dpi:TaxesQ4": {
+                                "@currCode": "SEK",
+                                "$": 33
+                            }
+                        }
+                    }
+                },
+                "dpi:DocSpec": {
+                    "stf:DocTypeIndic": "OECD1",
+                    "stf:DocRefId": "OP_2023_123456789_b27ec429-f539-499c-88bc-da6d9563f316_v1"
+                }
+            }
+        ]
+    }
+}

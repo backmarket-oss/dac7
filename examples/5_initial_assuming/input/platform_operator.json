@@ -1,0 +1,36 @@
+{
+    "residence_country_code": "FR",
+    "tax_identification_numbers": [
+        {
+            "issued_by": "FR",
+            "value": "555753159"
+        }
+    ],
+    "other_identification_numbers": [
+        {
+            "type": "BRN",
+            "issued_by": "FR",
+            "value": "555753159"
+        }
+    ],
+    "vat_number": "FR47555753159",
+    "legal_names": [
+        "Locavroum"
+    ],
+    "business_names": [
+        "Autoloc.fr"
+    ],
+    "addresses": [
+        {
+            "legal_type": "OECD304",
+            "country_code": "FR",
+            "street": "rue Bernard Ouillon",
+            "building_identifier": "25",
+            "post_code": "92200",
+            "city": "Neuilly sur seine"
+        }
+    ],
+    "nexus": "RPONEX1",
+    "updated": true,
+    "version": 1
+}

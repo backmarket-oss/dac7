@@ -1,0 +1,58 @@
+[
+    {
+        "residence_country_code": "BE",
+        "tax_identification_numbers": [
+            {
+                "issued_by": "BE",
+                "value": "48937185261"
+            }
+        ],
+        "name_type": "OECD202",
+        "first_name": "Freddy",
+        "first_name_type": "Prenom d\u2019usage",
+        "last_name": "Maertens",
+        "last_name_type": "Nom d\u2019usage",
+        "addresses": [
+            {
+                "legal_type": "OECD301",
+                "country_code": "BE",
+                "street": "Rue Fran\u00e7ois Marcq 21",
+                "post_code": "7030",
+                "city": "Mons"
+            }
+        ],
+        "birth_date": "1952-02-13",
+        "birth_city": "Nieuport",
+        "birth_country_code": "BE",
+        "financial_identifiers": [
+            {
+                "type": "IBAN",
+                "account_number": "34567890098765",
+                "account_holder_name": "Cycles Maertens SRL",
+                "other_info": "Compte de d\u00e9p\u00f4t"
+            }
+        ],
+        "personal_services": {
+            "currency_code": "EUR",
+            "consideration_amount_q1": 4728,
+            "consideration_amount_q2": 6258,
+            "consideration_amount_q3": 4412,
+            "consideration_amount_q4": 3252,
+            "activities_number_q1": 15,
+            "activities_number_q2": 22,
+            "activities_number_q3": 17,
+            "activities_number_q4": 12,
+            "fees_amount_q1": 473,
+            "fees_amount_q2": 626,
+            "fees_amount_q3": 441,
+            "fees_amount_q4": 325,
+            "taxes_amount_q1": 220,
+            "taxes_amount_q2": 523,
+            "taxes_amount_q3": 444,
+            "taxes_amount_q4": 357
+        },
+        "seller_id": "1090c2c9-9448-4287-895a-edf79ef3981e",
+        "version": 1,
+        "updated": true
+    }
+]

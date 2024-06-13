@@ -24,5 +24,19 @@
       "matchPackageNames": ["psf/black-pre-commit-mirror"],
       "customChangelogUrl": "https://github.com/psf/black"
     }
+  ],
+  "regexManagers": [
+    {
+      "description": "Update poetry",
+      "fileMatch": [
+        "^.+\\.yml$",
+        "^Dockerfile$"
+      ],
+      "matchStrings": [
+        "pip install( --upgrade)? poetry==(?<currentValue>\\S+?)\\s"
+      ],
+      "depNameTemplate": "poetry",
+      "datasourceTemplate": "pypi"
+    }
   ]
 }

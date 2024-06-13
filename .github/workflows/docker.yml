@@ -1,0 +1,29 @@
+name: docker
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+jobs:
+  tests:
+    name: Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4
+
+      - name: Install poetry
+        run: pip install poetry==1.8.3
+
+      - uses: actions/setup-python@82c7e631bb3cdc910f68e0081d67478d79c6982d # v5
+        with:
+          python-version: '3.12'
+          cache: 'poetry'
+
+      - name: Install local project
+        run: make init
+
+      - name: Unit tests
+        run: make test-unit
+
+      - name: Run end-to-end tests
+        run: make test-e2e

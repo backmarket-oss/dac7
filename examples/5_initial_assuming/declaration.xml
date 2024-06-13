@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dpi:DPI_OECD xmlns:dpi="urn:oecd:ties:dpi" xmlns:stf="urn:oecd:ties:dpistf" version="1.0">
+    <dpi:MessageSpec>
+        <dpi:TransmittingCountry>FR</dpi:TransmittingCountry>
+        <dpi:ReceivingCountry>FR</dpi:ReceivingCountry>
+        <dpi:MessageType>DPI</dpi:MessageType>
+        <dpi:MessageRefId>OP_2023_555753159_d1</dpi:MessageRefId>
+        <dpi:MessageTypeIndic>DPI401</dpi:MessageTypeIndic>
+        <dpi:ReportingPeriod>2023-12-31</dpi:ReportingPeriod>
+        <dpi:Timestamp>2024-01-30T21:48:22.209</dpi:Timestamp>
+    </dpi:MessageSpec>
+    <dpi:DPIBody>
+        <dpi:PlatformOperator>
+            <dpi:ResCountryCode>FR</dpi:ResCountryCode>
+            <dpi:TIN issuedBy="FR">555753159</dpi:TIN>
+            <dpi:IN issuedBy="FR" INType="BRN">555753159</dpi:IN>
+            <dpi:VAT>FR47555753159</dpi:VAT>
+            <dpi:Name>Locavroum</dpi:Name>
+            <dpi:PlatformBusinessName>Autoloc.fr</dpi:PlatformBusinessName>
+            <dpi:Address legalAddressType="OECD304">
+                <dpi:CountryCode>FR</dpi:CountryCode>
+                <dpi:AddressFix>
+                    <dpi:Street>rue Bernard Ouillon</dpi:Street>
+                    <dpi:BuildingIdentifier>25</dpi:BuildingIdentifier>
+                    <dpi:PostCode>92200</dpi:PostCode>
+                    <dpi:City>Neuilly sur seine</dpi:City>
+                </dpi:AddressFix>
+            </dpi:Address>
+            <dpi:Nexus>RPONEX1</dpi:Nexus>
+            <dpi:AssumedReporting>false</dpi:AssumedReporting>
+            <dpi:DocSpec>
+                <stf:DocTypeIndic>OECD1</stf:DocTypeIndic>
+                <stf:DocRefId>OP_2023_555753159_v1</stf:DocRefId>
+            </dpi:DocSpec>
+        </dpi:PlatformOperator>
+        <dpi:OtherPlatformOperators>
+            <dpi:AssumedPlatformOperator>
+                <dpi:ResCountryCode>FR</dpi:ResCountryCode>
+                <dpi:TIN issuedBy="FR">555852446</dpi:TIN>
+                <dpi:Name>MotoLoc.fr</dpi:Name>
+                <dpi:Address legalAddressType="OECD304">
+                    <dpi:CountryCode>FR</dpi:CountryCode>
+                    <dpi:AddressFix>
+                        <dpi:Street>rue Bernard Ouillon</dpi:Street>
+                        <dpi:BuildingIdentifier>25</dpi:BuildingIdentifier>
+                        <dpi:FloorIdentifier>5eme etage</dpi:FloorIdentifier>
+                        <dpi:PostCode>92200</dpi:PostCode>
+                        <dpi:City>Neuilly sur Seine</dpi:City>
+                    </dpi:AddressFix>
+                </dpi:Address>
+                <dpi:DocSpec>
+                    <stf:DocTypeIndic>OECD1</stf:DocTypeIndic>
+                    <stf:DocRefId>OP_2023_555753159_555852446_v1</stf:DocRefId>
+                </dpi:DocSpec>
+            </dpi:AssumedPlatformOperator>
+        </dpi:OtherPlatformOperators>
+        <dpi:ReportableSeller>
+            <dpi:Identity>
+                <dpi:IndividualSeller>
+                    <dpi:Standard>
+                        <dpi:IndSellerID>
+                            <dpi:ResCountryCode>NL</dpi:ResCountryCode>
+                            <dpi:TIN issuedBy="NL">872995473</dpi:TIN>
+                            <dpi:Name nameType="OECD202">
+                                <dpi:Title>Mr</dpi:Title>
+                                <dpi:FirstName xnlNameType="OECD208">Wouter</dpi:FirstName>
+                                <dpi:LastName xnlNameType="OECD208">Lavanbach</dpi:LastName>
+                            </dpi:Name>
+                            <dpi:Address legalAddressType="OECD302">
+                                <dpi:CountryCode>NL</dpi:CountryCode>
+                                <dpi:AddressFix>
+                                    <dpi:Street>Van Koetsveldstraat</dpi:Street>
+                                    <dpi:BuildingIdentifier>20</dpi:BuildingIdentifier>
+                                    <dpi:PostCode>3532 ES</dpi:PostCode>
+                                    <dpi:City>Utrecht</dpi:City>
+                                </dpi:AddressFix>
+                            </dpi:Address>
+                            <dpi:BirthInfo>
+                                <dpi:BirthDate>1954-05-04</dpi:BirthDate>
+                                <dpi:BirthPlace>
+                                    <dpi:City>Amsterdam</dpi:City>
+                                    <dpi:CountryInfo>
+                                        <dpi:CountryCode>NL</dpi:CountryCode>
+                                    </dpi:CountryInfo>
+                                </dpi:BirthPlace>
+                            </dpi:BirthInfo>
+                        </dpi:IndSellerID>
+                        <dpi:FinancialIdentifier>
+                            <dpi:Identifier AccountNumberType="IBAN">NL91ABNA0417164300</dpi:Identifier>
+                        </dpi:FinancialIdentifier>
+                    </dpi:Standard>
+                </dpi:IndividualSeller>
+            </dpi:Identity>
+            <dpi:RelevantActivities>
+                <dpi:TransportationRental>
+                    <dpi:Consideration>
+                        <dpi:ConsQ1 currCode="EUR">0</dpi:ConsQ1>
+                        <dpi:ConsQ2 currCode="EUR">1512</dpi:ConsQ2>
+                        <dpi:ConsQ3 currCode="EUR">4577</dpi:ConsQ3>
+                        <dpi:ConsQ4 currCode="EUR">2992</dpi:ConsQ4>
+                    </dpi:Consideration>
+                    <dpi:NumberOfActivities>
+                        <dpi:NumbQ1>0</dpi:NumbQ1>
+                        <dpi:NumbQ2>4</dpi:NumbQ2>
+                        <dpi:NumbQ3>10</dpi:NumbQ3>
+                        <dpi:NumbQ4>7</dpi:NumbQ4>
+                    </dpi:NumberOfActivities>
+                    <dpi:Fees>
+                        <dpi:FeesQ1 currCode="EUR">0</dpi:FeesQ1>
+                        <dpi:FeesQ2 currCode="EUR">15</dpi:FeesQ2>
+                        <dpi:FeesQ3 currCode="EUR">457</dpi:FeesQ3>
+                        <dpi:FeesQ4 currCode="EUR">299</dpi:FeesQ4>
+                    </dpi:Fees>
+                    <dpi:Taxes>
+                        <dpi:TaxesQ1 currCode="EUR">0</dpi:TaxesQ1>
+                        <dpi:TaxesQ2 currCode="EUR">200</dpi:TaxesQ2>
+                        <dpi:TaxesQ3 currCode="EUR">350</dpi:TaxesQ3>
+                        <dpi:TaxesQ4 currCode="EUR">150</dpi:TaxesQ4>
+                    </dpi:Taxes>
+                </dpi:TransportationRental>
+            </dpi:RelevantActivities>
+            <dpi:DocSpec>
+                <stf:DocTypeIndic>OECD1</stf:DocTypeIndic>
+                <stf:DocRefId>OP_2023_555753159_55de6edc-4913-43c6-8f1f-72b88e2b220f_v1</stf:DocRefId>
+            </dpi:DocSpec>
+        </dpi:ReportableSeller>
+        <dpi:ReportableSeller>
+            <dpi:Identity>
+                <dpi:IndividualSeller>
+                    <dpi:Standard>
+                        <dpi:IndSellerID>
+                            <dpi:ResCountryCode>FR</dpi:ResCountryCode>
+                            <dpi:TIN issuedBy="FR">48523611200025</dpi:TIN>
+                            <dpi:Name nameType="OECD207">
+                                <dpi:FirstName xnlNameType="OECD208">Herve</dpi:FirstName>
+                                <dpi:LastName xnlNameType="OECD208">Formeri</dpi:LastName>
+                            </dpi:Name>
+                            <dpi:Address legalAddressType="OECD302">
+                                <dpi:CountryCode>FR</dpi:CountryCode>
+                                <dpi:AddressFix>
+                                    <dpi:Street>Boulevard Pan Bagnat</dpi:Street>
+                                    <dpi:BuildingIdentifier>12</dpi:BuildingIdentifier>
+                                    <dpi:PostCode>92430</dpi:PostCode>
+                                    <dpi:City>Marnes la Coquette</dpi:City>
+                                </dpi:AddressFix>
+                            </dpi:Address>
+                            <dpi:BirthInfo>
+                                <dpi:BirthDate>1965-04-24</dpi:BirthDate>
+                                <dpi:BirthPlace>
+                                    <dpi:City>Nice</dpi:City>
+                                    <dpi:CountryInfo>
+                                        <dpi:CountryCode>FR</dpi:CountryCode>
+                                    </dpi:CountryInfo>
+                                </dpi:BirthPlace>
+                            </dpi:BirthInfo>
+                        </dpi:IndSellerID>
+                        <dpi:FinancialIdentifier>
+                            <dpi:Identifier AccountNumberType="IBAN">FR7630001007941234567890185</dpi:Identifier>
+                            <dpi:AccountHolderName>SCI de la rue Mouffetard</dpi:AccountHolderName>
+                        </dpi:FinancialIdentifier>
+                    </dpi:Standard>
+                </dpi:IndividualSeller>
+            </dpi:Identity>
+            <dpi:RelevantActivities>
+                <dpi:TransportationRental>
+                    <dpi:Consideration>
+                        <dpi:ConsQ1 currCode="EUR">0</dpi:ConsQ1>
+                        <dpi:ConsQ2 currCode="EUR">0</dpi:ConsQ2>
+                        <dpi:ConsQ3 currCode="EUR">1250</dpi:ConsQ3>
+                        <dpi:ConsQ4 currCode="EUR">512</dpi:ConsQ4>
+                    </dpi:Consideration>
+                    <dpi:NumberOfActivities>
+                        <dpi:NumbQ1>0</dpi:NumbQ1>
+                        <dpi:NumbQ2>0</dpi:NumbQ2>
+                        <dpi:NumbQ3>3</dpi:NumbQ3>
+                        <dpi:NumbQ4>2</dpi:NumbQ4>
+                    </dpi:NumberOfActivities>
+                    <dpi:Fees>
+                        <dpi:FeesQ1 currCode="EUR">0</dpi:FeesQ1>
+                        <dpi:FeesQ2 currCode="EUR">0</dpi:FeesQ2>
+                        <dpi:FeesQ3 currCode="EUR">125</dpi:FeesQ3>
+                        <dpi:FeesQ4 currCode="EUR">51</dpi:FeesQ4>
+                    </dpi:Fees>
+                    <dpi:Taxes>
+                        <dpi:TaxesQ1 currCode="EUR">0</dpi:TaxesQ1>
+                        <dpi:TaxesQ2 currCode="EUR">0</dpi:TaxesQ2>
+                        <dpi:TaxesQ3 currCode="EUR">60</dpi:TaxesQ3>
+                        <dpi:TaxesQ4 currCode="EUR">25</dpi:TaxesQ4>
+                    </dpi:Taxes>
+                </dpi:TransportationRental>
+            </dpi:RelevantActivities>
+            <dpi:DocSpec>
+                <stf:DocTypeIndic>OECD1</stf:DocTypeIndic>
+                <stf:DocRefId>OP_2023_555753159_9f535c1e-73a2-494d-a4f4-e0f7474be679_v1</stf:DocRefId>
+            </dpi:DocSpec>
+        </dpi:ReportableSeller>
+    </dpi:DPIBody>
+</dpi:DPI_OECD>

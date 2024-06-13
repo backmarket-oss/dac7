@@ -1,0 +1,85 @@
+[
+    {
+        "residence_country_code": "ES",
+        "tax_identification_numbers": [
+            {
+                "issued_by": "AR",
+                "value": "20258743991"
+            }
+        ],
+        "vat_number": "12345667",
+        "name_type": "OECD202",
+        "titles": [
+            "Mr"
+        ],
+        "first_name": "Carlos",
+        "first_name_type": "First",
+        "middle_names": [
+            {
+                "@xnlNameType": "Middle",
+                "$": "Miguel"
+            }
+        ],
+        "name_prefix": {
+            "@xnlNameType": "Prefix",
+            "$": "De"
+        },
+        "last_name": "Quintana",
+        "last_name_type": "Last",
+        "addresses": [
+            {
+                "legal_type": "OECD302",
+                "country_code": "AR",
+                "street": "20 calle de la libertad",
+                "post_code": "B1406",
+                "city": "BuenosAires"
+            }
+        ],
+        "birth_date": "1987-07-31",
+        "birth_city": "Buenos Aires",
+        "birth_city_subentity": "Buenos",
+        "birth_country_code": "AR",
+        "financial_identifiers": [
+            {
+                "type": "IBAN",
+                "account_number": "AR34567890098765045",
+                "account_holder_name": "Carlos Miguel de Quintana",
+                "other_info": "Compte joint"
+            }
+        ],
+        "immovable_properties": [
+            {
+                "address": {
+                    "legal_type": "OECD303",
+                    "country_code": "FR",
+                    "street": "15 quai de la Londe",
+                    "post_code": "50100",
+                    "city": "Cherbourg-en-Cotentin"
+                },
+                "land_registration_number": "1987824412F",
+                "currency_code": "EUR",
+                "consideration_amount_q1": 5132,
+                "consideration_amount_q2": 4567,
+                "consideration_amount_q3": 6252,
+                "consideration_amount_q4": 3980,
+                "activities_number_q1": 6,
+                "activities_number_q2": 5,
+                "activities_number_q3": 7,
+                "activities_number_q4": 3,
+                "fees_amount_q1": 400,
+                "fees_amount_q2": 300,
+                "fees_amount_q3": 450,
+                "fees_amount_q4": 200,
+                "taxes_amount_q1": 300,
+                "taxes_amount_q2": 200,
+                "taxes_amount_q3": 350,
+                "taxes_amount_q4": 150,
+                "property_type": "DPI904",
+                "rented_days": 147
+            }
+        ],
+        "seller_id": "03587e99-aa78-8871-9abc-487025a8b54d0",
+        "version": 1,
+        "updated": true
+    }
+]

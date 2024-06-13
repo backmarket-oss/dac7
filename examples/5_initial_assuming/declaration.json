@@ -1,0 +1,348 @@
+{
+    "@xmlns:dpi": "urn:oecd:ties:dpi",
+    "@xmlns:stf": "urn:oecd:ties:dpistf",
+    "@version": "1.0",
+    "dpi:MessageSpec": {
+        "dpi:TransmittingCountry": "FR",
+        "dpi:ReceivingCountry": "FR",
+        "dpi:MessageType": "DPI",
+        "dpi:MessageRefId": "OP_2023_555753159_d1",
+        "dpi:MessageTypeIndic": "DPI401",
+        "dpi:ReportingPeriod": "2023-12-31",
+        "dpi:Timestamp": "2024-01-30T21:48:22.209"
+    },
+    "dpi:DPIBody": {
+        "dpi:PlatformOperator": {
+            "dpi:ResCountryCode": "FR",
+            "dpi:TIN": [
+                {
+                    "@issuedBy": "FR",
+                    "$": "555753159"
+                }
+            ],
+            "dpi:IN": [
+                {
+                    "@issuedBy": "FR",
+                    "@INType": "BRN",
+                    "$": "555753159"
+                }
+            ],
+            "dpi:VAT": "FR47555753159",
+            "dpi:Name": [
+                {
+                    "$": "Locavroum"
+                }
+            ],
+            "dpi:Address": [
+                {
+                    "@legalAddressType": "OECD304",
+                    "dpi:CountryCode": "FR",
+                    "dpi:AddressFix": {
+                        "dpi:Street": "rue Bernard Ouillon",
+                        "dpi:BuildingIdentifier": "25",
+                        "dpi:PostCode": "92200",
+                        "dpi:City": "Neuilly sur seine"
+                    }
+                }
+            ],
+            "dpi:PlatformBusinessName": [
+                "Autoloc.fr"
+            ],
+            "dpi:Nexus": "RPONEX1",
+            "dpi:AssumedReporting": false,
+            "dpi:DocSpec": {
+                "stf:DocTypeIndic": "OECD1",
+                "stf:DocRefId": "OP_2023_555753159_v1"
+            }
+        },
+        "dpi:OtherPlatformOperators": {
+            "dpi:AssumedPlatformOperator": [
+                {
+                    "dpi:ResCountryCode": [
+                        "FR"
+                    ],
+                    "dpi:TIN": [
+                        {
+                            "@issuedBy": "FR",
+                            "$": "555852446"
+                        }
+                    ],
+                    "dpi:Name": {
+                        "$": "MotoLoc.fr"
+                    },
+                    "dpi:Address": {
+                        "@legalAddressType": "OECD304",
+                        "dpi:CountryCode": "FR",
+                        "dpi:AddressFix": {
+                            "dpi:Street": "rue Bernard Ouillon",
+                            "dpi:BuildingIdentifier": "25",
+                            "dpi:FloorIdentifier": "5eme etage",
+                            "dpi:PostCode": "92200",
+                            "dpi:City": "Neuilly sur Seine"
+                        }
+                    },
+                    "dpi:DocSpec": {
+                        "stf:DocTypeIndic": "OECD1",
+                        "stf:DocRefId": "OP_2023_555753159_555852446_v1"
+                    }
+                }
+            ]
+        },
+        "dpi:ReportableSeller": [
+            {
+                "dpi:Identity": {
+                    "dpi:IndividualSeller": {
+                        "dpi:Standard": {
+                            "dpi:IndSellerID": {
+                                "dpi:ResCountryCode": "NL",
+                                "dpi:TIN": [
+                                    {
+                                        "@issuedBy": "NL",
+                                        "$": "872995473"
+                                    }
+                                ],
+                                "dpi:Name": {
+                                    "@nameType": "OECD202",
+                                    "dpi:Title": [
+                                        "Mr"
+                                    ],
+                                    "dpi:FirstName": {
+                                        "@xnlNameType": "OECD208",
+                                        "$": "Wouter"
+                                    },
+                                    "dpi:LastName": {
+                                        "@xnlNameType": "OECD208",
+                                        "$": "Lavanbach"
+                                    }
+                                },
+                                "dpi:Address": [
+                                    {
+                                        "@legalAddressType": "OECD302",
+                                        "dpi:CountryCode": "NL",
+                                        "dpi:AddressFix": {
+                                            "dpi:Street": "Van Koetsveldstraat",
+                                            "dpi:BuildingIdentifier": "20",
+                                            "dpi:PostCode": "3532 ES",
+                                            "dpi:City": "Utrecht"
+                                        }
+                                    }
+                                ],
+                                "dpi:BirthInfo": {
+                                    "dpi:BirthDate": "1954-05-04",
+                                    "dpi:BirthPlace": {
+                                        "dpi:City": "Amsterdam",
+                                        "dpi:CountryInfo": {
+                                            "dpi:CountryCode": "NL"
+                                        }
+                                    }
+                                }
+                            },
+                            "dpi:FinancialIdentifier": [
+                                {
+                                    "dpi:Identifier": {
+                                        "@AccountNumberType": "IBAN",
+                                        "$": "NL91ABNA0417164300"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "dpi:RelevantActivities": {
+                    "dpi:TransportationRental": {
+                        "dpi:Consideration": {
+                            "dpi:ConsQ1": {
+                                "@currCode": "EUR",
+                                "$": 0
+                            },
+                            "dpi:ConsQ2": {
+                                "@currCode": "EUR",
+                                "$": 1512
+                            },
+                            "dpi:ConsQ3": {
+                                "@currCode": "EUR",
+                                "$": 4577
+                            },
+                            "dpi:ConsQ4": {
+                                "@currCode": "EUR",
+                                "$": 2992
+                            }
+                        },
+                        "dpi:NumberOfActivities": {
+                            "dpi:NumbQ1": 0,
+                            "dpi:NumbQ2": 4,
+                            "dpi:NumbQ3": 10,
+                            "dpi:NumbQ4": 7
+                        },
+                        "dpi:Fees": {
+                            "dpi:FeesQ1": {
+                                "@currCode": "EUR",
+                                "$": 0
+                            },
+                            "dpi:FeesQ2": {
+                                "@currCode": "EUR",
+                                "$": 15
+                            },
+                            "dpi:FeesQ3": {
+                                "@currCode": "EUR",
+                                "$": 457
+                            },
+                            "dpi:FeesQ4": {
+                                "@currCode": "EUR",
+                                "$": 299
+                            }
+                        },
+                        "dpi:Taxes": {
+                            "dpi:TaxesQ1": {
+                                "@currCode": "EUR",
+                                "$": 0
+                            },
+                            "dpi:TaxesQ2": {
+                                "@currCode": "EUR",
+                                "$": 200
+                            },
+                            "dpi:TaxesQ3": {
+                                "@currCode": "EUR",
+                                "$": 350
+                            },
+                            "dpi:TaxesQ4": {
+                                "@currCode": "EUR",
+                                "$": 150
+                            }
+                        }
+                    }
+                },
+                "dpi:DocSpec": {
+                    "stf:DocTypeIndic": "OECD1",
+                    "stf:DocRefId": "OP_2023_555753159_55de6edc-4913-43c6-8f1f-72b88e2b220f_v1"
+                }
+            },
+            {
+                "dpi:Identity": {
+                    "dpi:IndividualSeller": {
+                        "dpi:Standard": {
+                            "dpi:IndSellerID": {
+                                "dpi:ResCountryCode": "FR",
+                                "dpi:TIN": [
+                                    {
+                                        "@issuedBy": "FR",
+                                        "$": "48523611200025"
+                                    }
+                                ],
+                                "dpi:Name": {
+                                    "@nameType": "OECD207",
+                                    "dpi:FirstName": {
+                                        "@xnlNameType": "OECD208",
+                                        "$": "Herve"
+                                    },
+                                    "dpi:LastName": {
+                                        "@xnlNameType": "OECD208",
+                                        "$": "Formeri"
+                                    }
+                                },
+                                "dpi:Address": [
+                                    {
+                                        "@legalAddressType": "OECD302",
+                                        "dpi:CountryCode": "FR",
+                                        "dpi:AddressFix": {
+                                            "dpi:Street": "Boulevard Pan Bagnat",
+                                            "dpi:BuildingIdentifier": "12",
+                                            "dpi:PostCode": "92430",
+                                            "dpi:City": "Marnes la Coquette"
+                                        }
+                                    }
+                                ],
+                                "dpi:BirthInfo": {
+                                    "dpi:BirthDate": "1965-04-24",
+                                    "dpi:BirthPlace": {
+                                        "dpi:City": "Nice",
+                                        "dpi:CountryInfo": {
+                                            "dpi:CountryCode": "FR"
+                                        }
+                                    }
+                                }
+                            },
+                            "dpi:FinancialIdentifier": [
+                                {
+                                    "dpi:Identifier": {
+                                        "@AccountNumberType": "IBAN",
+                                        "$": "FR7630001007941234567890185"
+                                    },
+                                    "dpi:AccountHolderName": "SCI de la rue Mouffetard"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "dpi:RelevantActivities": {
+                    "dpi:TransportationRental": {
+                        "dpi:Consideration": {
+                            "dpi:ConsQ1": {
+                                "@currCode": "EUR",
+                                "$": 0
+                            },
+                            "dpi:ConsQ2": {
+                                "@currCode": "EUR",
+                                "$": 0
+                            },
+                            "dpi:ConsQ3": {
+                                "@currCode": "EUR",
+                                "$": 1250
+                            },
+                            "dpi:ConsQ4": {
+                                "@currCode": "EUR",
+                                "$": 512
+                            }
+                        },
+                        "dpi:NumberOfActivities": {
+                            "dpi:NumbQ1": 0,
+                            "dpi:NumbQ2": 0,
+                            "dpi:NumbQ3": 3,
+                            "dpi:NumbQ4": 2
+                        },
+                        "dpi:Fees": {
+                            "dpi:FeesQ1": {
+                                "@currCode": "EUR",
+                                "$": 0
+                            },
+                            "dpi:FeesQ2": {
+                                "@currCode": "EUR",
+                                "$": 0
+                            },
+                            "dpi:FeesQ3": {
+                                "@currCode": "EUR",
+                                "$": 125
+                            },
+                            "dpi:FeesQ4": {
+                                "@currCode": "EUR",
+                                "$": 51
+                            }
+                        },
+                        "dpi:Taxes": {
+                            "dpi:TaxesQ1": {
+                                "@currCode": "EUR",
+                                "$": 0
+                            },
+                            "dpi:TaxesQ2": {
+                                "@currCode": "EUR",
+                                "$": 0
+                            },
+                            "dpi:TaxesQ3": {
+                                "@currCode": "EUR",
+                                "$": 60
+                            },
+                            "dpi:TaxesQ4": {
+                                "@currCode": "EUR",
+                                "$": 25
+                            }
+                        }
+                    }
+                },
+                "dpi:DocSpec": {
+                    "stf:DocTypeIndic": "OECD1",
+                    "stf:DocRefId": "OP_2023_555753159_9f535c1e-73a2-494d-a4f4-e0f7474be679_v1"
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,90 @@
+{
+    "@xmlns:dpi": "urn:oecd:ties:dpi",
+    "@xmlns:stf": "urn:oecd:ties:dpistf",
+    "@version": "1.0",
+    "dpi:MessageSpec": {
+        "dpi:TransmittingCountry": "FR",
+        "dpi:ReceivingCountry": "FR",
+        "dpi:MessageType": "DPI",
+        "dpi:MessageRefId": "OP_2023_632777120_d1",
+        "dpi:MessageTypeIndic": "DPI403",
+        "dpi:ReportingPeriod": "2023-12-31",
+        "dpi:Timestamp": "2024-01-16T11:22:59.456"
+    },
+    "dpi:DPIBody": {
+        "dpi:PlatformOperator": {
+            "dpi:ResCountryCode": "FR",
+            "dpi:TIN": [
+                {
+                    "@issuedBy": "FR",
+                    "$": "632777120"
+                }
+            ],
+            "dpi:IN": [
+                {
+                    "@issuedBy": "FR",
+                    "@INType": "BRN",
+                    "$": "632777120"
+                }
+            ],
+            "dpi:VAT": "FR58632777120",
+            "dpi:Name": [
+                {
+                    "$": "Francaise des Services"
+                }
+            ],
+            "dpi:Address": [
+                {
+                    "@legalAddressType": "OECD304",
+                    "dpi:CountryCode": "FR",
+                    "dpi:AddressFix": {
+                        "dpi:Street": "Quai des Grands Augustins",
+                        "dpi:BuildingIdentifier": "15",
+                        "dpi:FloorIdentifier": "RDC",
+                        "dpi:PostCode": "75006",
+                        "dpi:City": "Paris"
+                    }
+                }
+            ],
+            "dpi:PlatformBusinessName": [
+                "QuickService.fr"
+            ],
+            "dpi:Nexus": "RPONEX1",
+            "dpi:AssumedReporting": true,
+            "dpi:DocSpec": {
+                "stf:DocTypeIndic": "OECD1",
+                "stf:DocRefId": "OP_2023_632777120_v1"
+            }
+        },
+        "dpi:OtherPlatformOperators": {
+            "dpi:AssumingPlatformOperator": {
+                "dpi:ResCountryCode": [
+                    "DE"
+                ],
+                "dpi:TIN": [
+                    {
+                        "@issuedBy": "DE",
+                        "$": "HRB 12345"
+                    }
+                ],
+                "dpi:Name": {
+                    "$": "QuickService.de"
+                },
+                "dpi:Address": {
+                    "@legalAddressType": "OECD304",
+                    "dpi:CountryCode": "DE",
+                    "dpi:AddressFix": {
+                        "dpi:Street": "Haupstrasse",
+                        "dpi:BuildingIdentifier": "5",
+                        "dpi:PostCode": "53111",
+                        "dpi:City": "Bonn"
+                    }
+                },
+                "dpi:DocSpec": {
+                    "stf:DocTypeIndic": "OECD1",
+                    "stf:DocRefId": "OP_2023_632777120_HRB12345_v1"
+                }
+            }
+        }
+    }
+}

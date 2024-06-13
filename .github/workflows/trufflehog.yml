@@ -1,0 +1,21 @@
+name: trufflehog
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+jobs:
+  scan:
+    name: Leaked Secrets Scan
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout code
+        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4
+        with:
+          fetch-depth: 0
+
+      - name: Secret Scanning
+        uses: trufflesecurity/trufflehog@main
+        with:
+          extra_args: --only-verified

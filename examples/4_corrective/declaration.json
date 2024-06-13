@@ -1,0 +1,296 @@
+{
+    "@xmlns:dpi": "urn:oecd:ties:dpi",
+    "@xmlns:stf": "urn:oecd:ties:dpistf",
+    "@version": "1.0",
+    "dpi:MessageSpec": {
+        "dpi:TransmittingCountry": "FR",
+        "dpi:ReceivingCountry": "FR",
+        "dpi:MessageType": "DPI",
+        "dpi:MessageRefId": "OP_2023_123456789_d1",
+        "dpi:MessageTypeIndic": "DPI401",
+        "dpi:ReportingPeriod": "2023-12-31",
+        "dpi:Timestamp": "2024-01-28T08:12:00.003"
+    },
+    "dpi:DPIBody": {
+        "dpi:PlatformOperator": {
+            "dpi:ResCountryCode": "FR",
+            "dpi:TIN": [
+                {
+                    "@issuedBy": "FR",
+                    "$": "123456789"
+                }
+            ],
+            "dpi:IN": [
+                {
+                    "@issuedBy": "FR",
+                    "@INType": "BRN",
+                    "$": "123456789"
+                }
+            ],
+            "dpi:VAT": "FR45123456789",
+            "dpi:Name": [
+                {
+                    "$": "Classified Ads SAS"
+                }
+            ],
+            "dpi:Address": [
+                {
+                    "@legalAddressType": "OECD304",
+                    "dpi:CountryCode": "FR",
+                    "dpi:AddressFix": {
+                        "dpi:Street": "52 avenue Napoleon",
+                        "dpi:BuildingIdentifier": "Immeuble Paris Business",
+                        "dpi:PostCode": "75000",
+                        "dpi:City": "Paris"
+                    }
+                }
+            ],
+            "dpi:PlatformBusinessName": [
+                "LuluBallades.com"
+            ],
+            "dpi:Nexus": "RPONEX1",
+            "dpi:AssumedReporting": false,
+            "dpi:DocSpec": {
+                "stf:DocTypeIndic": "OECD2",
+                "stf:DocRefId": "OP_2023_123456789_v2",
+                "stf:CorrDocRefId": "OP_2023_123456789_v1"
+            }
+        },
+        "dpi:ReportableSeller": [
+            {
+                "dpi:Identity": {
+                    "dpi:IndividualSeller": {
+                        "dpi:Standard": {
+                            "dpi:IndSellerID": {
+                                "dpi:ResCountryCode": "ES",
+                                "dpi:TIN": [
+                                    {
+                                        "@issuedBy": "FR",
+                                        "$": "20258743991"
+                                    }
+                                ],
+                                "dpi:Name": {
+                                    "@nameType": "OECD202",
+                                    "dpi:Title": [
+                                        "Mr"
+                                    ],
+                                    "dpi:FirstName": {
+                                        "@xnlNameType": "OECD208",
+                                        "$": "Carlos"
+                                    },
+                                    "dpi:MiddleName": [
+                                        {
+                                            "@xnlNameType": "OECD208",
+                                            "$": "Fran\u00e7ois"
+                                        }
+                                    ],
+                                    "dpi:NamePrefix": {
+                                        "@xnlNameType": "OECD208",
+                                        "$": "De"
+                                    },
+                                    "dpi:LastName": {
+                                        "@xnlNameType": "OECD208",
+                                        "$": "Quintana"
+                                    }
+                                },
+                                "dpi:Address": [
+                                    {
+                                        "@legalAddressType": "OECD302",
+                                        "dpi:CountryCode": "AR",
+                                        "dpi:AddressFix": {
+                                            "dpi:Street": "20 calle de la libertad",
+                                            "dpi:FloorIdentifier": "Tercera planta",
+                                            "dpi:PostCode": "B1406",
+                                            "dpi:City": "BuenosAires"
+                                        }
+                                    }
+                                ],
+                                "dpi:BirthInfo": {
+                                    "dpi:BirthDate": "1987-07-31",
+                                    "dpi:BirthPlace": {
+                                        "dpi:City": "Buenos Aires",
+                                        "dpi:CountryInfo": {
+                                            "dpi:CountryCode": "AR"
+                                        }
+                                    }
+                                }
+                            },
+                            "dpi:FinancialIdentifier": [
+                                {
+                                    "dpi:Identifier": {
+                                        "@AccountNumberType": "IBAN",
+                                        "$": "AR34567890098765045"
+                                    },
+                                    "dpi:AccountHolderName": "Carlos Miguel de Quintana",
+                                    "dpi:OtherInfo": "Compte joint"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "dpi:RelevantActivities": {
+                    "dpi:ImmovableProperty": {
+                        "dpi:PropertyListing": [
+                            {
+                                "dpi:Consideration": {
+                                    "dpi:ConsQ1": {
+                                        "@currCode": "EUR",
+                                        "$": 100
+                                    },
+                                    "dpi:ConsQ2": {
+                                        "@currCode": "EUR",
+                                        "$": 400
+                                    },
+                                    "dpi:ConsQ3": {
+                                        "@currCode": "EUR",
+                                        "$": 1000
+                                    },
+                                    "dpi:ConsQ4": {
+                                        "@currCode": "EUR",
+                                        "$": 0
+                                    }
+                                },
+                                "dpi:NumberOfActivities": {
+                                    "dpi:NumbQ1": 1,
+                                    "dpi:NumbQ2": 2,
+                                    "dpi:NumbQ3": 3,
+                                    "dpi:NumbQ4": 0
+                                },
+                                "dpi:Fees": {
+                                    "dpi:FeesQ1": {
+                                        "@currCode": "EUR",
+                                        "$": 15
+                                    },
+                                    "dpi:FeesQ2": {
+                                        "@currCode": "EUR",
+                                        "$": 45
+                                    },
+                                    "dpi:FeesQ3": {
+                                        "@currCode": "EUR",
+                                        "$": 150
+                                    },
+                                    "dpi:FeesQ4": {
+                                        "@currCode": "EUR",
+                                        "$": 0
+                                    }
+                                },
+                                "dpi:Taxes": {
+                                    "dpi:TaxesQ1": {
+                                        "@currCode": "EUR",
+                                        "$": 10
+                                    },
+                                    "dpi:TaxesQ2": {
+                                        "@currCode": "EUR",
+                                        "$": 50
+                                    },
+                                    "dpi:TaxesQ3": {
+                                        "@currCode": "EUR",
+                                        "$": 150
+                                    },
+                                    "dpi:TaxesQ4": {
+                                        "@currCode": "EUR",
+                                        "$": 0
+                                    }
+                                },
+                                "dpi:Address": {
+                                    "@legalAddressType": "OECD303",
+                                    "dpi:CountryCode": "FR",
+                                    "dpi:AddressFix": {
+                                        "dpi:Street": "quai de la Londe",
+                                        "dpi:BuildingIdentifier": "15",
+                                        "dpi:PostCode": "50100",
+                                        "dpi:City": "Cherbourg-en-Cotentin"
+                                    }
+                                },
+                                "dpi:LandRegistrationNumber": "5002176637V",
+                                "dpi:PropertyType": "DPI901",
+                                "dpi:RentedDays": 15
+                            },
+                            {
+                                "dpi:Consideration": {
+                                    "dpi:ConsQ1": {
+                                        "@currCode": "EUR",
+                                        "$": 100
+                                    },
+                                    "dpi:ConsQ2": {
+                                        "@currCode": "EUR",
+                                        "$": 400
+                                    },
+                                    "dpi:ConsQ3": {
+                                        "@currCode": "EUR",
+                                        "$": 1000
+                                    },
+                                    "dpi:ConsQ4": {
+                                        "@currCode": "EUR",
+                                        "$": 0
+                                    }
+                                },
+                                "dpi:NumberOfActivities": {
+                                    "dpi:NumbQ1": 1,
+                                    "dpi:NumbQ2": 2,
+                                    "dpi:NumbQ3": 3,
+                                    "dpi:NumbQ4": 0
+                                },
+                                "dpi:Fees": {
+                                    "dpi:FeesQ1": {
+                                        "@currCode": "EUR",
+                                        "$": 15
+                                    },
+                                    "dpi:FeesQ2": {
+                                        "@currCode": "EUR",
+                                        "$": 45
+                                    },
+                                    "dpi:FeesQ3": {
+                                        "@currCode": "EUR",
+                                        "$": 150
+                                    },
+                                    "dpi:FeesQ4": {
+                                        "@currCode": "EUR",
+                                        "$": 0
+                                    }
+                                },
+                                "dpi:Taxes": {
+                                    "dpi:TaxesQ1": {
+                                        "@currCode": "EUR",
+                                        "$": 10
+                                    },
+                                    "dpi:TaxesQ2": {
+                                        "@currCode": "EUR",
+                                        "$": 50
+                                    },
+                                    "dpi:TaxesQ3": {
+                                        "@currCode": "EUR",
+                                        "$": 150
+                                    },
+                                    "dpi:TaxesQ4": {
+                                        "@currCode": "EUR",
+                                        "$": 0
+                                    }
+                                },
+                                "dpi:Address": {
+                                    "@legalAddressType": "OECD303",
+                                    "dpi:CountryCode": "FR",
+                                    "dpi:AddressFix": {
+                                        "dpi:Street": "20 boulevard Jean-Philippe Smet",
+                                        "dpi:BuildingIdentifier": "Batiment Gabrielle",
+                                        "dpi:FloorIdentifier": "Etage 1",
+                                        "dpi:PostCode": "75000",
+                                        "dpi:City": "PARIS"
+                                    }
+                                },
+                                "dpi:LandRegistrationNumber": "100256874H",
+                                "dpi:PropertyType": "DPI901",
+                                "dpi:RentedDays": 11
+                            }
+                        ]
+                    }
+                },
+                "dpi:DocSpec": {
+                    "stf:DocTypeIndic": "OECD2",
+                    "stf:DocRefId": "OP_2023_123456789_97d7e524-163f-4bed-b551-67b7b3b8e140_v2",
+                    "stf:CorrDocRefId": "OP_2023_123456789_97d7e524-163f-4bed-b551-67b7b3b8e140_v1"
+                }
+            }
+        ]
+    }
+}

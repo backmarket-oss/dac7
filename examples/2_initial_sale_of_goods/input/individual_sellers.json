@@ -1,0 +1,56 @@
+[
+    {
+        "residence_country_code": "SE",
+        "tax_identification_numbers": [
+            {
+                "issued_by": "SE",
+                "value": "598022-6588"
+            }
+        ],
+        "name_type": "OECD202",
+        "first_name": "Olga",
+        "first_name_type": "Prenom d\u2019usage",
+        "last_name": "Andersson",
+        "last_name_type": "Nom d\u2019usage",
+        "addresses": [
+            {
+                "legal_type": "OECD301",
+                "country_code": "SE",
+                "street": "Stj\u00e4rnor torg 25",
+                "post_code": "111 52",
+                "city": "Stockholm"
+            }
+        ],
+        "birth_date": "1997-11-08",
+        "birth_city": "Nykvarn",
+        "birth_country_code": "SE",
+        "financial_identifiers": [
+            {
+                "type": "IBAN",
+                "account_number": "SE1240001520960911132345"
+            }
+        ],
+        "sale_of_goods": {
+            "currency_code": "SEK",
+            "consideration_amount_q1": 5755,
+            "consideration_amount_q2": 5831,
+            "consideration_amount_q3": 6008,
+            "consideration_amount_q4": 1378,
+            "activities_number_q1": 33,
+            "activities_number_q2": 34,
+            "activities_number_q3": 44,
+            "activities_number_q4": 12,
+            "fees_amount_q1": 899,
+            "fees_amount_q2": 900,
+            "fees_amount_q3": 980,
+            "fees_amount_q4": 165,
+            "taxes_amount_q1": 85,
+            "taxes_amount_q2": 88,
+            "taxes_amount_q3": 105,
+            "taxes_amount_q4": 33
+        },
+        "seller_id": "b27ec429-f539-499c-88bc-da6d9563f316",
+        "version": 1,
+        "updated": true
+    }
+]

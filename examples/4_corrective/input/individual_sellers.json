@@ -1,0 +1,116 @@
+[
+    {
+        "residence_country_code": "ES",
+        "tax_identification_numbers": [
+            {
+                "issued_by": "FR",
+                "value": "20258743991"
+            }
+        ],
+        "name_type": "OECD202",
+        "titles": [
+            "Mr"
+        ],
+        "first_name": "Carlos",
+        "first_name_type": "OECD208",
+        "middle_names": [
+            {
+                "@xnlNameType": "OECD208",
+                "$": "Fran\u00e7ois"
+            }
+        ],
+        "name_prefix": {
+            "@xnlNameType": "OECD208",
+            "$": "De"
+        },
+        "last_name": "Quintana",
+        "last_name_type": "OECD208",
+        "addresses": [
+            {
+                "legal_type": "OECD302",
+                "country_code": "AR",
+                "street": "20 calle de la libertad",
+                "floor_identifier": "Tercera planta",
+                "post_code": "B1406",
+                "city": "BuenosAires"
+            }
+        ],
+        "birth_date": "1987-07-31",
+        "birth_city": "Buenos Aires",
+        "birth_country_code": "AR",
+        "financial_identifiers": [
+            {
+                "type": "IBAN",
+                "account_number": "AR34567890098765045",
+                "account_holder_name": "Carlos Miguel de Quintana",
+                "other_info": "Compte joint"
+            }
+        ],
+        "immovable_properties": [
+            {
+                "address": {
+                    "legal_type": "OECD303",
+                    "country_code": "FR",
+                    "street": "quai de la Londe",
+                    "building_identifier": "15",
+                    "post_code": "50100",
+                    "city": "Cherbourg-en-Cotentin"
+                },
+                "land_registration_number": "5002176637V",
+                "currency_code": "EUR",
+                "consideration_amount_q1": 100,
+                "consideration_amount_q2": 400,
+                "consideration_amount_q3": 1000,
+                "consideration_amount_q4": 0,
+                "activities_number_q1": 1,
+                "activities_number_q2": 2,
+                "activities_number_q3": 3,
+                "activities_number_q4": 0,
+                "fees_amount_q1": 15,
+                "fees_amount_q2": 45,
+                "fees_amount_q3": 150,
+                "fees_amount_q4": 0,
+                "taxes_amount_q1": 10,
+                "taxes_amount_q2": 50,
+                "taxes_amount_q3": 150,
+                "taxes_amount_q4": 0,
+                "property_type": "DPI901",
+                "rented_days": 15
+            },
+            {
+                "address": {
+                    "legal_type": "OECD303",
+                    "country_code": "FR",
+                    "street": "20 boulevard Jean-Philippe Smet",
+                    "building_identifier": "Batiment Gabrielle",
+                    "floor_identifier": "Etage 1",
+                    "post_code": "75000",
+                    "city": "PARIS"
+                },
+                "land_registration_number": "100256874H",
+                "currency_code": "EUR",
+                "consideration_amount_q1": 100,
+                "consideration_amount_q2": 400,
+                "consideration_amount_q3": 1000,
+                "consideration_amount_q4": 0,
+                "activities_number_q1": 1,
+                "activities_number_q2": 2,
+                "activities_number_q3": 3,
+                "activities_number_q4": 0,
+                "fees_amount_q1": 15,
+                "fees_amount_q2": 45,
+                "fees_amount_q3": 150,
+                "fees_amount_q4": 0,
+                "taxes_amount_q1": 10,
+                "taxes_amount_q2": 50,
+                "taxes_amount_q3": 150,
+                "taxes_amount_q4": 0,
+                "property_type": "DPI901",
+                "rented_days": 11
+            }
+        ],
+        "seller_id": "97d7e524-163f-4bed-b551-67b7b3b8e140",
+        "version": 2,
+        "updated": true
+    }
+]

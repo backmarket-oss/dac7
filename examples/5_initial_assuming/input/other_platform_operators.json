@@ -1,0 +1,27 @@
+{
+    "assumed_platform_operators": [
+        {
+            "residence_country_codes": [
+                "FR"
+            ],
+            "tax_identification_numbers": [
+                {
+                    "issued_by": "FR",
+                    "value": "555852446"
+                }
+            ],
+            "legal_name": "MotoLoc.fr",
+            "address": {
+                "legal_type": "OECD304",
+                "country_code": "FR",
+                "street": "rue Bernard Ouillon",
+                "building_identifier": "25",
+                "floor_identifier": "5eme etage",
+                "post_code": "92200",
+                "city": "Neuilly sur Seine"
+            },
+            "version": 1,
+            "updated": true
+        }
+    ]
+}

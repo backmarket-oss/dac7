@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dpi:DPI_OECD xmlns:dpi="urn:oecd:ties:dpi" xmlns:stf="urn:oecd:ties:dpistf" version="1.0">
+    <dpi:MessageSpec>
+        <dpi:TransmittingCountry>FR</dpi:TransmittingCountry>
+        <dpi:ReceivingCountry>FR</dpi:ReceivingCountry>
+        <dpi:MessageType>DPI</dpi:MessageType>
+        <dpi:MessageRefId>OP_2023_123456789_d1</dpi:MessageRefId>
+        <dpi:MessageTypeIndic>DPI401</dpi:MessageTypeIndic>
+        <dpi:ReportingPeriod>2023-12-31</dpi:ReportingPeriod>
+        <dpi:Timestamp>2024-01-25T14:17:22.241</dpi:Timestamp>
+    </dpi:MessageSpec>
+    <dpi:DPIBody>
+        <dpi:PlatformOperator>
+            <dpi:ResCountryCode>FR</dpi:ResCountryCode>
+            <dpi:TIN issuedBy="FR">123456789</dpi:TIN>
+            <dpi:IN issuedBy="FR" INType="BRN">123456789</dpi:IN>
+            <dpi:VAT>FR32123456789</dpi:VAT>
+            <dpi:Name>Classified Ads SAS</dpi:Name>
+            <dpi:PlatformBusinessName>Luluballades.com</dpi:PlatformBusinessName>
+            <dpi:Address legalAddressType="OECD304">
+                <dpi:CountryCode>FR</dpi:CountryCode>
+                <dpi:AddressFix>
+                    <dpi:Street>15 rue de l'Eglise</dpi:Street>
+                    <dpi:BuildingIdentifier>Immeuble Paris Business</dpi:BuildingIdentifier>
+                    <dpi:PostCode>75000</dpi:PostCode>
+                    <dpi:City>Paris</dpi:City>
+                </dpi:AddressFix>
+            </dpi:Address>
+            <dpi:Nexus>RPONEX1</dpi:Nexus>
+            <dpi:AssumedReporting>false</dpi:AssumedReporting>
+            <dpi:DocSpec>
+                <stf:DocTypeIndic>OECD0</stf:DocTypeIndic>
+                <stf:DocRefId>OP_2023_123456789_v1</stf:DocRefId>
+            </dpi:DocSpec>
+        </dpi:PlatformOperator>
+        <dpi:ReportableSeller>
+            <dpi:Identity>
+                <dpi:IndividualSeller>
+                    <dpi:Standard>
+                        <dpi:IndSellerID>
+                            <dpi:ResCountryCode>BE</dpi:ResCountryCode>
+                            <dpi:TIN issuedBy="BE">48937185261</dpi:TIN>
+                            <dpi:Name nameType="OECD202">
+                                <dpi:FirstName xnlNameType="Prenom d’usage">Freddy</dpi:FirstName>
+                                <dpi:LastName xnlNameType="Nom d’usage">Maertens</dpi:LastName>
+                            </dpi:Name>
+                            <dpi:Address legalAddressType="OECD301">
+                                <dpi:CountryCode>BE</dpi:CountryCode>
+                                <dpi:AddressFix>
+                                    <dpi:Street>Rue François Marcq 21</dpi:Street>
+                                    <dpi:PostCode>7030</dpi:PostCode>
+                                    <dpi:City>Mons</dpi:City>
+                                </dpi:AddressFix>
+                            </dpi:Address>
+                            <dpi:BirthInfo>
+                                <dpi:BirthDate>1952-02-13</dpi:BirthDate>
+                                <dpi:BirthPlace>
+                                    <dpi:City>Nieuport</dpi:City>
+                                    <dpi:CountryInfo>
+                                        <dpi:CountryCode>BE</dpi:CountryCode>
+                                    </dpi:CountryInfo>
+                                </dpi:BirthPlace>
+                            </dpi:BirthInfo>
+                        </dpi:IndSellerID>
+                        <dpi:FinancialIdentifier>
+                            <dpi:Identifier AccountNumberType="IBAN">34567890098765</dpi:Identifier>
+                            <dpi:AccountHolderName>Cycles Maertens SRL</dpi:AccountHolderName>
+                            <dpi:OtherInfo>Compte de dépôt</dpi:OtherInfo>
+                        </dpi:FinancialIdentifier>
+                    </dpi:Standard>
+                </dpi:IndividualSeller>
+            </dpi:Identity>
+            <dpi:RelevantActivities>
+                <dpi:PersonalServices>
+                    <dpi:Consideration>
+                        <dpi:ConsQ1 currCode="EUR">4728</dpi:ConsQ1>
+                        <dpi:ConsQ2 currCode="EUR">6258</dpi:ConsQ2>
+                        <dpi:ConsQ3 currCode="EUR">4412</dpi:ConsQ3>
+                        <dpi:ConsQ4 currCode="EUR">3252</dpi:ConsQ4>
+                    </dpi:Consideration>
+                    <dpi:NumberOfActivities>
+                        <dpi:NumbQ1>15</dpi:NumbQ1>
+                        <dpi:NumbQ2>22</dpi:NumbQ2>
+                        <dpi:NumbQ3>17</dpi:NumbQ3>
+                        <dpi:NumbQ4>12</dpi:NumbQ4>
+                    </dpi:NumberOfActivities>
+                    <dpi:Fees>
+                        <dpi:FeesQ1 currCode="EUR">473</dpi:FeesQ1>
+                        <dpi:FeesQ2 currCode="EUR">626</dpi:FeesQ2>
+                        <dpi:FeesQ3 currCode="EUR">441</dpi:FeesQ3>
+                        <dpi:FeesQ4 currCode="EUR">325</dpi:FeesQ4>
+                    </dpi:Fees>
+                    <dpi:Taxes>
+                        <dpi:TaxesQ1 currCode="EUR">220</dpi:TaxesQ1>
+                        <dpi:TaxesQ2 currCode="EUR">523</dpi:TaxesQ2>
+                        <dpi:TaxesQ3 currCode="EUR">444</dpi:TaxesQ3>
+                        <dpi:TaxesQ4 currCode="EUR">357</dpi:TaxesQ4>
+                    </dpi:Taxes>
+                </dpi:PersonalServices>
+            </dpi:RelevantActivities>
+            <dpi:DocSpec>
+                <stf:DocTypeIndic>OECD1</stf:DocTypeIndic>
+                <stf:DocRefId>OP_2023_123456789_1090c2c9-9448-4287-895a-edf79ef3981e_v1</stf:DocRefId>
+            </dpi:DocSpec>
+        </dpi:ReportableSeller>
+    </dpi:DPIBody>
+</dpi:DPI_OECD>

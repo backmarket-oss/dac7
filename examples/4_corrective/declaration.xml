@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dpi:DPI_OECD xmlns:dpi="urn:oecd:ties:dpi" xmlns:stf="urn:oecd:ties:dpistf" version="1.0">
+    <dpi:MessageSpec>
+        <dpi:TransmittingCountry>FR</dpi:TransmittingCountry>
+        <dpi:ReceivingCountry>FR</dpi:ReceivingCountry>
+        <dpi:MessageType>DPI</dpi:MessageType>
+        <dpi:MessageRefId>OP_2023_123456789_d1</dpi:MessageRefId>
+        <dpi:MessageTypeIndic>DPI401</dpi:MessageTypeIndic>
+        <dpi:ReportingPeriod>2023-12-31</dpi:ReportingPeriod>
+        <dpi:Timestamp>2024-01-28T08:12:00.003</dpi:Timestamp>
+    </dpi:MessageSpec>
+    <dpi:DPIBody>
+        <dpi:PlatformOperator>
+            <dpi:ResCountryCode>FR</dpi:ResCountryCode>
+            <dpi:TIN issuedBy="FR">123456789</dpi:TIN>
+            <dpi:IN issuedBy="FR" INType="BRN">123456789</dpi:IN>
+            <dpi:VAT>FR45123456789</dpi:VAT>
+            <dpi:Name>Classified Ads SAS</dpi:Name>
+            <dpi:PlatformBusinessName>LuluBallades.com</dpi:PlatformBusinessName>
+            <dpi:Address legalAddressType="OECD304">
+                <dpi:CountryCode>FR</dpi:CountryCode>
+                <dpi:AddressFix>
+                    <dpi:Street>52 avenue Napoleon</dpi:Street>
+                    <dpi:BuildingIdentifier>Immeuble Paris Business</dpi:BuildingIdentifier>
+                    <dpi:PostCode>75000</dpi:PostCode>
+                    <dpi:City>Paris</dpi:City>
+                </dpi:AddressFix>
+            </dpi:Address>
+            <dpi:Nexus>RPONEX1</dpi:Nexus>
+            <dpi:AssumedReporting>false</dpi:AssumedReporting>
+            <dpi:DocSpec>
+                <stf:DocTypeIndic>OECD2</stf:DocTypeIndic>
+                <stf:DocRefId>OP_2023_123456789_v2</stf:DocRefId>
+                <stf:CorrDocRefId>OP_2023_123456789_v1</stf:CorrDocRefId>
+            </dpi:DocSpec>
+        </dpi:PlatformOperator>
+        <dpi:ReportableSeller>
+            <dpi:Identity>
+                <dpi:IndividualSeller>
+                    <dpi:Standard>
+                        <dpi:IndSellerID>
+                            <dpi:ResCountryCode>ES</dpi:ResCountryCode>
+                            <dpi:TIN issuedBy="FR">20258743991</dpi:TIN>
+                            <dpi:Name nameType="OECD202">
+                                <dpi:Title>Mr</dpi:Title>
+                                <dpi:FirstName xnlNameType="OECD208">Carlos</dpi:FirstName>
+                                <dpi:MiddleName xnlNameType="OECD208">François</dpi:MiddleName>
+                                <dpi:NamePrefix xnlNameType="OECD208">De</dpi:NamePrefix>
+                                <dpi:LastName xnlNameType="OECD208">Quintana</dpi:LastName>
+                            </dpi:Name>
+                            <dpi:Address legalAddressType="OECD302">
+                                <dpi:CountryCode>AR</dpi:CountryCode>
+                                <dpi:AddressFix>
+                                    <dpi:Street>20 calle de la libertad</dpi:Street>
+                                    <dpi:FloorIdentifier>Tercera planta</dpi:FloorIdentifier>
+                                    <dpi:PostCode>B1406</dpi:PostCode>
+                                    <dpi:City>BuenosAires</dpi:City>
+                                </dpi:AddressFix>
+                            </dpi:Address>
+                            <dpi:BirthInfo>
+                                <dpi:BirthDate>1987-07-31</dpi:BirthDate>
+                                <dpi:BirthPlace>
+                                    <dpi:City>Buenos Aires</dpi:City>
+                                    <dpi:CountryInfo>
+                                        <dpi:CountryCode>AR</dpi:CountryCode>
+                                    </dpi:CountryInfo>
+                                </dpi:BirthPlace>
+                            </dpi:BirthInfo>
+                        </dpi:IndSellerID>
+                        <dpi:FinancialIdentifier>
+                            <dpi:Identifier AccountNumberType="IBAN">AR34567890098765045</dpi:Identifier>
+                            <dpi:AccountHolderName>Carlos Miguel de Quintana</dpi:AccountHolderName>
+                            <dpi:OtherInfo>Compte joint</dpi:OtherInfo>
+                        </dpi:FinancialIdentifier>
+                    </dpi:Standard>
+                </dpi:IndividualSeller>
+            </dpi:Identity>
+            <dpi:RelevantActivities>
+                <dpi:ImmovableProperty>
+                    <dpi:PropertyListing>
+                        <dpi:Address legalAddressType="OECD303">
+                            <dpi:CountryCode>FR</dpi:CountryCode>
+                            <dpi:AddressFix>
+                                <dpi:Street>quai de la Londe</dpi:Street>
+                                <dpi:BuildingIdentifier>15</dpi:BuildingIdentifier>
+                                <dpi:PostCode>50100</dpi:PostCode>
+                                <dpi:City>Cherbourg-en-Cotentin</dpi:City>
+                            </dpi:AddressFix>
+                        </dpi:Address>
+                        <dpi:LandRegistrationNumber>5002176637V</dpi:LandRegistrationNumber>
+                        <dpi:Consideration>
+                            <dpi:ConsQ1 currCode="EUR">100</dpi:ConsQ1>
+                            <dpi:ConsQ2 currCode="EUR">400</dpi:ConsQ2>
+                            <dpi:ConsQ3 currCode="EUR">1000</dpi:ConsQ3>
+                            <dpi:ConsQ4 currCode="EUR">0</dpi:ConsQ4>
+                        </dpi:Consideration>
+                        <dpi:NumberOfActivities>
+                            <dpi:NumbQ1>1</dpi:NumbQ1>
+                            <dpi:NumbQ2>2</dpi:NumbQ2>
+                            <dpi:NumbQ3>3</dpi:NumbQ3>
+                            <dpi:NumbQ4>0</dpi:NumbQ4>
+                        </dpi:NumberOfActivities>
+                        <dpi:Fees>
+                            <dpi:FeesQ1 currCode="EUR">15</dpi:FeesQ1>
+                            <dpi:FeesQ2 currCode="EUR">45</dpi:FeesQ2>
+                            <dpi:FeesQ3 currCode="EUR">150</dpi:FeesQ3>
+                            <dpi:FeesQ4 currCode="EUR">0</dpi:FeesQ4>
+                        </dpi:Fees>
+                        <dpi:Taxes>
+                            <dpi:TaxesQ1 currCode="EUR">10</dpi:TaxesQ1>
+                            <dpi:TaxesQ2 currCode="EUR">50</dpi:TaxesQ2>
+                            <dpi:TaxesQ3 currCode="EUR">150</dpi:TaxesQ3>
+                            <dpi:TaxesQ4 currCode="EUR">0</dpi:TaxesQ4>
+                        </dpi:Taxes>
+                        <dpi:PropertyType>DPI901</dpi:PropertyType>
+                        <dpi:RentedDays>15</dpi:RentedDays>
+                    </dpi:PropertyListing>
+                    <dpi:PropertyListing>
+                        <dpi:Address legalAddressType="OECD303">
+                            <dpi:CountryCode>FR</dpi:CountryCode>
+                            <dpi:AddressFix>
+                                <dpi:Street>20 boulevard Jean-Philippe Smet</dpi:Street>
+                                <dpi:BuildingIdentifier>Batiment Gabrielle</dpi:BuildingIdentifier>
+                                <dpi:FloorIdentifier>Etage 1</dpi:FloorIdentifier>
+                                <dpi:PostCode>75000</dpi:PostCode>
+                                <dpi:City>PARIS</dpi:City>
+                            </dpi:AddressFix>
+                        </dpi:Address>
+                        <dpi:LandRegistrationNumber>100256874H</dpi:LandRegistrationNumber>
+                        <dpi:Consideration>
+                            <dpi:ConsQ1 currCode="EUR">100</dpi:ConsQ1>
+                            <dpi:ConsQ2 currCode="EUR">400</dpi:ConsQ2>
+                            <dpi:ConsQ3 currCode="EUR">1000</dpi:ConsQ3>
+                            <dpi:ConsQ4 currCode="EUR">0</dpi:ConsQ4>
+                        </dpi:Consideration>
+                        <dpi:NumberOfActivities>
+                            <dpi:NumbQ1>1</dpi:NumbQ1>
+                            <dpi:NumbQ2>2</dpi:NumbQ2>
+                            <dpi:NumbQ3>3</dpi:NumbQ3>
+                            <dpi:NumbQ4>0</dpi:NumbQ4>
+                        </dpi:NumberOfActivities>
+                        <dpi:Fees>
+                            <dpi:FeesQ1 currCode="EUR">15</dpi:FeesQ1>
+                            <dpi:FeesQ2 currCode="EUR">45</dpi:FeesQ2>
+                            <dpi:FeesQ3 currCode="EUR">150</dpi:FeesQ3>
+                            <dpi:FeesQ4 currCode="EUR">0</dpi:FeesQ4>
+                        </dpi:Fees>
+                        <dpi:Taxes>
+                            <dpi:TaxesQ1 currCode="EUR">10</dpi:TaxesQ1>
+                            <dpi:TaxesQ2 currCode="EUR">50</dpi:TaxesQ2>
+                            <dpi:TaxesQ3 currCode="EUR">150</dpi:TaxesQ3>
+                            <dpi:TaxesQ4 currCode="EUR">0</dpi:TaxesQ4>
+                        </dpi:Taxes>
+                        <dpi:PropertyType>DPI901</dpi:PropertyType>
+                        <dpi:RentedDays>11</dpi:RentedDays>
+                    </dpi:PropertyListing>
+                </dpi:ImmovableProperty>
+            </dpi:RelevantActivities>
+            <dpi:DocSpec>
+                <stf:DocTypeIndic>OECD2</stf:DocTypeIndic>
+                <stf:DocRefId>OP_2023_123456789_97d7e524-163f-4bed-b551-67b7b3b8e140_v2</stf:DocRefId>
+                <stf:CorrDocRefId>OP_2023_123456789_97d7e524-163f-4bed-b551-67b7b3b8e140_v1</stf:CorrDocRefId>
+            </dpi:DocSpec>
+        </dpi:ReportableSeller>
+    </dpi:DPIBody>
+</dpi:DPI_OECD>

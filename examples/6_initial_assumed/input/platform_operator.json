@@ -1,0 +1,37 @@
+{
+    "residence_country_code": "FR",
+    "tax_identification_numbers": [
+        {
+            "issued_by": "FR",
+            "value": "632777120"
+        }
+    ],
+    "other_identification_numbers": [
+        {
+            "type": "BRN",
+            "issued_by": "FR",
+            "value": "632777120"
+        }
+    ],
+    "vat_number": "FR58632777120",
+    "legal_names": [
+        "Francaise des Services"
+    ],
+    "business_names": [
+        "QuickService.fr"
+    ],
+    "addresses": [
+        {
+            "legal_type": "OECD304",
+            "country_code": "FR",
+            "street": "Quai des Grands Augustins",
+            "building_identifier": "15",
+            "floor_identifier": "RDC",
+            "post_code": "75006",
+            "city": "Paris"
+        }
+    ],
+    "nexus": "RPONEX1",
+    "updated": true,
+    "version": 1
+}

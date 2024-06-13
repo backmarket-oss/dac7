@@ -1,0 +1,36 @@
+{
+    "residence_country_code": "FR",
+    "tax_identification_numbers": [
+        {
+            "issued_by": "FR",
+            "value": "123456789"
+        }
+    ],
+    "other_identification_numbers": [
+        {
+            "issued_by": "FR",
+            "type": "BRN",
+            "value": "123456789"
+        }
+    ],
+    "vat_number": "FR32123456789",
+    "legal_names": [
+        "Classified Ads SAS"
+    ],
+    "business_names": [
+        "Luluballades.com"
+    ],
+    "addresses": [
+        {
+            "legal_type": "OECD304",
+            "country_code": "FR",
+            "street": "15 rue de l'Eglise",
+            "building_identifier": "Immeuble Paris Business",
+            "post_code": "75000",
+            "city": "Paris"
+        }
+    ],
+    "nexus": "RPONEX1",
+    "updated": false,
+    "version": 1
+}

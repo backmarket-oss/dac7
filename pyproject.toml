@@ -1,0 +1,125 @@
+[tool.poetry]
+name = "dac7"
+version = "0.1.0"
+description = "Tooling for DAC7"
+readme = "README.md"
+license = "LICENSE.md"
+authors = [
+    "Nicolas Bonnotte <nicolas.bonnotte@backmarket.com>",
+]
+packages = [
+  { include = "dac7", from = "cli/src" },
+]
+include = [
+    "cli/src/dac7/schemas/*.xsd"
+]
+
+[tool.poetry.scripts]
+dac7 = "dac7.main:app"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+typer = "^0.12.0"
+xmlschema = "^3.0.0"
+pydantic = "^2.5.2"
+annotated-types = "^0.7.0"
+python-gnupg = "^0.5.2"
+requests = "^2.32.3"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0"
+pytest-cov = "^5.0.0"
+mypy = "^1.7.1"
+pre-commit = "^3.6.0"
+xenon = "^0.9.1"
+pytest-mock = "^3.12.0"
+pdbpp = "^0.10.3"
+virtualenv = "^20.26.2"
+types-requests = "^2.32.0.20240602"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.bandit]
+exclude_dirs = ["cli/tests"]
+skips = []
+
+[tool.black]
+line-length = 120
+target-version = ["py312"]
+
+[tool.coverage.run]
+source = ["cli/src"]
+
+[tool.coverage.report]
+# Regexes for lines to exclude from consideration
+exclude_lines = [
+  # Don't complain if tests don't hit defensive assertion code:
+  "raise NotImplementedError",
+  "pragma: no cover", # Coverage is not expected on pytest.fail() calls in tests
+  ".*pytest.fail.*",
+]
+fail_under = 80
+show_missing = true
+skip_covered = true
+
+[tool.mypy]
+allow_incomplete_defs = false
+check_untyped_defs = true
+enable_error_code = ["ignore-without-code"]
+files = ["dac7"]
+mypy_path = ["cli/src", "cli/stubs"]
+explicit_package_bases = true
+no_implicit_optional = true
+python_version = "3.12"
+warn_redundant_casts = true
+warn_return_any = true
+warn_unused_configs = true
+warn_unused_ignores = true
+
+[[tool.mypy.overrides]]
+ignore_missing_imports = true
+module = []
+
+[tool.pytest.ini_options]
+# Make sure that warnings raise errors, to handle things like deprecations as soon as possible.
+filterwarnings = ["error"]
+
+[tool.ruff]
+fix = true
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
+fixable = ["I"]
+ignore = [
+  "A003", # line too long (already checked by black)
+]
+select = [
+  "YTT", # flake8-2020
+  "B", # flake8-bugbear
+  "A", # flake8-builtins
+  "C4", # flake8-comprehensions
+  "T10", # flake8-debugger
+  "INP", # flake8-no-pep420
+  "T20", # flake8-print
+  "PT", # flake8-pytest-style
+  "SIM", # flake8-simplify
+  "TID", # flake8-tidy-imports
+  "I", # isort
+  "C90", # mccabe
+  "E", # pycodestyle
+  "W", # pycodestyle
+  "F", # pyflakes
+  "PGH", # pygrep-hooks
+  "RUF", # ruff
+]
+
+[tool.ruff.lint.per-file-ignores]
+"cli/tests/**/*.py" = ["T201"]
+
+[tool.ruff.lint.isort]
+force-single-line = true
+lines-between-types = 1
+section-order = ["future", "standard-library", "first-party", "third-party", "local-folder"]

@@ -1,0 +1,15 @@
+name: mlc
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  schedule:
+      - cron: "0 0 * * 1"
+jobs:
+  mlc:
+    name: Broken Links Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Markup Link Checker (mlc)
+        uses: becheran/mlc@8f2df530b954bdb8df5aefd01f1beb9e0fe23c22 # v0.18.0

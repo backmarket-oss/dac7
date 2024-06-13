@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Based on a schema published by the Direction Générale des Finances Public
+https://www.impots.gouv.fr/transfert-dinformations-en-application-des-dispositifs-dpi-dac7-plateformes-deconomie-collaborative
+Last updated in November 2023, retrieved in November 2023
+
+SPDX-License-Identifier: etalab-2.0
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:stf="urn:oecd:ties:dpistf"
+    targetNamespace="urn:oecd:ties:dpistf"
+    elementFormDefault="qualified">
+
+    <!-- Defines a string with minimum length 1 and maximum length of 10 -->
+    <xsd:simpleType name="StringMin1Max10_Type">
+        <xsd:annotation>
+            <xsd:documentation>Defines a string with minimum length 1 and maximum length of 10.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1" />
+            <xsd:maxLength value="10" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <!-- -->
+    <!-- Defines a string with minimum length 1 and maximum length of 170 -->
+    <xsd:simpleType name="StringMin1Max170_Type">
+        <xsd:annotation>
+            <xsd:documentation>Defines a string with minimum length 1 and maximum length of 170.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1" />
+            <xsd:maxLength value="170" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <!-- -->
+    <!-- Defines a string with minimum length 1 and maximum length of 200 -->
+    <xsd:simpleType name="StringMin1Max200_Type">
+        <xsd:annotation>
+            <xsd:documentation>Defines a string with minimum length 1 and maximum length of 200.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1" />
+            <xsd:maxLength value="200" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <!-- -->
+    <!-- Defines an integer with up to 4 digits -->
+    <xsd:simpleType name="IntegerMax4Digits_Type">
+        <xsd:annotation>
+            <xsd:documentation>Defines an integer with maximum length of 4 digits.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="0" />
+            <xsd:maxInclusive value="9999" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <!-- -->
+    <!-- Defines a string with minimum length 1 and maximum length of 400 -->
+    <xsd:simpleType name="StringMin1Max400_Type">
+        <xsd:annotation>
+            <xsd:documentation>Defines a string with minimum length 1 and maximum length of 400.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1" />
+            <xsd:maxLength value="400" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <!-- -->
+    <!-- Defines a string with minimum length 1 and maximum length of 4000 -->
+    <xsd:simpleType name="StringMin1Max4000_Type">
+        <xsd:annotation>
+            <xsd:documentation>Defines a string with minimum length 1 and maximum length of 4000.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1" />
+            <xsd:maxLength value="4000" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <!-- -->
+
+    <!-- Document type indicators types -->
+    <xsd:simpleType name="OECDDocTypeIndic_EnumType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="OECD0">
+                <xsd:annotation>
+                    <xsd:documentation>Données renvoyées</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="OECD1">
+                <xsd:annotation>
+                    <xsd:documentation>Nouvelles données</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="OECD2">
+                <xsd:annotation>
+                    <xsd:documentation>Données corrigées</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="OECD3">
+                <xsd:annotation>
+                    <xsd:documentation>Suppression de données</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="OECD10">
+                <xsd:annotation>
+                    <xsd:documentation>Données de test renvoyées</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="OECD11">
+                <xsd:annotation>
+                    <xsd:documentation>Nouvelles données de test</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="OECD12">
+                <xsd:annotation>
+                    <xsd:documentation>Données de test corrigées</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="OECD13">
+                <xsd:annotation>
+                    <xsd:documentation>Suppression de données de test</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- -->
+    <xsd:simpleType name="OECDNameType_EnumType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="OECD202">
+                <xsd:annotation>
+                    <xsd:documentation>indiv (individu)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="OECD203">
+                <xsd:annotation>
+                    <xsd:documentation>alias</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="OECD204">
+                <xsd:annotation>
+                    <xsd:documentation>nick (nickname)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="OECD205">
+                <xsd:annotation>
+                    <xsd:documentation>aka (also known as)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="OECD206">
+                <xsd:annotation>
+                    <xsd:documentation>dba (doing business as)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="OECD207">
+                <xsd:annotation>
+                    <xsd:documentation>legal</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="OECD208">
+                <xsd:annotation>
+                    <xsd:documentation>atbirth</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Type of the address considered from a legal point of view -->
+    <xsd:simpleType name="OECDLegalAddressType_EnumType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">This is a datatype for an attribute to an address. It
+                serves to indicate the legal character of that address (residential, business etc.)</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:token">
+            <xsd:enumeration value="OECD301">
+                <xsd:annotation>
+                    <xsd:documentation>residentialOrBusiness</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="OECD302">
+                <xsd:annotation>
+                    <xsd:documentation>residential</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="OECD303">
+                <xsd:annotation>
+                    <xsd:documentation>business</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="OECD304">
+                <xsd:annotation>
+                    <xsd:documentation>registeredOffice</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="OECD305">
+                <xsd:annotation>
+                    <xsd:documentation>unspecified</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- -->
+    <xsd:complexType name="DocSpec_Type">
+        <xsd:sequence>
+            <xsd:element name="DocTypeIndic" type="stf:OECDDocTypeIndic_EnumType" />
+            <xsd:element name="DocRefId">
+                <xsd:simpleType>
+                    <xsd:restriction base="stf:StringMin1Max200_Type">
+                        <xsd:pattern value="[\da-zA-Z+-.:=_]{1,200}" />
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="CorrDocRefId" minOccurs="0">
+                <xsd:simpleType>
+                    <xsd:restriction base="stf:StringMin1Max200_Type">
+                        <xsd:pattern value="[\da-zA-Z+-.:=_]{1,200}" />
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

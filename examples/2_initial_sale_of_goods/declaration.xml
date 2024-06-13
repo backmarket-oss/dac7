@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dpi:DPI_OECD xmlns:dpi="urn:oecd:ties:dpi" xmlns:stf="urn:oecd:ties:dpistf" version="1.0">
+    <dpi:MessageSpec>
+        <dpi:TransmittingCountry>FR</dpi:TransmittingCountry>
+        <dpi:ReceivingCountry>FR</dpi:ReceivingCountry>
+        <dpi:MessageType>DPI</dpi:MessageType>
+        <dpi:MessageRefId>OP_2023_123456789_d1</dpi:MessageRefId>
+        <dpi:MessageTypeIndic>DPI401</dpi:MessageTypeIndic>
+        <dpi:ReportingPeriod>2023-12-31</dpi:ReportingPeriod>
+        <dpi:Timestamp>2024-01-25T12:55:02.003</dpi:Timestamp>
+    </dpi:MessageSpec>
+    <dpi:DPIBody>
+        <dpi:PlatformOperator>
+            <dpi:ResCountryCode>FR</dpi:ResCountryCode>
+            <dpi:TIN issuedBy="FR">123456789</dpi:TIN>
+            <dpi:IN issuedBy="FR" INType="BRN">123456789</dpi:IN>
+            <dpi:VAT>FR3252172345678990</dpi:VAT>
+            <dpi:Name>Paris Vide Grenier SA</dpi:Name>
+            <dpi:PlatformBusinessName>Kiventou.com</dpi:PlatformBusinessName>
+            <dpi:Address legalAddressType="OECD304">
+                <dpi:CountryCode>FR</dpi:CountryCode>
+                <dpi:AddressFix>
+                    <dpi:Street>52 avenue Napoleon</dpi:Street>
+                    <dpi:BuildingIdentifier>Immeuble Paris Business</dpi:BuildingIdentifier>
+                    <dpi:PostCode>75000</dpi:PostCode>
+                    <dpi:City>Paris</dpi:City>
+                </dpi:AddressFix>
+            </dpi:Address>
+            <dpi:Nexus>RPONEX1</dpi:Nexus>
+            <dpi:AssumedReporting>false</dpi:AssumedReporting>
+            <dpi:DocSpec>
+                <stf:DocTypeIndic>OECD1</stf:DocTypeIndic>
+                <stf:DocRefId>OP_2023_123456789_v1</stf:DocRefId>
+            </dpi:DocSpec>
+        </dpi:PlatformOperator>
+        <dpi:ReportableSeller>
+            <dpi:Identity>
+                <dpi:EntitySeller>
+                    <dpi:Standard>
+                        <dpi:EntSellerID>
+                            <dpi:ResCountryCode>FR</dpi:ResCountryCode>
+                            <dpi:TIN issuedBy="FR">52484162312345</dpi:TIN>
+                            <dpi:IN issuedBy="FR" INType="BRN">52484162312345</dpi:IN>
+                            <dpi:Name>SCI de la rue Mouffetard</dpi:Name>
+                            <dpi:Address legalAddressType="OECD302">
+                                <dpi:CountryCode>FR</dpi:CountryCode>
+                                <dpi:AddressFix>
+                                    <dpi:Street>10 place du Général de Gaulle</dpi:Street>
+                                    <dpi:PostCode>33000</dpi:PostCode>
+                                    <dpi:City>BORDEAUX</dpi:City>
+                                </dpi:AddressFix>
+                            </dpi:Address>
+                        </dpi:EntSellerID>
+                        <dpi:FinancialIdentifier>
+                            <dpi:Identifier AccountNumberType="IBAN">FR34567890098765045</dpi:Identifier>
+                            <dpi:AccountHolderName>Paul Chopin</dpi:AccountHolderName>
+                            <dpi:OtherInfo>Compte joint</dpi:OtherInfo>
+                        </dpi:FinancialIdentifier>
+                    </dpi:Standard>
+                </dpi:EntitySeller>
+            </dpi:Identity>
+            <dpi:RelevantActivities>
+                <dpi:SaleOfGoods>
+                    <dpi:Consideration>
+                        <dpi:ConsQ1 currCode="EUR">20</dpi:ConsQ1>
+                        <dpi:ConsQ2 currCode="EUR">800</dpi:ConsQ2>
+                        <dpi:ConsQ3 currCode="EUR">500</dpi:ConsQ3>
+                        <dpi:ConsQ4 currCode="EUR">0</dpi:ConsQ4>
+                    </dpi:Consideration>
+                    <dpi:NumberOfActivities>
+                        <dpi:NumbQ1>1</dpi:NumbQ1>
+                        <dpi:NumbQ2>20</dpi:NumbQ2>
+                        <dpi:NumbQ3>12</dpi:NumbQ3>
+                        <dpi:NumbQ4>0</dpi:NumbQ4>
+                    </dpi:NumberOfActivities>
+                    <dpi:Fees>
+                        <dpi:FeesQ1 currCode="EUR">3</dpi:FeesQ1>
+                        <dpi:FeesQ2 currCode="EUR">68</dpi:FeesQ2>
+                        <dpi:FeesQ3 currCode="EUR">101</dpi:FeesQ3>
+                        <dpi:FeesQ4 currCode="EUR">0</dpi:FeesQ4>
+                    </dpi:Fees>
+                    <dpi:Taxes>
+                        <dpi:TaxesQ1 currCode="EUR">1</dpi:TaxesQ1>
+                        <dpi:TaxesQ2 currCode="EUR">22</dpi:TaxesQ2>
+                        <dpi:TaxesQ3 currCode="EUR">13</dpi:TaxesQ3>
+                        <dpi:TaxesQ4 currCode="EUR">0</dpi:TaxesQ4>
+                    </dpi:Taxes>
+                </dpi:SaleOfGoods>
+            </dpi:RelevantActivities>
+            <dpi:DocSpec>
+                <stf:DocTypeIndic>OECD1</stf:DocTypeIndic>
+                <stf:DocRefId>OP_2023_123456789_5683da9c-2ea0-427b-ab86-578ebdb545ba_v1</stf:DocRefId>
+            </dpi:DocSpec>
+        </dpi:ReportableSeller>
+        <dpi:ReportableSeller>
+            <dpi:Identity>
+                <dpi:EntitySeller>
+                    <dpi:Standard>
+                        <dpi:EntSellerID>
+                            <dpi:ResCountryCode>ES</dpi:ResCountryCode>
+                            <dpi:TIN issuedBy="FR">B12345678</dpi:TIN>
+                            <dpi:IN issuedBy="FR" INType="BRN">B12345678</dpi:IN>
+                            <dpi:Name>Rainie Tower</dpi:Name>
+                            <dpi:Address legalAddressType="OECD302">
+                                <dpi:CountryCode>ES</dpi:CountryCode>
+                                <dpi:AddressFix>
+                                    <dpi:Street>Calle Betis</dpi:Street>
+                                    <dpi:BuildingIdentifier>Num 7</dpi:BuildingIdentifier>
+                                    <dpi:PostCode>28001</dpi:PostCode>
+                                    <dpi:City>MADRID</dpi:City>
+                                </dpi:AddressFix>
+                            </dpi:Address>
+                        </dpi:EntSellerID>
+                        <dpi:FinancialIdentifier>
+                            <dpi:Identifier AccountNumberType="IBAN">ES13 8765 3092 7065</dpi:Identifier>
+                            <dpi:AccountHolderName>Jacques Vert</dpi:AccountHolderName>
+                        </dpi:FinancialIdentifier>
+                    </dpi:Standard>
+                </dpi:EntitySeller>
+            </dpi:Identity>
+            <dpi:RelevantActivities>
+                <dpi:SaleOfGoods>
+                    <dpi:Consideration>
+                        <dpi:ConsQ1 currCode="EUR">8177</dpi:ConsQ1>
+                        <dpi:ConsQ2 currCode="EUR">5695</dpi:ConsQ2>
+                        <dpi:ConsQ3 currCode="EUR">6391</dpi:ConsQ3>
+                        <dpi:ConsQ4 currCode="EUR">1235</dpi:ConsQ4>
+                    </dpi:Consideration>
+                    <dpi:NumberOfActivities>
+                        <dpi:NumbQ1>892</dpi:NumbQ1>
+                        <dpi:NumbQ2>969</dpi:NumbQ2>
+                        <dpi:NumbQ3>1077</dpi:NumbQ3>
+                        <dpi:NumbQ4>510</dpi:NumbQ4>
+                    </dpi:NumberOfActivities>
+                    <dpi:Fees>
+                        <dpi:FeesQ1 currCode="EUR">1500</dpi:FeesQ1>
+                        <dpi:FeesQ2 currCode="EUR">820</dpi:FeesQ2>
+                        <dpi:FeesQ3 currCode="EUR">908</dpi:FeesQ3>
+                        <dpi:FeesQ4 currCode="EUR">155</dpi:FeesQ4>
+                    </dpi:Fees>
+                    <dpi:Taxes>
+                        <dpi:TaxesQ1 currCode="EUR">300</dpi:TaxesQ1>
+                        <dpi:TaxesQ2 currCode="EUR">90</dpi:TaxesQ2>
+                        <dpi:TaxesQ3 currCode="EUR">133</dpi:TaxesQ3>
+                        <dpi:TaxesQ4 currCode="EUR">28</dpi:TaxesQ4>
+                    </dpi:Taxes>
+                </dpi:SaleOfGoods>
+            </dpi:RelevantActivities>
+            <dpi:DocSpec>
+                <stf:DocTypeIndic>OECD1</stf:DocTypeIndic>
+                <stf:DocRefId>OP_2023_123456789_2a1d15af-aef0-4b77-8c0c-7341ee5e7ae1_v1</stf:DocRefId>
+            </dpi:DocSpec>
+        </dpi:ReportableSeller>
+        <dpi:ReportableSeller>
+            <dpi:Identity>
+                <dpi:IndividualSeller>
+                    <dpi:Standard>
+                        <dpi:IndSellerID>
+                            <dpi:ResCountryCode>SE</dpi:ResCountryCode>
+                            <dpi:TIN issuedBy="SE">598022-6588</dpi:TIN>
+                            <dpi:Name nameType="OECD202">
+                                <dpi:FirstName xnlNameType="Prenom d’usage">Olga</dpi:FirstName>
+                                <dpi:LastName xnlNameType="Nom d’usage">Andersson</dpi:LastName>
+                            </dpi:Name>
+                            <dpi:Address legalAddressType="OECD301">
+                                <dpi:CountryCode>SE</dpi:CountryCode>
+                                <dpi:AddressFix>
+                                    <dpi:Street>Stjärnor torg 25</dpi:Street>
+                                    <dpi:PostCode>111 52</dpi:PostCode>
+                                    <dpi:City>Stockholm</dpi:City>
+                                </dpi:AddressFix>
+                            </dpi:Address>
+                            <dpi:BirthInfo>
+                                <dpi:BirthDate>1997-11-08</dpi:BirthDate>
+                                <dpi:BirthPlace>
+                                    <dpi:City>Nykvarn</dpi:City>
+                                    <dpi:CountryInfo>
+                                        <dpi:CountryCode>SE</dpi:CountryCode>
+                                    </dpi:CountryInfo>
+                                </dpi:BirthPlace>
+                            </dpi:BirthInfo>
+                        </dpi:IndSellerID>
+                        <dpi:FinancialIdentifier>
+                            <dpi:Identifier AccountNumberType="IBAN">SE1240001520960911132345</dpi:Identifier>
+                        </dpi:FinancialIdentifier>
+                    </dpi:Standard>
+                </dpi:IndividualSeller>
+            </dpi:Identity>
+            <dpi:RelevantActivities>
+                <dpi:SaleOfGoods>
+                    <dpi:Consideration>
+                        <dpi:ConsQ1 currCode="SEK">5755</dpi:ConsQ1>
+                        <dpi:ConsQ2 currCode="SEK">5831</dpi:ConsQ2>
+                        <dpi:ConsQ3 currCode="SEK">6008</dpi:ConsQ3>
+                        <dpi:ConsQ4 currCode="SEK">1378</dpi:ConsQ4>
+                    </dpi:Consideration>
+                    <dpi:NumberOfActivities>
+                        <dpi:NumbQ1>33</dpi:NumbQ1>
+                        <dpi:NumbQ2>34</dpi:NumbQ2>
+                        <dpi:NumbQ3>44</dpi:NumbQ3>
+                        <dpi:NumbQ4>12</dpi:NumbQ4>
+                    </dpi:NumberOfActivities>
+                    <dpi:Fees>
+                        <dpi:FeesQ1 currCode="SEK">899</dpi:FeesQ1>
+                        <dpi:FeesQ2 currCode="SEK">900</dpi:FeesQ2>
+                        <dpi:FeesQ3 currCode="SEK">980</dpi:FeesQ3>
+                        <dpi:FeesQ4 currCode="SEK">165</dpi:FeesQ4>
+                    </dpi:Fees>
+                    <dpi:Taxes>
+                        <dpi:TaxesQ1 currCode="SEK">85</dpi:TaxesQ1>
+                        <dpi:TaxesQ2 currCode="SEK">88</dpi:TaxesQ2>
+                        <dpi:TaxesQ3 currCode="SEK">105</dpi:TaxesQ3>
+                        <dpi:TaxesQ4 currCode="SEK">33</dpi:TaxesQ4>
+                    </dpi:Taxes>
+                </dpi:SaleOfGoods>
+            </dpi:RelevantActivities>
+            <dpi:DocSpec>
+                <stf:DocTypeIndic>OECD1</stf:DocTypeIndic>
+                <stf:DocRefId>OP_2023_123456789_b27ec429-f539-499c-88bc-da6d9563f316_v1</stf:DocRefId>
+            </dpi:DocSpec>
+        </dpi:ReportableSeller>
+    </dpi:DPIBody>
+</dpi:DPI_OECD>

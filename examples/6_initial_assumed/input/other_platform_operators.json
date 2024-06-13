@@ -1,0 +1,24 @@
+{
+    "assuming_platform_operator": {
+        "residence_country_codes": [
+            "DE"
+        ],
+        "tax_identification_numbers": [
+            {
+                "issued_by": "DE",
+                "value": "HRB 12345"
+            }
+        ],
+        "legal_name": "QuickService.de",
+        "address": {
+            "legal_type": "OECD304",
+            "country_code": "DE",
+            "street": "Haupstrasse",
+            "building_identifier": "5",
+            "post_code": "53111",
+            "city": "Bonn"
+        },
+        "version": 1,
+        "updated": true
+    }
+}

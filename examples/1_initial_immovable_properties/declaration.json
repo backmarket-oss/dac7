@@ -1,0 +1,355 @@
+{
+    "@xmlns:dpi": "urn:oecd:ties:dpi",
+    "@xmlns:stf": "urn:oecd:ties:dpistf",
+    "@version": "1.0",
+    "dpi:MessageSpec": {
+        "dpi:TransmittingCountry": "FR",
+        "dpi:ReceivingCountry": "FR",
+        "dpi:MessageType": "DPI",
+        "dpi:MessageRefId": "OP_2023_123456789_d1",
+        "dpi:MessageTypeIndic": "DPI401",
+        "dpi:ReportingPeriod": "2023-12-31",
+        "dpi:Timestamp": "2024-01-31T12:05:56.084"
+    },
+    "dpi:DPIBody": {
+        "dpi:PlatformOperator": {
+            "dpi:ResCountryCode": "FR",
+            "dpi:TIN": [
+                {
+                    "@issuedBy": "FR",
+                    "$": "123456789"
+                }
+            ],
+            "dpi:IN": [
+                {
+                    "@issuedBy": "FR",
+                    "@INType": "BRN",
+                    "$": "123456789"
+                }
+            ],
+            "dpi:VAT": "FR32123456789",
+            "dpi:Name": [
+                {
+                    "$": "Classified Ads SAS"
+                }
+            ],
+            "dpi:Address": [
+                {
+                    "@legalAddressType": "OECD304",
+                    "dpi:CountryCode": "FR",
+                    "dpi:AddressFix": {
+                        "dpi:Street": "15 rue de l'Eglise",
+                        "dpi:BuildingIdentifier": "Immeuble Paris Business",
+                        "dpi:PostCode": "75000",
+                        "dpi:City": "Paris"
+                    }
+                }
+            ],
+            "dpi:PlatformBusinessName": [
+                "Luluballades.com"
+            ],
+            "dpi:Nexus": "RPONEX1",
+            "dpi:AssumedReporting": false,
+            "dpi:DocSpec": {
+                "stf:DocTypeIndic": "OECD1",
+                "stf:DocRefId": "OP_2023_123456789_v1"
+            }
+        },
+        "dpi:ReportableSeller": [
+            {
+                "dpi:Identity": {
+                    "dpi:EntitySeller": {
+                        "dpi:Standard": {
+                            "dpi:EntSellerID": {
+                                "dpi:ResCountryCode": "FR",
+                                "dpi:TIN": [
+                                    {
+                                        "@issuedBy": "FR",
+                                        "$": "52484162312345"
+                                    }
+                                ],
+                                "dpi:IN": [
+                                    {
+                                        "@issuedBy": "FR",
+                                        "@INType": "Other",
+                                        "$": "52484162312345"
+                                    }
+                                ],
+                                "dpi:VAT": "FR32524841623",
+                                "dpi:Name": [
+                                    {
+                                        "$": "SCI de la rue Mouffetard"
+                                    }
+                                ],
+                                "dpi:Address": [
+                                    {
+                                        "dpi:CountryCode": "FR",
+                                        "dpi:AddressFix": {
+                                            "dpi:Street": "10 place du G\u00e9n\u00e9ral de Gaulle",
+                                            "dpi:PostCode": "33000",
+                                            "dpi:City": "Bordeaux"
+                                        }
+                                    }
+                                ]
+                            },
+                            "dpi:FinancialIdentifier": [
+                                {
+                                    "dpi:Identifier": {
+                                        "@AccountNumberType": "IBAN",
+                                        "$": "FR7630001007941234567890185"
+                                    }
+                                }
+                            ],
+                            "dpi:PermanentEstablishments": {
+                                "dpi:PermanentEstablishment": [
+                                    "IT"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "dpi:RelevantActivities": {
+                    "dpi:ImmovableProperty": {
+                        "dpi:PropertyListing": [
+                            {
+                                "dpi:Consideration": {
+                                    "dpi:ConsQ1": {
+                                        "@currCode": "EUR",
+                                        "$": 5000
+                                    },
+                                    "dpi:ConsQ2": {
+                                        "@currCode": "EUR",
+                                        "$": 4567
+                                    },
+                                    "dpi:ConsQ3": {
+                                        "@currCode": "EUR",
+                                        "$": 2345
+                                    },
+                                    "dpi:ConsQ4": {
+                                        "@currCode": "EUR",
+                                        "$": 3454
+                                    }
+                                },
+                                "dpi:NumberOfActivities": {
+                                    "dpi:NumbQ1": 6,
+                                    "dpi:NumbQ2": 5,
+                                    "dpi:NumbQ3": 3,
+                                    "dpi:NumbQ4": 2
+                                },
+                                "dpi:Fees": {
+                                    "dpi:FeesQ1": {
+                                        "@currCode": "EUR",
+                                        "$": 400
+                                    },
+                                    "dpi:FeesQ2": {
+                                        "@currCode": "EUR",
+                                        "$": 300
+                                    },
+                                    "dpi:FeesQ3": {
+                                        "@currCode": "EUR",
+                                        "$": 250
+                                    },
+                                    "dpi:FeesQ4": {
+                                        "@currCode": "EUR",
+                                        "$": 100
+                                    }
+                                },
+                                "dpi:Taxes": {
+                                    "dpi:TaxesQ1": {
+                                        "@currCode": "EUR",
+                                        "$": 300
+                                    },
+                                    "dpi:TaxesQ2": {
+                                        "@currCode": "EUR",
+                                        "$": 200
+                                    },
+                                    "dpi:TaxesQ3": {
+                                        "@currCode": "EUR",
+                                        "$": 150
+                                    },
+                                    "dpi:TaxesQ4": {
+                                        "@currCode": "EUR",
+                                        "$": 100
+                                    }
+                                },
+                                "dpi:Address": {
+                                    "@legalAddressType": "OECD303",
+                                    "dpi:CountryCode": "FR",
+                                    "dpi:AddressFix": {
+                                        "dpi:Street": "10 rue Mouffetard",
+                                        "dpi:PostCode": "75005",
+                                        "dpi:City": "Paris"
+                                    }
+                                },
+                                "dpi:LandRegistrationNumber": "1051234567F",
+                                "dpi:PropertyType": "DPI901",
+                                "dpi:RentedDays": 200
+                            }
+                        ]
+                    }
+                },
+                "dpi:DocSpec": {
+                    "stf:DocTypeIndic": "OECD1",
+                    "stf:DocRefId": "OP_2023_123456789_03349c99-fb08-4179-9cca-05260a8b54d0_v1"
+                }
+            },
+            {
+                "dpi:Identity": {
+                    "dpi:IndividualSeller": {
+                        "dpi:Standard": {
+                            "dpi:IndSellerID": {
+                                "dpi:ResCountryCode": "ES",
+                                "dpi:TIN": [
+                                    {
+                                        "@issuedBy": "AR",
+                                        "$": "20258743991"
+                                    }
+                                ],
+                                "dpi:VAT": "12345667",
+                                "dpi:Name": {
+                                    "@nameType": "OECD202",
+                                    "dpi:Title": [
+                                        "Mr"
+                                    ],
+                                    "dpi:FirstName": {
+                                        "@xnlNameType": "First",
+                                        "$": "Carlos"
+                                    },
+                                    "dpi:MiddleName": [
+                                        {
+                                            "@xnlNameType": "Middle",
+                                            "$": "Miguel"
+                                        }
+                                    ],
+                                    "dpi:NamePrefix": {
+                                        "@xnlNameType": "Prefix",
+                                        "$": "De"
+                                    },
+                                    "dpi:LastName": {
+                                        "@xnlNameType": "Last",
+                                        "$": "Quintana"
+                                    }
+                                },
+                                "dpi:Address": [
+                                    {
+                                        "@legalAddressType": "OECD302",
+                                        "dpi:CountryCode": "AR",
+                                        "dpi:AddressFix": {
+                                            "dpi:Street": "20 calle de la libertad",
+                                            "dpi:PostCode": "B1406",
+                                            "dpi:City": "BuenosAires"
+                                        }
+                                    }
+                                ],
+                                "dpi:BirthInfo": {
+                                    "dpi:BirthDate": "1987-07-31",
+                                    "dpi:BirthPlace": {
+                                        "dpi:City": "Buenos Aires",
+                                        "dpi:CitySubentity": "Buenos",
+                                        "dpi:CountryInfo": {
+                                            "dpi:CountryCode": "AR"
+                                        }
+                                    }
+                                }
+                            },
+                            "dpi:FinancialIdentifier": [
+                                {
+                                    "dpi:Identifier": {
+                                        "@AccountNumberType": "IBAN",
+                                        "$": "AR34567890098765045"
+                                    },
+                                    "dpi:AccountHolderName": "Carlos Miguel de Quintana",
+                                    "dpi:OtherInfo": "Compte joint"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "dpi:RelevantActivities": {
+                    "dpi:ImmovableProperty": {
+                        "dpi:PropertyListing": [
+                            {
+                                "dpi:Consideration": {
+                                    "dpi:ConsQ1": {
+                                        "@currCode": "EUR",
+                                        "$": 5132
+                                    },
+                                    "dpi:ConsQ2": {
+                                        "@currCode": "EUR",
+                                        "$": 4567
+                                    },
+                                    "dpi:ConsQ3": {
+                                        "@currCode": "EUR",
+                                        "$": 6252
+                                    },
+                                    "dpi:ConsQ4": {
+                                        "@currCode": "EUR",
+                                        "$": 3980
+                                    }
+                                },
+                                "dpi:NumberOfActivities": {
+                                    "dpi:NumbQ1": 6,
+                                    "dpi:NumbQ2": 5,
+                                    "dpi:NumbQ3": 7,
+                                    "dpi:NumbQ4": 3
+                                },
+                                "dpi:Fees": {
+                                    "dpi:FeesQ1": {
+                                        "@currCode": "EUR",
+                                        "$": 400
+                                    },
+                                    "dpi:FeesQ2": {
+                                        "@currCode": "EUR",
+                                        "$": 300
+                                    },
+                                    "dpi:FeesQ3": {
+                                        "@currCode": "EUR",
+                                        "$": 450
+                                    },
+                                    "dpi:FeesQ4": {
+                                        "@currCode": "EUR",
+                                        "$": 200
+                                    }
+                                },
+                                "dpi:Taxes": {
+                                    "dpi:TaxesQ1": {
+                                        "@currCode": "EUR",
+                                        "$": 300
+                                    },
+                                    "dpi:TaxesQ2": {
+                                        "@currCode": "EUR",
+                                        "$": 200
+                                    },
+                                    "dpi:TaxesQ3": {
+                                        "@currCode": "EUR",
+                                        "$": 350
+                                    },
+                                    "dpi:TaxesQ4": {
+                                        "@currCode": "EUR",
+                                        "$": 150
+                                    }
+                                },
+                                "dpi:Address": {
+                                    "@legalAddressType": "OECD303",
+                                    "dpi:CountryCode": "FR",
+                                    "dpi:AddressFix": {
+                                        "dpi:Street": "15 quai de la Londe",
+                                        "dpi:PostCode": "50100",
+                                        "dpi:City": "Cherbourg-en-Cotentin"
+                                    }
+                                },
+                                "dpi:LandRegistrationNumber": "1987824412F",
+                                "dpi:PropertyType": "DPI904",
+                                "dpi:RentedDays": 147
+                            }
+                        ]
+                    }
+                },
+                "dpi:DocSpec": {
+                    "stf:DocTypeIndic": "OECD1",
+                    "stf:DocRefId": "OP_2023_123456789_03587e99-aa78-8871-9abc-487025a8b54d0_v1"
+                }
+            }
+        ]
+    }
+}

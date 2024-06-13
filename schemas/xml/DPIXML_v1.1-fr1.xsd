@@ -1,0 +1,628 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Based on a schema published by the Direction Générale des Finances Public
+https://www.impots.gouv.fr/transfert-dinformations-en-application-des-dispositifs-dpi-dac7-plateformes-deconomie-collaborative
+Last updated in May 2024, retrieved in November 2024
+
+SPDX-License-Identifier: etalab-2.0
+-->
+<xsd:schema xmlns:dpi="urn:oecd:ties:dpi" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:stf="urn:oecd:ties:dpistf"
+            xmlns:iso="urn:oecd:ties:dpiisotypes"
+            targetNamespace="urn:oecd:ties:dpi"
+            elementFormDefault="qualified">
+    <xsd:import namespace="urn:oecd:ties:dpistf" schemaLocation="oecddpitypes_v1.0-fr1.xsd"/>
+    <xsd:import namespace="urn:oecd:ties:dpiisotypes" schemaLocation="isodpitypes_v1.0-fr1.xsd"/>
+
+    <xsd:element name="DPI_OECD">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="MessageSpec" type="dpi:MessageSpec_Type"/>
+                <xsd:element name="DPIBody" type="dpi:DPIBody_Type"/>
+            </xsd:sequence>
+            <xsd:attribute name="version" use="required">
+                <!-- Version is a “V” requirement and `1.0` should be the only possible value. See §3.2.1 on page 17. -->
+                <xsd:simpleType>
+                    <xsd:restriction base="stf:StringMin1Max10_Type">
+                        <xsd:enumeration value="1.0" />
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!--    Definition of complex types-->
+    <xsd:complexType name="MessageSpec_Type">
+        <xsd:sequence>
+            <xsd:element name="TransmittingCountry" type="dpi:FR_EnumType"/>
+            <!--04/04/2023 "TransmittingCountry" seule valeur autorisée "FR"-->
+            <xsd:element name="ReceivingCountry" type="dpi:FR_EnumType"/>
+            <!--04/04/2023 "ReceivingCountry" seule valeur autorisée "FR"-->
+            <xsd:element name="MessageType" type="dpi:MessageType_EnumType"/>
+            <xsd:element name="MessageRefId">
+                <xsd:simpleType>
+                    <xsd:restriction base="stf:StringMin1Max170_Type">
+                        <!-- Maximum 88 characters. See §3.2.2 on page 18 -->
+                        <xsd:minLength value="1" />
+                        <xsd:maxLength value="88" />
+                        <!-- SIREN must follow the year. See §3.2.2 on page 18 -->
+                        <xsd:pattern value="OP_(202[3-9]|20[3-9]\d)_(\d{9})_.+"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="MessageTypeIndic" type="dpi:DPIMessageTypeIndic_EnumType"/>
+            <xsd:element name="ReportingPeriod" type="xsd:date"/>
+            <xsd:element name="Timestamp" type="xsd:dateTime"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="DPIBody_Type">
+        <xsd:sequence>
+            <xsd:element name="PlatformOperator" type="dpi:CorrectablePlatformOperator_Type"/>
+            <xsd:element name="OtherPlatformOperators" type="dpi:OtherPlatformOperators_Type" minOccurs="0"/>
+            <xsd:element name="ReportableSeller" type="dpi:CorrectableReportableSeller_Type" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="CorrectablePlatformOperator_Type">
+        <xsd:sequence>
+            <xsd:element name="ResCountryCode" type="iso:CountryCode_Type" minOccurs="0"/>
+            <xsd:element name="TIN" maxOccurs="unbounded" type="dpi:TIN_PlatformOperator_Type"/>
+            <!--04/04/2023 "TIN" type spécifique au PlatformOperator-->
+            <xsd:element name="IN" minOccurs="0" maxOccurs="unbounded" type="dpi:IN_Type"/>
+            <xsd:element name="VAT" minOccurs="0">
+                <xsd:simpleType>
+                    <xsd:restriction base="stf:StringMin1Max200_Type"/>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="Name" type="dpi:NameOrganisation_Type"/>
+            <!--30/03/2023 "Name" obligatoire non répétable-->
+            <xsd:element name="PlatformBusinessName" type="stf:StringMin1Max200_Type"/>
+            <!--30/03/2023 "PlatformBusinessName" obligatoire non répétable-->
+            <xsd:element name="Address" type="dpi:Address_Type" maxOccurs="unbounded"/>
+            <xsd:element name="Nexus" type="dpi:Nexus_EnumType"/>
+            <xsd:element name="AssumedReporting" type="xsd:boolean"/>
+            <xsd:element name="DocSpec" type="stf:DocSpec_Type"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="OtherPlatformOperators_Type">
+        <xsd:sequence>
+            <xsd:choice>
+                <xsd:element name="AssumingPlatformOperator" type="dpi:CorrectableOtherRPO_Type"/>
+                <xsd:element name="AssumedPlatformOperator" type="dpi:CorrectableOtherRPO_Type" maxOccurs="unbounded"/>
+            </xsd:choice>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="CorrectableReportableSeller_Type">
+        <xsd:sequence>
+            <xsd:element name="Identity">
+                <xsd:complexType>
+                    <xsd:choice>
+                        <xsd:element name="EntitySeller" type="dpi:EntitySeller_Type"/>
+                        <xsd:element name="IndividualSeller" type="dpi:IndividualSeller_Type"/>
+                    </xsd:choice>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="RelevantActivities" type="dpi:RelevantActivities_Type"/>
+            <xsd:element name="DocSpec" type="stf:DocSpec_Type"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!--    Definition of simple types-->
+    <xsd:simpleType name="FR_EnumType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="FR"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="MessageType_EnumType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="DPI"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="Nexus_EnumType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="RPONEX1">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        L'opérateur de plateforme déclarant est domicilié fiscalement dans l'État membre de l'UE.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="RPONEX2">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        L'opérateur de plateforme déclarant n'est pas domicilié fiscalement, mais est constitué en société en vertu de la
+                        législation de l'État membre de l'Union européenne.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="RPONEX3">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        L'opérateur de plateforme déclarant n'est pas domicilié fiscalement, mais possède son siège de direction (y compris
+                        de direction effective) dans l'État membre de l'UE.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="RPONEX4">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        L'opérateur de plateforme déclarant n'est pas domicilié fiscalement, mais possède un établissement stable dans
+                        l'État membre de l'Union européenne et n'est pas un opérateur de plateforme qualifié non ressortissant de l'Union .
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="RPONEX5">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        L'opérateur de plateforme déclarant n'est ni domicilié fiscalement, ni constitué en société ni dirigé dans l'État
+                        membre de l'UE, ne possède pas non plus d'établissement stable dans l'État membre de l'UE, mais il facilite
+                        l'exercice d'une activité pertinente par des vendeurs à déclarer ou d'une activité pertinente impliquant la location
+                        de biens immobiliers situés dans l'État membre de l'UE et il n'est pas un opérateur de plateforme qualifié non
+                        ressortissant de l'Union.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="DPIMessageTypeIndic_EnumType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="DPI401">
+                <xsd:annotation>
+                    <xsd:documentation>The message contains new information</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DPI402">
+                <xsd:annotation>
+                    <xsd:documentation>The message contains corrections for previously sent information</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DPI403">
+                <xsd:annotation>
+                    <xsd:documentation>The message advises there is no data to report</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="INType_EnumType">
+        <xsd:restriction base="stf:StringMin1Max200_Type">
+            <xsd:enumeration value="LEI">
+                <xsd:annotation>
+                    <xsd:documentation>Legal Entity Identifier</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="EIN">
+                <xsd:annotation>
+                    <xsd:documentation>Entity Identification Number</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="IIN">
+                <xsd:annotation>
+                    <xsd:documentation>Individual Identification Number</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="BRN">
+                <xsd:annotation>
+                    <xsd:documentation>Business Registration Number</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Other">
+                <xsd:annotation>
+                    <xsd:documentation>Other</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="CorrectableOtherRPO_Type">
+        <xsd:sequence>
+            <xsd:element name="ResCountryCode" type="iso:CountryCode_Type"/>
+            <!--05/06/2023 "ResCountryCode" obligatoire et non répétable-->
+            <xsd:element name="TIN" type="dpi:TIN_Type" maxOccurs="unbounded"/>
+            <xsd:element name="Name" type="dpi:NameOrganisation_Type"/>
+            <xsd:element name="Address" type="dpi:Address_Type" maxOccurs="unbounded"/>
+            <xsd:element name="DocSpec" type="stf:DocSpec_Type"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="TIN_PlatformOperator_Type">
+        <xsd:simpleContent>
+            <xsd:extension base="stf:StringMin1Max200_Type">
+                <xsd:attribute name="issuedBy" type="dpi:FR_EnumType"/>
+                <!--04/04/2023 "issuedBy" seule valeur autorisée "FR", attribut "unknown" non autorisé-->
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="TIN_Type">
+        <xsd:simpleContent>
+            <xsd:extension base="stf:StringMin1Max200_Type">
+                <xsd:attribute name="issuedBy" type="iso:CountryCode_Type"/>
+                <xsd:attribute name="unknown" type="xsd:boolean"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="IN_Type">
+        <xsd:simpleContent>
+            <xsd:extension base="dpi:StringSansSeulsCaractEspaceTabCRLF200">
+                <xsd:attribute name="issuedBy" type="iso:CountryCode_Type"/>
+                <xsd:attribute name="INType" type="dpi:INType_EnumType" use="required"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="RelevantActivities_Type">
+        <xsd:sequence>
+            <xsd:element name="ImmovableProperty" minOccurs="0">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="PropertyListing" maxOccurs="unbounded">
+                            <xsd:complexType>
+                                <xsd:sequence>
+                                    <xsd:element name="Address" type="dpi:Address_Type"/>
+                                    <xsd:element name="LandRegistrationNumber" type="stf:StringMin1Max200_Type" minOccurs="0"/>
+                                    <xsd:element name="Consideration" type="dpi:Consideration_Type"/>
+                                    <xsd:element name="NumberOfActivities" type="dpi:NumberOfActivities_Type"/>
+                                    <xsd:element name="Fees" type="dpi:Fees_Type"/>
+                                    <xsd:element name="Taxes" type="dpi:Taxes_Type"/>
+                                    <xsd:element name="PropertyType" type="dpi:PropertyType_Type"/>
+                                    <!-- only if PropertyType DPI910 is selected -->
+                                    <xsd:element name="OtherPropertyType" type="stf:StringMin1Max200_Type" minOccurs="0"/>
+                                    <xsd:element name="RentedDays" type="stf:IntegerMax4Digits_Type" minOccurs="0"/>
+                                </xsd:sequence>
+                            </xsd:complexType>
+                        </xsd:element>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="PersonalServices" minOccurs="0">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="Consideration" type="dpi:Consideration_Type"/>
+                        <xsd:element name="NumberOfActivities" type="dpi:NumberOfActivities_Type"/>
+                        <xsd:element name="Fees" type="dpi:Fees_Type"/>
+                        <xsd:element name="Taxes" type="dpi:Taxes_Type"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="SaleOfGoods" minOccurs="0">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="Consideration" type="dpi:Consideration_Type"/>
+                        <xsd:element name="NumberOfActivities" type="dpi:NumberOfActivities_Type"/>
+                        <xsd:element name="Fees" type="dpi:Fees_Type"/>
+                        <xsd:element name="Taxes" type="dpi:Taxes_Type"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="TransportationRental" minOccurs="0">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="Consideration" type="dpi:Consideration_Type"/>
+                        <xsd:element name="NumberOfActivities" type="dpi:NumberOfActivities_Type"/>
+                        <xsd:element name="Fees" type="dpi:Fees_Type"/>
+                        <xsd:element name="Taxes" type="dpi:Taxes_Type"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:simpleType name="PropertyType_Type">
+        <xsd:restriction base="stf:StringMin1Max10_Type">
+            <xsd:enumeration value="DPI901">
+                <xsd:annotation>
+                    <xsd:documentation>Bureau</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DPI902">
+                <xsd:annotation>
+                    <xsd:documentation>Chambre d'hôtel</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DPI903">
+                <xsd:annotation>
+                    <xsd:documentation>Chambre d'hôtes</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DPI904">
+                <xsd:annotation>
+                    <xsd:documentation>Maison</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DPI905">
+                <xsd:annotation>
+                    <xsd:documentation>Appartement</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DPI906">
+                <xsd:annotation>
+                    <xsd:documentation>Mobil-home</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DPI907">
+                <xsd:annotation>
+                    <xsd:documentation>Terrain de camping</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DPI908">
+                <xsd:annotation>
+                    <xsd:documentation>Bateau</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DPI909">
+                <xsd:annotation>
+                    <xsd:documentation>Place de stationnement</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DPI910">
+                <xsd:annotation>
+                    <xsd:documentation>Autre</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="Consideration_Type">
+        <xsd:sequence>
+            <xsd:element name="ConsQ1" type="dpi:MonAmnt_Type"/>
+            <xsd:element name="ConsQ2" type="dpi:MonAmnt_Type"/>
+            <xsd:element name="ConsQ3" type="dpi:MonAmnt_Type"/>
+            <xsd:element name="ConsQ4" type="dpi:MonAmnt_Type"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="NumberOfActivities_Type">
+        <xsd:sequence>
+            <!-- Values must be >= according to 2nd-level rule 3. See §5.3.2.1 on page 105 -->
+            <xsd:element name="NumbQ1" type="xsd:nonNegativeInteger"/>
+            <xsd:element name="NumbQ2" type="xsd:nonNegativeInteger"/>
+            <xsd:element name="NumbQ3" type="xsd:nonNegativeInteger"/>
+            <xsd:element name="NumbQ4" type="xsd:nonNegativeInteger"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="Fees_Type">
+        <xsd:sequence>
+            <xsd:element name="FeesQ1" type="dpi:MonAmnt_Type"/>
+            <xsd:element name="FeesQ2" type="dpi:MonAmnt_Type"/>
+            <xsd:element name="FeesQ3" type="dpi:MonAmnt_Type"/>
+            <xsd:element name="FeesQ4" type="dpi:MonAmnt_Type"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="Taxes_Type">
+        <xsd:sequence>
+            <xsd:element name="TaxesQ1" type="dpi:MonAmnt_Type"/>
+            <xsd:element name="TaxesQ2" type="dpi:MonAmnt_Type"/>
+            <xsd:element name="TaxesQ3" type="dpi:MonAmnt_Type"/>
+            <xsd:element name="TaxesQ4" type="dpi:MonAmnt_Type"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="EntitySeller_Type">
+        <!--25/04/2023 "GVS" non autorisé, "standard" seule balise possible -->
+        <xsd:sequence>
+            <xsd:element name="Standard">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="EntSellerID" type="dpi:OrganisationParty_Type"/>
+                        <xsd:element name="FinancialIdentifier" type="dpi:FinancialIdentifier_Type" minOccurs="0" maxOccurs="unbounded"/>
+                        <xsd:element name="PermanentEstablishments" type="dpi:PermanentEstablishments_Type" minOccurs="0"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="OrganisationParty_Type">
+        <xsd:sequence>
+            <!-- ResCountryCode must be a country covered by DAC7, i.e. within the EU according to 2nd-level rule 8. See §5.3.2.1 on page 105. -->
+            <xsd:element name="ResCountryCode" type="iso:EUCountryCode_Type"/>
+            <!--30/03/2023 "ResCountryCode" obligatoire non répétable-->
+            <xsd:element name="TIN" type="dpi:TIN_Type" maxOccurs="unbounded"/>
+            <xsd:element name="IN" type="dpi:IN_Type" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="VAT" type="stf:StringMin1Max200_Type" minOccurs="0"/>
+            <xsd:element name="Name" type="dpi:NameOrganisation_Type" maxOccurs="unbounded"/>
+            <xsd:element name="Address" type="dpi:Address_Type" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="PersonParty_Type">
+        <xsd:sequence>
+            <!-- ResCountryCode must be a country covered by DAC7, i.e. within the EU according to 2nd-level rule 8. See §5.3.2.1 on page 105. -->
+            <xsd:element name="ResCountryCode" type="iso:EUCountryCode_Type"/>
+            <!--30/03/2023 "ResCountryCode" obligatoire non répétable-->
+            <xsd:element name="TIN" type="dpi:TIN_Type" maxOccurs="unbounded"/>
+            <!--20/10/2023 "IN" non autorisé pour les vendeurs physiques-->
+            <xsd:element name="VAT" type="stf:StringMin1Max200_Type" minOccurs="0"/>
+            <xsd:element name="Name" type="dpi:NamePerson_Type" maxOccurs="unbounded"/>
+            <xsd:element name="Address" type="dpi:Address_Type" maxOccurs="unbounded"/>
+            <xsd:element name="BirthInfo">
+                <!--30/03/2023 "BirthInfo" obligatoire-->
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="BirthDate" type="xsd:date"/>
+                        <xsd:element name="BirthPlace" minOccurs="0">
+                            <!--30/03/2023 "BirthPlace" non obligatoire-->
+                            <xsd:complexType>
+                                <xsd:sequence>
+                                    <xsd:element name="City" type="stf:StringMin1Max200_Type"/>
+                                    <xsd:element name="CitySubentity" type="stf:StringMin1Max200_Type" minOccurs="0"/>
+                                    <xsd:element name="CountryInfo">
+                                        <xsd:complexType>
+                                            <xsd:choice>
+                                                <xsd:element name="CountryCode" type="iso:CountryCode_Type"/>
+                                                <xsd:element name="FormerCountryName" type="stf:StringMin1Max200_Type"/>
+                                            </xsd:choice>
+                                        </xsd:complexType>
+                                    </xsd:element>
+                                </xsd:sequence>
+                            </xsd:complexType>
+                        </xsd:element>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="PermanentEstablishments_Type">
+        <!-- Permanent establishment countries must be within the EU according to the 2nd-level rule 31. See §5.3.2.1 on page 110. -->
+        <xsd:sequence>
+            <xsd:element name="PermanentEstablishment" type="iso:EUCountryCode_Type" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="FinancialIdentifier_Type">
+        <xsd:sequence>
+            <xsd:element name="Identifier">
+                <xsd:complexType>
+                    <xsd:simpleContent>
+                        <xsd:extension base="stf:StringMin1Max200_Type">
+                            <xsd:attribute name="AccountNumberType" type="stf:StringMin1Max200_Type"/>
+                        </xsd:extension>
+                    </xsd:simpleContent>
+                </xsd:complexType>
+            </xsd:element>
+            <!--20/07/2023 "AccountHolderName" et "OtherInfo" facultatifs -->
+            <xsd:element name="AccountHolderName" type="stf:StringMin1Max200_Type" minOccurs="0"/>
+            <xsd:element name="OtherInfo" type="stf:StringMin1Max400_Type" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="IndividualSeller_Type">
+        <!--25/04/2023 "GVS" non autorisé, "standard" seule balise possible -->
+        <xsd:sequence>
+            <xsd:element name="Standard">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="IndSellerID" type="dpi:PersonParty_Type"/>
+                        <xsd:element name="FinancialIdentifier" type="dpi:FinancialIdentifier_Type" minOccurs="0" maxOccurs="unbounded"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="NamePerson_Type">
+        <xsd:sequence>
+            <xsd:element name="PrecedingTitle" type="stf:StringMin1Max200_Type" minOccurs="0"/>
+            <xsd:element name="Title" type="stf:StringMin1Max200_Type" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="FirstName">
+                <xsd:complexType>
+                    <xsd:simpleContent>
+                        <xsd:extension base="stf:StringMin1Max200_Type">
+                            <xsd:attribute name="xnlNameType" type="stf:StringMin1Max200_Type"/>
+                        </xsd:extension>
+                    </xsd:simpleContent>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="MiddleName" minOccurs="0" maxOccurs="unbounded">
+                <xsd:complexType>
+                    <xsd:simpleContent>
+                        <xsd:extension base="stf:StringMin1Max200_Type">
+                            <xsd:attribute name="xnlNameType" type="stf:StringMin1Max200_Type"/>
+                        </xsd:extension>
+                    </xsd:simpleContent>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="NamePrefix" minOccurs="0">
+                <xsd:complexType>
+                    <xsd:simpleContent>
+                        <xsd:extension base="stf:StringMin1Max200_Type">
+                            <xsd:attribute name="xnlNameType" type="stf:StringMin1Max200_Type"/>
+                        </xsd:extension>
+                    </xsd:simpleContent>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="LastName">
+                <xsd:complexType>
+                    <xsd:simpleContent>
+                        <xsd:extension base="dpi:StringSansSeulsCaractEspaceTabCRLF200">
+                            <xsd:attribute name="xnlNameType" type="stf:StringMin1Max200_Type"/>
+                        </xsd:extension>
+                    </xsd:simpleContent>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="GenerationIdentifier" type="stf:StringMin1Max200_Type" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="Suffix" type="stf:StringMin1Max200_Type" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="GeneralSuffix" type="stf:StringMin1Max200_Type" minOccurs="0"/>
+        </xsd:sequence>
+        <xsd:attribute name="nameType" type="stf:OECDNameType_EnumType"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="MonAmnt_Type">
+        <xsd:simpleContent>
+            <!-- Values must be >= according to 2nd-level rules 2, 4, and 5. See §5.3.2.1 on page 105 -->
+            <xsd:extension base="xsd:nonNegativeInteger">
+                <xsd:attribute name="currCode" type="iso:currCode_Type" use="required"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+    <!-- Organisation name -->
+    <xsd:complexType name="NameOrganisation_Type">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">Name of organisation</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:extension base="dpi:StringSansSeulsCaractEspaceTabCRLF200">
+                <xsd:attribute name="nameType" type="stf:OECDNameType_EnumType"/>
+            </xsd:extension>
+            <!--<xsd:extension base="stf:StringMin1Max200_Type">-->
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <!-- -->
+    <!--  The Address of a Party, given in fixed or free Form, possibly in both Forms -->
+    <xsd:complexType name="Address_Type">
+        <xsd:sequence>
+            <xsd:element name="CountryCode" type="iso:CountryCode_Type"/>
+            <xsd:choice>
+                <xsd:element name="AddressFix" type="dpi:AddressFix_Type"/>
+                <xsd:element name="AddressFree" type="dpi:StringSansSeulsCaractEspaceTabCRLF200"/>
+            </xsd:choice>
+        </xsd:sequence>
+        <xsd:attribute name="legalAddressType" type="stf:OECDLegalAddressType_EnumType"/>
+    </xsd:complexType>
+    <!--  -->
+    <!-- Address Fix -->
+    <xsd:complexType name="AddressFix_Type">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                Structure of the address for a party broken down into its logical parts, recommended for easy matching. The 'City' element
+                is the only required subelement. All of the subelements are simple text - data type 'string'.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="Street" type="stf:StringMin1Max200_Type" minOccurs="0"/>
+            <xsd:element name="BuildingIdentifier" type="stf:StringMin1Max200_Type" minOccurs="0"/>
+            <xsd:element name="SuiteIdentifier" type="stf:StringMin1Max200_Type" minOccurs="0"/>
+            <xsd:element name="FloorIdentifier" type="stf:StringMin1Max200_Type" minOccurs="0"/>
+            <xsd:element name="DistrictName" type="stf:StringMin1Max200_Type" minOccurs="0"/>
+            <xsd:element name="POB" type="stf:StringMin1Max200_Type" minOccurs="0"/>
+            <xsd:element name="PostCode" type="stf:StringMin1Max200_Type" minOccurs="0"/>
+            <xsd:element name="City" type="dpi:StringSansSeulsCaractEspaceTabCRLF200"/>
+            <xsd:element name="CountrySubentity" type="stf:StringMin1Max200_Type" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <!--  -->
+
+    <!-- création d'un type pour restreindre les champs texte -->
+    <xsd:simpleType name="StringSansSeulsCaractEspaceTabCRLF200">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="fr">Type permettant de contrôler les chaines de caractères pour contenir au moins un caractère
+                différent de « espace », tabulation (\t), saut de ligne (\n), retour charriot (\r)
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="stf:StringMin1Max200_Type">
+            <xsd:pattern value=".*(\S).*"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

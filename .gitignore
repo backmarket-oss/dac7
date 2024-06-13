@@ -1,0 +1,17 @@
+__pycache__
+.coverage
+.mypy_cache
+.pytest_cache
+.ruff_cache
+*.json
+*.xml
+*.xml.gz
+*.xml.gz.gpg
+!.github/*.json
+!schemas/**/*.json
+!examples/**/*.json
+!examples/**/*.xml
+/cli/src/dac7/schemas
+/dist
+/output
+/tests
