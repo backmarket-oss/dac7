@@ -25,8 +25,8 @@ class KeyInfoProd(KeyInfo):
     fingerprint = "3AE282C69675932A19D3245BD155B53F9EFF7A61"
     archive_url = "https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/tiers_declarants/cdc_td_bilateral/cle_publique_chiffrement_dgfip_tiersdeclarants_prod.zip"
     archive_checksum = (
-        "1e6afb7b8d21c996ee165de3ee7815b7f5865384b891b4901941afb696089576be0f76"
-        "53cf442b91026bcb6247b8aa53b75e9ce9e29301748147c9308cddb5de"
+        "c3350b1db0a7e9536892254fcd796e702f9dad0be12f97032c32349405bc5b0a1ca868"
+        "6997240f686e3e302678791644577924ccb72b236ad1df2431a78b66a8"
     )
 
 
@@ -34,8 +34,8 @@ class KeyInfoTest(KeyInfo):
     fingerprint = "E7125CD404D160E6C1C773299182BFA4B2FCE419"
     archive_url = "https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/tiers_declarants/cdc_td_bilateral/cle_publique_chiffrement_dgfip_tiersdeclarants_test.zip"
     archive_checksum = (
-        "35e5eb45b35d22d6efc830b1a6706c74ae447c8414a1ff29afd3821d44f23582798200"
-        "f465a3bb9bf48307299e534ec1f61734871264c6388dfc9355311d5b16"
+        "ec7f4ec691f6b8a846969b95d8c04b4bf699099adca0d56367248bccd64cd8c57f4315"
+        "27e10335cc454424b7952cb80a222e4b27a0f89cfdff014425ffdcfd42"
     )
 
 
