@@ -4,7 +4,7 @@
     "config:recommended",
     ":enablePreCommit",
     "schedule:monthly",
-    "regexManagers:dockerfileVersions",
+    "customManagers:dockerfileVersions",
     ":semanticCommits",
     ":semanticCommitTypeAll(chore)",
     "helpers:pinGitHubActionDigests",
@@ -13,20 +13,27 @@
   "rebaseWhen": "conflicted",
   "packageRules": [
     {
-      "matchPackageNames": ["shellcheck-py/shellcheck-py"],
+      "matchPackageNames": [
+        "shellcheck-py/shellcheck-py"
+      ],
       "versioning": "loose"
     },
     {
-      "matchPackageNames": ["astral-sh/ruff-pre-commit"],
-      "customChangelogUrl": "https://github.com/astral-sh/ruff"
+      "matchPackageNames": [
+        "astral-sh/ruff-pre-commit"
+      ],
+      "changelogUrl": "https://github.com/astral-sh/ruff"
     },
     {
-      "matchPackageNames": ["psf/black-pre-commit-mirror"],
-      "customChangelogUrl": "https://github.com/psf/black"
+      "matchPackageNames": [
+        "psf/black-pre-commit-mirror"
+      ],
+      "changelogUrl": "https://github.com/psf/black"
     }
   ],
-  "regexManagers": [
+  "customManagers": [
     {
+      "customType": "regex",
       "description": "Update poetry",
       "fileMatch": [
         "^.+\\.yml$",
