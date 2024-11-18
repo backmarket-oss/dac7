@@ -1,9 +1,13 @@
 name: semgrep
+
 on:
   pull_request:
-    branches: [main]
+    branches:
+      - main
   push:
-    branches: [main]
+    branches:
+      - main
+
 jobs:
   static:
     name: Static Check
