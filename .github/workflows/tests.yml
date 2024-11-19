@@ -9,8 +9,10 @@ on:
       - main
   schedule:
       - cron: "0 0 * * 1"
+  workflow_dispatch:
 
 jobs:
+
   tests:
     name: Unit and End-to-End Tests
     runs-on: ubuntu-latest

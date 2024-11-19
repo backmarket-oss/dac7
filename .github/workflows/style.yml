@@ -1,4 +1,4 @@
-name: Style Checks
+name: Style
 
 on:
   pull_request:
@@ -9,8 +9,10 @@ on:
       - main
   schedule:
       - cron: "0 0 * * 1"
+  workflow_dispatch:
 
 jobs:
+
   pre-commit:
     name: Pre-Commit Check
     runs-on: ubuntu-latest
