@@ -1,0 +1,58 @@
+name: pypi
+
+on:
+  push:
+    tags:
+      - '*.*.*'
+      - '!*.*.*rc*'
+
+permissions:
+    contents: read
+
+jobs:
+
+  build:
+    name: Build distribution
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+
+      - name: Install poetry
+        run: pipx install --force poetry==1.8.4
+
+      - uses: actions/setup-python@f677139bbe7f9c59b41e40162b753c062f5d49a3 # v5
+        with:
+          python-version: '3.12'
+          cache: 'poetry'
+
+      - name: Install local project
+        run: make init
+
+      - name: Package project
+        run: poetry build
+
+      - name: Store the distribution
+        uses: actions/upload-artifact@v4
+        with:
+          name: python-package-distributions
+          path: dist/
+
+  publish-to-pypi:
+    name: Publish to PyPI
+    needs:
+    - build
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/p/dac7
+    permissions:
+      id-token: write
+    steps:
+      - name: Download the distribution
+        uses: actions/download-artifact@v4
+        with:
+          name: python-package-distributions
+          path: dist/
+
+      - name: Publish distribution to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1

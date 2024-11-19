@@ -40,7 +40,7 @@
         "^Dockerfile$"
       ],
       "matchStrings": [
-        "pip install( --upgrade)? poetry==(?<currentValue>\\S+?)\\s"
+        "pipx install --force poetry==(?<currentValue>\\S+?)\\s"
       ],
       "depNameTemplate": "poetry",
       "datasourceTemplate": "pypi"

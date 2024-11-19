@@ -1,3 +1,5 @@
+name: Release Please
+
 on:
   push:
     branches:
@@ -7,14 +9,14 @@ permissions:
   contents: write
   pull-requests: write
 
-name: release-please
-
 jobs:
+
   release-please:
+    name: Release PR
     runs-on: ubuntu-latest
     steps:
       - uses: googleapis/release-please-action@7987652d64b4581673a76e33ad5e98e3dd56832f # v4
         with:
           # this is a built-in strategy in release-please, see "Action Inputs"
           # for more options
-          release-type: simple
+          release-type: python
