@@ -1,4 +1,4 @@
-name: pre-commit
+name: Style Checks
 
 on:
   pull_request:
@@ -7,10 +7,12 @@ on:
   push:
     branches:
       - main
+  schedule:
+      - cron: "0 0 * * 1"
 
 jobs:
-  style-check:
-    name: Style Check
+  pre-commit:
+    name: Pre-Commit Check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
@@ -35,3 +37,10 @@ jobs:
 
       - name: Run pre-commit
         run: SKIP=poetry-lock poetry run pre-commit run --show-diff-on-failure --all-files
+
+  broken-links:
+    name: Broken Links Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Markup Link Checker (mlc)
+        uses: becheran/mlc@8f2df530b954bdb8df5aefd01f1beb9e0fe23c22 # v0.18.0
