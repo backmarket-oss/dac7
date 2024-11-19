@@ -1,4 +1,4 @@
-# DAC7 (France only)
+# DAC7 (France 2023)
 
 > [!CAUTION]
 > All content shared in this repository is provided "as is" without any warranty of any kind from its authors.
@@ -33,11 +33,11 @@ poetry run dac7 encrypt -z -E PROD ${filename} > ${filename}.gz.gpg
 This repository is focused on the French version of DAC7, the requirements of
 which have been published by the _Direction générale des Finances publiques_,
 or DGFiP, on May 15, 2024
-([_cahier des charges_ v1.3](http://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/tiers_declarants/cdc_td_bilateral/cdc-dac7-v.1.3.pdf),
-[schema v1.1](http://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/tiers_declarants/cdc_td_bilateral/schema-xsd-de-collecte-dpi-dac7---revenus-2023.zip)
+([_cahier des charges_ v1.3][dgfip-cdc],
+[schema v1.1][dgfip-schema]
 :fr:).
 They differ from the
-[original OECD standard](https://www.oecd.org/tax/exchange-of-tax-information/model-rules-for-reporting-by-platform-operators-with-respect-to-sellers-in-the-sharing-and-gig-economy.htm)
+[original OECD standard][oecd]
 on a couple of points that are small yet enough to break compatibility
 (see below).
 
@@ -54,8 +54,8 @@ This repository contains:
 
 ### Revised XML schema
 
-The [DGFiP specification v1.3](https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/tiers_declarants/cdc_td_bilateral/cdc-dac7-v.1.3.pdf) :fr: is not compatible with the
-[OECD standard v1](https://www.oecd.org/tax/exchange-of-tax-information/model-rules-for-reporting-by-platform-operators-with-respect-to-sellers-in-the-sharing-and-gig-economy.htm)
+The [DGFiP specification v1.3][dgfip-cdc] :fr: is not compatible with the
+[OECD standard v1][oecd]
 on at least the following points:
 
 - The URIs for the XML namespaces `dpi` and `stf` ends with `:v1` in the OECD
@@ -65,10 +65,10 @@ on at least the following points:
 
 For this reason, the French tax authority has provided its own XSD schema.
 Unfortunately, its
-[version v1.1](http://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/tiers_declarants/cdc_td_bilateral/schema-xsd-de-collecte-dpi-dac7---revenus-2023.zip)
+[version v1.1][dgfip-schema]
 :fr:
 does not implement all the requirements stated in the
-[specification document v1.3](https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/tiers_declarants/cdc_td_bilateral/cdc-dac7-v.1.3.pdf) :fr: released at the same time.
+[specification document v1.3][dgfip-cdc] :fr: released at the same time.
 
 For this reason, we provide a revised version of the French schema in the
 [schemas/xml](./schemas/xml) folder that includes the following additional
@@ -84,7 +84,7 @@ checks:
    DAC7, i.e. within the EU
 
 Those schemas are adapted from the schemas included in the DGFiP specification
-documents ([Cahier des charges DPI-DAC7, Revenus 2023, v1.3](https://www.impots.gouv.fr/transfert-dinformations-en-application-des-dispositifs-dpi-dac7-plateformes-deconomie-collaborative),
+documents ([Cahier des charges DPI-DAC7, Revenus 2023, v1.3][dgfip],
 last updated in May 2024, retrieved in May 2024), which are published under the
 [Etalab-2.0 license](./examples/LICENSE.md).
 
@@ -94,7 +94,7 @@ This repository also includes a Python CLI `dac7` that can be used to:
 
 - Encrypt a French DAC7 declaration using the DGFiP keys
 - Get the name an XML declaration should have to match
-  [the naming convention](https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/tiers_declarants/cdc_td_bilateral/nommage_collecte-dpi-dac7.pdf)
+  [the naming convention][dgfip-naming]
   :fr: issued by DGFiP
 - Check the conformity of an XML declaration with both the revised schema and
   the naming convention
@@ -178,7 +178,7 @@ poetry run dac7 validate --help
 ### Get the expected name of an XML declaration file
 
 If you already have a file `declaration.xml`, you can get the name it should have to match
-[the DGFiP naming convention](https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/tiers_declarants/cdc_td_bilateral/nommage_collecte-dpi-dac7.pdf) :fr:
+[the DGFiP naming convention][dgfip-naming] :fr:
 with
 
 ```sh
@@ -240,7 +240,7 @@ poetry run dac7 schemas build --help
 
 In the [examples](./examples) folder, we provide files adapted from the examples
 included in the DGFiP specification documents
-([Cahier des charges DPI-DAC7, Revenus 2023, v1.3](https://www.impots.gouv.fr/transfert-dinformations-en-application-des-dispositifs-dpi-dac7-plateformes-deconomie-collaborative),
+([Cahier des charges DPI-DAC7, Revenus 2023, v1.3][dgfip],
 last updated in May 2024, retrieved in May 2024), which are published under the
 [Etalab-2.0 license](./examples/LICENSE.md).
 
@@ -356,10 +356,16 @@ make schemas
 
 ## Links
 
-- [Original DPI Schema (v1.0)](https://www.oecd.org/tax/exchange-of-tax-information/model-rules-for-reporting-by-platform-operators-with-respect-to-sellers-in-the-sharing-and-gig-economy.htm) published by the OECD
+- [Original DPI Schema (v1.0)][oecd] published by the OECD
 - [Directive 2021/514 of March 22, 2021](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32021L0514) amending [Directive 2011/16 of February 15, 2011 (consolidated)](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02011L0016-20230101)
 - [Regulation 2022/1467 of September 5,  2022](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32022R1467) amending [Regulation 2015/2378 of December 15, 2015 (consolidated)](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02015R2378-20230101), which includes the OECD schema
-- [French specification for DPI-DAC7 data transfer](https://www.impots.gouv.fr/transfert-dinformations-en-application-des-dispositifs-dpi-dac7-plateformes-deconomie-collaborative) :fr: published by DGFiP, which includes
+- [French specification for DPI-DAC7 data transfer][dgfip] :fr: published by DGFiP, which includes
   - a human-readable specification document
   - a schema for the content of the XML file
   - a "naming convention" for the file
+
+[dgfip]: https://www.impots.gouv.fr/transfert-dinformations-en-application-des-dispositifs-dpi-dac7-plateformes-deconomie-collaborative
+[dgfip-cdc]: https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/tiers_declarants/cdc_td_bilateral/cdc-dac7-v.1.3.pdf
+[dgfip-naming]: https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/tiers_declarants/cdc_td_bilateral/nommage_collecte-dpi-dac7.pdf
+[dgfip-schema]: https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/tiers_declarants/cdc_td_bilateral/schema-xsd-de-collecte-dpi-dac7---revenus-2023.zip
+[oecd]: https://www.oecd.org/tax/exchange-of-tax-information/model-rules-for-reporting-by-platform-operators-with-respect-to-sellers-in-the-sharing-and-gig-economy.htm
