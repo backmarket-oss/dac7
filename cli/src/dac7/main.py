@@ -499,7 +499,7 @@ def show_individual_sellers_schema():
 
 
 def get_timestamp() -> datetime:
-    return datetime.now(UTC)
+    return datetime.now(UTC).replace(tzinfo=None)
 
 
 def load_json(path: Optional[Path], default: Any) -> Any:
