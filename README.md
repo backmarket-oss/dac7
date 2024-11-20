@@ -1,4 +1,4 @@
-# DAC7 (France 2023)
+# DAC7 (France report for 2024 earnings)
 
 > [!CAUTION]
 > All content shared in this repository is provided "as is" without any warranty of any kind from its authors.
@@ -32,8 +32,7 @@ poetry run dac7 encrypt -z -E PROD ${filename} > ${filename}.gz.gpg
 
 This repository is focused on the French version of DAC7, the requirements of
 which have been published by the _Direction générale des Finances publiques_,
-or DGFiP, on May 15, 2024
-([_cahier des charges_ v1.3][dgfip-cdc],
+or DGFiP, on October 24, 2024 ([_cahier des charges_ v1.4][dgfip-cdc],
 [schema v1.1][dgfip-schema]
 :fr:).
 They differ from the
@@ -54,7 +53,7 @@ This repository contains:
 
 ### Revised XML schema
 
-The [DGFiP specification v1.3][dgfip-cdc] :fr: is not compatible with the
+The [DGFiP specification][dgfip-cdc] :fr: is not compatible with the
 [OECD standard v1][oecd]
 on at least the following points:
 
@@ -68,7 +67,7 @@ Unfortunately, its
 [version v1.1][dgfip-schema]
 :fr:
 does not implement all the requirements stated in the
-[specification document v1.3][dgfip-cdc] :fr: released at the same time.
+[specification document][dgfip-cdc] :fr: released at the same time.
 
 For this reason, we provide a revised version of the French schema in the
 [schemas/xml](./schemas/xml) folder that includes the following additional
@@ -84,8 +83,7 @@ checks:
    DAC7, i.e. within the EU
 
 Those schemas are adapted from the schemas included in the DGFiP specification
-documents ([Cahier des charges DPI-DAC7, Revenus 2023, v1.3][dgfip],
-last updated in May 2024, retrieved in May 2024), which are published under the
+documents ([_Cahier des charges DPI-DAC7_][dgfip-cdc]), which are published under the
 [Etalab-2.0 license](./examples/LICENSE.md).
 
 ### Python CLI
@@ -121,9 +119,8 @@ To run the `dac7` CLI, you need:
 It may work with other versions, maybe. Don't hesitate to open a PR to update
 the documentation and/or the code!
 
-Once you have cloned the repository, you can use
-[Poetry](https://python-poetry.org/) to create a virtual environment and
-install the project in it with all its dependencies:
+Once you have cloned the repository, you can use [Poetry](https://python-poetry.org/) to create a virtual environment
+and install the project in it with all its dependencies:
 
 ```sh
 poetry install
@@ -140,8 +137,8 @@ poetry run dac7 --help
 > [!NOTE]
 > You need GnuPG to be installed on your system to be able to encrypt the file
 
-The DGFiP test and prod platforms expect a compressed-then-encrypted file,
-using the corresponding test and prod encryption keys.
+The DGFiP test and prod platforms expect a compressed-then-encrypted file, using the corresponding test and prod
+encryption keys.
 
 The `encrypt` command can do both in one go:
 
@@ -240,8 +237,7 @@ poetry run dac7 schemas build --help
 
 In the [examples](./examples) folder, we provide files adapted from the examples
 included in the DGFiP specification documents
-([Cahier des charges DPI-DAC7, Revenus 2023, v1.3][dgfip],
-last updated in May 2024, retrieved in May 2024), which are published under the
+([_Cahier des charges DPI-DAC7_][dgfip-cdc]), which are published under the
 [Etalab-2.0 license](./examples/LICENSE.md).
 
 #### 1. Entity and individual sellers for immovable properties
@@ -365,7 +361,7 @@ make schemas
   - a "naming convention" for the file
 
 [dgfip]: https://www.impots.gouv.fr/transfert-dinformations-en-application-des-dispositifs-dpi-dac7-plateformes-deconomie-collaborative
-[dgfip-cdc]: https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/tiers_declarants/cdc_td_bilateral/cdc-dac7-v.1.3.pdf
+[dgfip-cdc]: https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/tiers_declarants/cdc_td_bilateral/cdc-dac7-v.1.4.pdf
 [dgfip-naming]: https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/tiers_declarants/cdc_td_bilateral/nommage_collecte-dpi-dac7.pdf
-[dgfip-schema]: https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/tiers_declarants/cdc_td_bilateral/schema-xsd-de-collecte-dpi-dac7---revenus-2023.zip
+[dgfip-schema]: https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/tiers_declarants/cdc_td_bilateral/schema-xsd-de-collecte-dpi-dac7---revenus-2024.zip
 [oecd]: https://www.oecd.org/tax/exchange-of-tax-information/model-rules-for-reporting-by-platform-operators-with-respect-to-sellers-in-the-sharing-and-gig-economy.htm
