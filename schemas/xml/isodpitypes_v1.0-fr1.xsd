@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Based on a schema published by the Direction Générale des Finances Public
+Based on a schema published by the Direction Générale des Finances Publiques
 https://www.impots.gouv.fr/transfert-dinformations-en-application-des-dispositifs-dpi-dac7-plateformes-deconomie-collaborative
-Last updated in November 2023, retrieved in November 2023
+Last updated in Avril 2023, retrieved in November 2024
 
 SPDX-License-Identifier: etalab-2.0
 -->
@@ -1284,11 +1284,11 @@ SPDX-License-Identifier: etalab-2.0
     legal status of the territories listed. Its content is without prejudice to the status of or
     sovereignty over any territory, to the delimitation of international frontiers and boundaries
     and to the name of any territory, city or area.
-     -->
+    -->
     <xsd:simpleType name="currCode_Type">
         <xsd:annotation>
             <xsd:documentation xml:lang="en"> The appropriate currency code from the ISO 4217
-                three-byte alpha version for the currency in which a monetary amount is expressed.</xsd:documentation>
+                three-byte alpha version for the currency in which a monetary amount is expressed. </xsd:documentation>
         </xsd:annotation>
         <xsd:restriction base="xsd:string">
             <xsd:enumeration value="AED">
@@ -1331,7 +1331,7 @@ SPDX-License-Identifier: etalab-2.0
                 <xsd:annotation>
                     <xsd:documentation>Australian Dollar: AUSTRALIA; CHRISTMAS ISLAND; COCOS
                         (KEELING) ISLANDS; HEARD ISLAND AND McDONALD ISLANDS; KIRIBATI; NAURU;
-                        NORFOLK ISLAND; TUVALU</xsd:documentation>
+                        NORFOLK ISLAND; TUVALU </xsd:documentation>
                 </xsd:annotation>
             </xsd:enumeration>
             <xsd:enumeration value="AWG">
@@ -1547,7 +1547,7 @@ SPDX-License-Identifier: etalab-2.0
                         IRELAND; ITALY; LATVIA; LITHUANIA; LUXEMBOURG; MALTA; MARTINIQUE; MAYOTTE;
                         MONACO; MONTENEGRO; NETHERLANDS; PORTUGAL; REUNION; SAINT BARTHELEMY; SAINT
                         MARTIN (FRENCH PART); SAINT PIERRE AND MIQUELON; SAN MARINO; SLOVAKIA;
-                        SLOVENIA; SPAIN; Vatican City State (HOLY SEE)</xsd:documentation>
+                        SLOVENIA; SPAIN; Vatican City State (HOLY SEE) </xsd:documentation>
                 </xsd:annotation>
             </xsd:enumeration>
             <xsd:enumeration value="FJD">
@@ -1563,7 +1563,7 @@ SPDX-License-Identifier: etalab-2.0
             <xsd:enumeration value="GBP">
                 <xsd:annotation>
                     <xsd:documentation>Pound Sterling: GUERNSEY; ISLE OF MAN; JERSEY; UNITED KINGDOM
-                        OF GREAT BRITAIN AND NORTHERN IRELAND</xsd:documentation>
+                        OF GREAT BRITAIN AND NORTHERN IRELAND </xsd:documentation>
                 </xsd:annotation>
             </xsd:enumeration>
             <xsd:enumeration value="GEL">
@@ -2076,7 +2076,7 @@ SPDX-License-Identifier: etalab-2.0
                         ISLANDS; MICRONESIA, FEDERATED STATES OF; NORTHERN MARIANA ISLANDS; PALAU;
                         PANAMA; PUERTO RICO; TIMOR-LESTE; TURKS AND CAICOS ISLANDS; UNITED STATES;
                         UNITED STATES MINOR OUTLYING ISLANDS; VIRGIN ISLANDS (BRITISH); VIRGIN
-                        ISLANDS (US)</xsd:documentation>
+                        ISLANDS (US) </xsd:documentation>
                 </xsd:annotation>
             </xsd:enumeration>
             <xsd:enumeration value="USN">
@@ -2137,7 +2137,7 @@ SPDX-License-Identifier: etalab-2.0
             <xsd:enumeration value="XAF">
                 <xsd:annotation>
                     <xsd:documentation>CFA Franc BEAC: CAMEROON; CENTRAL AFRICAN REPUBLIC; CHAD;
-                        CONGO; EQUATORIAL GUINEA; GABON</xsd:documentation>
+                        CONGO; EQUATORIAL GUINEA; GABON </xsd:documentation>
                 </xsd:annotation>
             </xsd:enumeration>
             <xsd:enumeration value="XAG">
@@ -2153,32 +2153,32 @@ SPDX-License-Identifier: etalab-2.0
             <xsd:enumeration value="XBA">
                 <xsd:annotation>
                     <xsd:documentation>Bond Markets Unit European Composite Unit (EURCO): ZZ01_Bond
-                        Markets Unit European_EURCO</xsd:documentation>
+                        Markets Unit European_EURCO </xsd:documentation>
                 </xsd:annotation>
             </xsd:enumeration>
             <xsd:enumeration value="XBB">
                 <xsd:annotation>
                     <xsd:documentation>Bond Markets Unit European Monetary Unit (E.M.U.-6):
-                        ZZ02_Bond Markets Unit European_EMU-6</xsd:documentation>
+                        ZZ02_Bond Markets Unit European_EMU-6 </xsd:documentation>
                 </xsd:annotation>
             </xsd:enumeration>
             <xsd:enumeration value="XBC">
                 <xsd:annotation>
                     <xsd:documentation>Bond Markets Unit European Unit of Account 9 (E.U.A.-9):
-                        ZZ03_Bond Markets Unit European_EUA-9</xsd:documentation>
+                        ZZ03_Bond Markets Unit European_EUA-9 </xsd:documentation>
                 </xsd:annotation>
             </xsd:enumeration>
             <xsd:enumeration value="XBD">
                 <xsd:annotation>
                     <xsd:documentation>Bond Markets Unit European Unit of Account 17 (E.U.A.-17):
-                        ZZ04_Bond Markets Unit European_EUA-17</xsd:documentation>
+                        ZZ04_Bond Markets Unit European_EUA-17 </xsd:documentation>
                 </xsd:annotation>
             </xsd:enumeration>
             <xsd:enumeration value="XCD">
                 <xsd:annotation>
                     <xsd:documentation>East Caribbean Dollar: ANGUILLA; ANTIGUA AND BARBUDA;
                         DOMINICA; GRENADA; MONTSERRAT; SAINT KITTS AND NEVIS; SAINT LUCIA; SAINT
-                        VINCENT AND THE GRENADINES</xsd:documentation>
+                        VINCENT AND THE GRENADINES </xsd:documentation>
                 </xsd:annotation>
             </xsd:enumeration>
             <xsd:enumeration value="XDR">
@@ -2195,7 +2195,7 @@ SPDX-License-Identifier: etalab-2.0
             <xsd:enumeration value="XOF">
                 <xsd:annotation>
                     <xsd:documentation>CFA Franc BCEAO: BENIN; BURKINA FASO; COTE D'IVOIRE;
-                        GUINEA-BISSAU; MALI; NIGER; SENEGAL; TOGO</xsd:documentation>
+                        GUINEA-BISSAU; MALI; NIGER; SENEGAL; TOGO </xsd:documentation>
                 </xsd:annotation>
             </xsd:enumeration>
             <xsd:enumeration value="XPD">
@@ -2228,7 +2228,7 @@ SPDX-License-Identifier: etalab-2.0
             <xsd:enumeration value="XXX">
                 <xsd:annotation>
                     <xsd:documentation>The codes assigned for transactions where no currency is
-                        involved: ZZ07_No_Currency</xsd:documentation>
+                        involved: ZZ07_No_Currency </xsd:documentation>
                 </xsd:annotation>
             </xsd:enumeration>
             <xsd:enumeration value="YER">
