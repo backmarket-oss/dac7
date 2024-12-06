@@ -4,10 +4,10 @@
         <dpi:TransmittingCountry>FR</dpi:TransmittingCountry>
         <dpi:ReceivingCountry>FR</dpi:ReceivingCountry>
         <dpi:MessageType>DPI</dpi:MessageType>
-        <dpi:MessageRefId>OP_2023_123456789_d1</dpi:MessageRefId>
+        <dpi:MessageRefId>OP_2024_123456789_d1</dpi:MessageRefId>
         <dpi:MessageTypeIndic>DPI401</dpi:MessageTypeIndic>
-        <dpi:ReportingPeriod>2023-12-31</dpi:ReportingPeriod>
-        <dpi:Timestamp>2024-01-28T08:12:00.003</dpi:Timestamp>
+        <dpi:ReportingPeriod>2024-12-31</dpi:ReportingPeriod>
+        <dpi:Timestamp>2025-01-28T08:12:00.003</dpi:Timestamp>
     </dpi:MessageSpec>
     <dpi:DPIBody>
         <dpi:PlatformOperator>
@@ -30,8 +30,8 @@
             <dpi:AssumedReporting>false</dpi:AssumedReporting>
             <dpi:DocSpec>
                 <stf:DocTypeIndic>OECD2</stf:DocTypeIndic>
-                <stf:DocRefId>OP_2023_123456789_v2</stf:DocRefId>
-                <stf:CorrDocRefId>OP_2023_123456789_v1</stf:CorrDocRefId>
+                <stf:DocRefId>OP_2024_123456789_v2</stf:DocRefId>
+                <stf:CorrDocRefId>OP_2024_123456789_v1</stf:CorrDocRefId>
             </dpi:DocSpec>
         </dpi:PlatformOperator>
         <dpi:ReportableSeller>
@@ -158,8 +158,8 @@
             </dpi:RelevantActivities>
             <dpi:DocSpec>
                 <stf:DocTypeIndic>OECD2</stf:DocTypeIndic>
-                <stf:DocRefId>OP_2023_123456789_97d7e524-163f-4bed-b551-67b7b3b8e140_v2</stf:DocRefId>
-                <stf:CorrDocRefId>OP_2023_123456789_97d7e524-163f-4bed-b551-67b7b3b8e140_v1</stf:CorrDocRefId>
+                <stf:DocRefId>OP_2024_123456789_97d7e524-163f-4bed-b551-67b7b3b8e140_v2</stf:DocRefId>
+                <stf:CorrDocRefId>OP_2024_123456789_97d7e524-163f-4bed-b551-67b7b3b8e140_v1</stf:CorrDocRefId>
             </dpi:DocSpec>
         </dpi:ReportableSeller>
     </dpi:DPIBody>

@@ -30,12 +30,12 @@ test-unit: schemas-xsd  ## Launch unit tests
 
 .PHONY: test-e2e
 test-e2e: prepare-test-env  ## Launch end-to-end tests
-	$(MAKE) test-e2e-case CASE=1_initial_immovable_properties TIMESTAMP=2024-01-31T12:05:56.084
-	$(MAKE) test-e2e-case CASE=2_initial_sale_of_goods TIMESTAMP=2024-01-25T12:55:02.003
-	$(MAKE) test-e2e-case CASE=3_additional TIMESTAMP=2024-01-25T14:17:22.241
-	$(MAKE) test-e2e-case CASE=4_corrective TIMESTAMP=2024-01-28T08:12:00.003
-	$(MAKE) test-e2e-case CASE=5_initial_assuming TIMESTAMP=2024-01-30T21:48:22.209
-	$(MAKE) test-e2e-case CASE=6_initial_assumed TIMESTAMP=2024-01-16T11:22:59.456
+	$(MAKE) test-e2e-case CASE=1_initial_immovable_properties TIMESTAMP=2025-01-31T12:05:56.084
+	$(MAKE) test-e2e-case CASE=2_initial_sale_of_goods TIMESTAMP=2025-01-25T12:55:02.003
+	$(MAKE) test-e2e-case CASE=3_additional TIMESTAMP=2025-01-25T14:17:22.241
+	$(MAKE) test-e2e-case CASE=4_corrective TIMESTAMP=2025-01-28T08:12:00.003
+	$(MAKE) test-e2e-case CASE=5_initial_assuming TIMESTAMP=2025-01-30T21:48:22.209
+	$(MAKE) test-e2e-case CASE=6_initial_assumed TIMESTAMP=2025-01-16T11:22:59.456
 
 
 .PHONY: test-e2e-case

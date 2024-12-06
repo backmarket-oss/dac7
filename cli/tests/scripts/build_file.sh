@@ -10,7 +10,7 @@ TEMP_FILENAME="${OUTPUT_DIR}/.declaration.xml"
 "${DAC7}" build \
     --env="${ENV}" \
     --declaration-id=1 \
-    --fiscal-year=2023 \
+    --fiscal-year=2024 \
     ${TIMESTAMP:+"--timestamp=${TIMESTAMP}"} \
     --platform-operator="${PLATFORM_JSON}" \
     ${OTHERS_JSON:+"--other-platform-operators=${OTHERS_JSON}"} \
@@ -32,4 +32,4 @@ mv "${TEMP_FILENAME}" "${FINAL_FILENAME}"
 
 # Compress and encrypt
 
-"${DAC7}" encrypt -z --env="${ENV}" "${FINAL_FILENAME}" > "${FINAL_FILENAME}.gz.gpg"
+# "${DAC7}" encrypt -z --env="${ENV}" "${FINAL_FILENAME}" > "${FINAL_FILENAME}.gz.gpg"
