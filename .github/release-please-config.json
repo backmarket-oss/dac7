@@ -2,6 +2,5 @@
     "release-type": "python",
     "skip-github-release": true,
     "include-v-in-tag": false,
-    "include-component-in-tag": false,
     "always-update": true
 }
