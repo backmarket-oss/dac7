@@ -32,4 +32,4 @@ mv "${TEMP_FILENAME}" "${FINAL_FILENAME}"
 
 # Compress and encrypt
 
-"${DAC7}" encrypt -z --env="${ENV}" "${FINAL_FILENAME}" > "${FINAL_FILENAME}.gz.gpg"
+# "${DAC7}" encrypt -z --env="${ENV}" "${FINAL_FILENAME}" > "${FINAL_FILENAME}.gz.gpg"
