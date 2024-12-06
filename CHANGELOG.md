@@ -1,5 +1,18 @@
 # Changelog
 
+## [2024.1.0](https://github.com/backmarket-oss/dac7/compare/2024.0.0...2024.1.0) (2024-12-06)
+
+
+### Features
+
+* French Specifications v1.4 ([#28](https://github.com/backmarket-oss/dac7/issues/28)) ([2c9eba4](https://github.com/backmarket-oss/dac7/commit/2c9eba4556d3991161dc03bc1720803196baf0f5))
+
+
+### Bug Fixes
+
+* Fix release-please config ([#31](https://github.com/backmarket-oss/dac7/issues/31)) ([b21614a](https://github.com/backmarket-oss/dac7/commit/b21614a23c14ae8a1fcf7e09263cc47011449b6d))
+* Fix release-please config ([#32](https://github.com/backmarket-oss/dac7/issues/32)) ([936fb49](https://github.com/backmarket-oss/dac7/commit/936fb49abf4a9298b609a34f54332050d0450503))
+
 ## 2024.0.0 (2024-11-19)
 
 First version for the 2024 report, containing 2023 data.
