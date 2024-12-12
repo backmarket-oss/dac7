@@ -1,5 +1,12 @@
 # Changelog
 
+## [2024.2.0](https://github.com/backmarket-oss/dac7/compare/2024.1.0...2024.2.0) (2024-12-12)
+
+
+### Features
+
+* Allow Python 3.11 ([#35](https://github.com/backmarket-oss/dac7/issues/35)) ([6dc0b31](https://github.com/backmarket-oss/dac7/commit/6dc0b316c88e1648b9270ed0a816766d55ac52ac))
+
 ## [2024.1.0](https://github.com/backmarket-oss/dac7/compare/2024.0.0...2024.1.0) (2024-12-06)
 
 
