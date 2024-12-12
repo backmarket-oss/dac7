@@ -18,7 +18,7 @@ include = [
 dac7 = "dac7.main:app"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = ">=3.11,<3.13"
 typer = "^0.15.0"
 xmlschema = "^3.0.0"
 pydantic = "^2.5.2"
@@ -72,7 +72,7 @@ files = ["dac7"]
 mypy_path = ["cli/src", "cli/stubs"]
 explicit_package_bases = true
 no_implicit_optional = true
-python_version = "3.12"
+python_version = "3.11"
 warn_redundant_casts = true
 warn_return_any = true
 warn_unused_configs = true

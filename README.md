@@ -10,7 +10,7 @@
 poetry install
 
 # Build a XML declaration from dedicated JSON files
-poetry run dac7 build -E PROD -f XML \
+dac7 build -E PROD -f XML \
                       -p platform_operator.json \
                       -o other_platform_operators.json \
                       -e entity_sellers.json \
@@ -18,14 +18,14 @@ poetry run dac7 build -E PROD -f XML \
                       > declaration.xml
 
 # Rename the file according to the specification
-filename=$(poetry run dac7 name declaration.xml)
+filename=$(dac7 name declaration.xml)
 mv declaration.xml ${filename}
 
 # Validate a XML declaration, both name and content
-poetry run dac7 validate ${filename}
+dac7 validate ${filename}
 
 # Compress and encrypt. Require GnuPG to be installed
-poetry run dac7 encrypt -z -E PROD ${filename} > ${filename}.gz.gpg
+dac7 encrypt -z -E PROD ${filename} > ${filename}.gz.gpg
 ```
 
 ## Contents of the repository
@@ -112,24 +112,20 @@ The corresponding JSON schemas are included in the
 
 To run the `dac7` CLI, you need:
 
-- Python 3.12
-- Poetry 1.8.3
+- Python 3.11 or 3.12
 - GnuPG, if you want to encrypt the declaration file
 
 It may work with other versions, maybe. Don't hesitate to open a PR to update
 the documentation and/or the code!
 
-Once you have cloned the repository, you can use [Poetry](https://python-poetry.org/) to create a virtual environment
-and install the project in it with all its dependencies:
-
 ```sh
-poetry install
+pipx install dac7
 ```
 
 Then you can explore all the available `dac7` commands with
 
 ```sh
-poetry run dac7 --help
+dac7 --help
 ```
 
 ### Compress and encrypt an XML declaration
@@ -143,19 +139,19 @@ encryption keys.
 The `encrypt` command can do both in one go:
 
 ```sh
-poetry run dac7 encrypt -z -E PROD declaration.xml > declaration.xml.gz.gpg
+dac7 encrypt -z -E PROD declaration.xml > declaration.xml.gz.gpg
 ```
 
 Or, for a test file,
 
 ```sh
-poetry run dac7 encrypt -z -E TEST declaration.xml > declaration.xml.gz.gpg
+dac7 encrypt -z -E TEST declaration.xml > declaration.xml.gz.gpg
 ```
 
 To get more help,
 
 ```sh
-poetry run dac7 encrypt --help
+dac7 encrypt --help
 ```
 
 ### Validate an XML declaration
@@ -163,13 +159,13 @@ poetry run dac7 encrypt --help
 To check both the content of the file and its name,
 
 ```sh
-poetry run dac7 validate declaration.xml
+dac7 validate declaration.xml
 ```
 
 To get more help,
 
 ```sh
-poetry run dac7 validate --help
+dac7 validate --help
 ```
 
 ### Get the expected name of an XML declaration file
@@ -179,7 +175,7 @@ If you already have a file `declaration.xml`, you can get the name it should hav
 with
 
 ```sh
-poetry run dac7 name declaration.xml
+dac7 name declaration.xml
 ```
 
 ### Build an XML declaration from dedicated flat JSON files
@@ -201,7 +197,7 @@ We propose to split those elements between different flat JSON files,
 and then assemble them together to produce the expected XML file:
 
 ```sh
-poetry run dac7 build -E PROD -f XML \
+dac7 build -E PROD -f XML \
                       -p platform_operator.json \
                       [-o other_platform_operators.json] \
                       [-e entity_sellers.json] \
@@ -224,13 +220,13 @@ when using `dac7 build`:
 To get more help,
 
 ```sh
-poetry run dac7 build --help
+dac7 build --help
 ```
 
 To get the JSON schemas for each of the input files,
 
 ```sh
-poetry run dac7 schemas build --help
+dac7 schemas build --help
 ```
 
 ### Examples
@@ -249,7 +245,7 @@ seller, both for immovable properties.
 You can rebuild the XML declaration with
 
 ```sh
-poetry run dac7 build -E PROD \
+dac7 build -E PROD \
    -p examples/1_initial_immovable_properties/input/platform_operator.json \
    -e examples/1_initial_immovable_properties/input/entity_sellers.json \
    -i examples/1_initial_immovable_properties/input/individual_sellers.json \
@@ -265,7 +261,7 @@ the sale of goods.
 You can rebuild the XML declaration with
 
 ```sh
-poetry run dac7 build -E PROD \
+dac7 build -E PROD \
    -p examples/2_initial_sale_of_goods/input/platform_operator.json \
    -e examples/2_initial_sale_of_goods/input/entity_sellers.json \
    -i examples/2_initial_sale_of_goods/input/individual_sellers.json \
@@ -280,7 +276,7 @@ individual seller that was missing from the initial declaration.
 You can rebuild the XML declaration with
 
 ```sh
-poetry run dac7 build -E PROD \
+dac7 build -E PROD \
    -p examples/3_additional/input/platform_operator.json \
    -i examples/3_additional/input/individual_sellers.json \
    > declaration.xml
@@ -294,7 +290,7 @@ platform operator and one individual seller.
 You can rebuild the XML declaration with
 
 ```sh
-poetry run dac7 build -E PROD \
+dac7 build -E PROD \
    -p examples/4_corrective/input/platform_operator.json \
    -i examples/4_corrective/input/individual_sellers.json \
    > declaration.xml
@@ -309,7 +305,7 @@ another operator.
 You can rebuild the XML declaration with
 
 ```sh
-poetry run dac7 build -E PROD \
+dac7 build -E PROD \
    -p examples/5_initial_assuming/input/platform_operator.json \
    -o examples/5_initial_assuming/input/other_platform_operators.json \
    -i examples/5_initial_assuming/input/individual_sellers.json \
@@ -324,7 +320,7 @@ platform operator whose declaration is assumed by another operator.
 You can rebuild the XML declaration with
 
 ```sh
-poetry run dac7 build -E PROD \
+dac7 build -E PROD \
    -p examples/6_initial_assumed/input/platform_operator.json \
    -o examples/6_initial_assumed/input/other_platform_operators.json \
    > declaration.xml
