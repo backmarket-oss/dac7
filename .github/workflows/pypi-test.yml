@@ -27,8 +27,11 @@ jobs:
       - name: Install local project
         run: make init
 
+      - name: Show poetry config
+        run: cat /home/runner/.config/pypoetry/config.toml
+
       - name: Package project
-        run: poetry build
+        run: poetry build -vvv
 
       - name: Store the distribution
         uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4
