@@ -1,5 +1,12 @@
 # Changelog
 
+## [2024.2.1](https://github.com/backmarket-oss/dac7/compare/2024.2.0...2024.2.1) (2024-12-13)
+
+
+### Bug Fixes
+
+* Missing static files ([#39](https://github.com/backmarket-oss/dac7/issues/39)) ([95e1f32](https://github.com/backmarket-oss/dac7/commit/95e1f32349bed6a2a859fc13be5ec509ccefc9a5))
+
 ## [2024.2.0](https://github.com/backmarket-oss/dac7/compare/2024.1.0...2024.2.0) (2024-12-12)
 
 
