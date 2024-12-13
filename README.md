@@ -112,7 +112,7 @@ The corresponding JSON schemas are included in the
 
 To run the `dac7` CLI, you need:
 
-- Python 3.11 or 3.12
+- Python 3.11 or 3.12 or 3.13
 - GnuPG, if you want to encrypt the declaration file
 
 It may work with other versions, maybe. Don't hesitate to open a PR to update

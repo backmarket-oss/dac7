@@ -18,7 +18,7 @@ include = [
 dac7 = "dac7.main:app"
 
 [tool.poetry.dependencies]
-python = ">=3.11,<3.13"
+python = ">=3.11,<3.14"
 typer = "^0.15.0"
 xmlschema = "^3.0.0"
 pydantic = "^2.5.2"
