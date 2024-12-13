@@ -1,5 +1,14 @@
 # Changelog
 
+## [2024.2.2](https://github.com/backmarket-oss/dac7/compare/2024.2.1...2024.2.2) (2024-12-13)
+
+
+### Bug Fixes
+
+* Allow python 3.13 ([#43](https://github.com/backmarket-oss/dac7/issues/43)) ([902e382](https://github.com/backmarket-oss/dac7/commit/902e3820c4e20be69b7c11a857568694fd4464b6))
+* Allow requests ([cbafa06](https://github.com/backmarket-oss/dac7/commit/cbafa06075463ac134c6539d3186a9816f967c55))
+* Allow requests 2.31 ([#41](https://github.com/backmarket-oss/dac7/issues/41)) ([cbafa06](https://github.com/backmarket-oss/dac7/commit/cbafa06075463ac134c6539d3186a9816f967c55))
+
 ## [2024.2.1](https://github.com/backmarket-oss/dac7/compare/2024.2.0...2024.2.1) (2024-12-13)
 
 
