@@ -31,6 +31,10 @@
       "changelogUrl": "https://github.com/psf/black"
     }
   ],
+  "ignoreDeps": [
+    "python",
+    "requests"
+  ],
   "customManagers": [
     {
       "customType": "regex",
