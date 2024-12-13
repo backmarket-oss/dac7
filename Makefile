@@ -18,6 +18,12 @@ init:  ## Bootstrap for local development
 	poetry install
 	poetry run pre-commit install
 
+# Build
+
+.PHONY: build
+build: init schemas  # Build package
+	rm -rf dist
+	poetry build -vvv
 
 # Tests
 
@@ -25,7 +31,7 @@ init:  ## Bootstrap for local development
 test: init test-unit test-e2e  ## Launch all the test tasks (unit, end-to-end)
 
 .PHONY: test-unit
-test-unit: schemas-xsd  ## Launch unit tests
+test-unit: build ## Launch unit tests
 	poetry run pytest --cov $(PYTEST_ARGS)
 
 .PHONY: test-e2e
@@ -55,10 +61,9 @@ test-e2e-case:
 
 
 .PHONY: prepare-test-env
-prepare-test-env: schemas-xsd
+prepare-test-env: build
 	@echo -e "$(YELLOW)Preparting tests$(NO_COLOR)"
-	rm -rf $(TEST_ENV_DIR) dist
-	poetry build
+	rm -rf $(TEST_ENV_DIR)
 	poetry run virtualenv $(TEST_ENV_DIR)
 	$(TEST_ENV_DIR)/bin/pip install dist/*.whl
 	rm -rf $(TEST_OUTPUT_DIR)
@@ -79,11 +84,11 @@ cli/src/dac7/schemas/%.xsd: schemas/xml/%.xsd
 
 .PHONY: schemas-json
 schemas-json:
-	$(DAC7_CMD) schemas json2xml > schemas/json/DPIXML_v1.1-fr1.json
-	$(DAC7_CMD) schemas build platform-operator > schemas/json/partial/platform_operator.json
-	$(DAC7_CMD) schemas build other-platform-operators > schemas/json/partial/other_platform_operators.json
-	$(DAC7_CMD) schemas build entity-sellers > schemas/json/partial/entity_sellers.json
-	$(DAC7_CMD) schemas build individual-sellers > schemas/json/partial/individual_sellers.json
+	poetry run dac7 schemas json2xml > schemas/json/DPIXML_v1.1-fr1.json
+	poetry run dac7 schemas build platform-operator > schemas/json/partial/platform_operator.json
+	poetry run dac7 schemas build other-platform-operators > schemas/json/partial/other_platform_operators.json
+	poetry run dac7 schemas build entity-sellers > schemas/json/partial/entity_sellers.json
+	poetry run dac7 schemas build individual-sellers > schemas/json/partial/individual_sellers.json
 
 # Implements this pattern for autodocumenting Makefiles:
 # https://marmelab.com/blog/2016/02/29/auto-documented-makefile.html

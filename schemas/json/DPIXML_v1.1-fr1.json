@@ -990,25 +990,16 @@
             "properties": {
                 "dpi:TransmittingCountry": {
                     "const": "FR",
-                    "enum": [
-                        "FR"
-                    ],
                     "title": "Dpi:Transmittingcountry",
                     "type": "string"
                 },
                 "dpi:ReceivingCountry": {
                     "const": "FR",
-                    "enum": [
-                        "FR"
-                    ],
                     "title": "Dpi:Receivingcountry",
                     "type": "string"
                 },
                 "dpi:MessageType": {
                     "const": "DPI",
-                    "enum": [
-                        "DPI"
-                    ],
                     "title": "Dpi:Messagetype",
                     "type": "string"
                 },
@@ -1693,25 +1684,16 @@
     "properties": {
         "@xmlns:dpi": {
             "const": "urn:oecd:ties:dpi",
-            "enum": [
-                "urn:oecd:ties:dpi"
-            ],
             "title": "@Xmlns:Dpi",
             "type": "string"
         },
         "@xmlns:stf": {
             "const": "urn:oecd:ties:dpistf",
-            "enum": [
-                "urn:oecd:ties:dpistf"
-            ],
             "title": "@Xmlns:Stf",
             "type": "string"
         },
         "@version": {
             "const": "1.0",
-            "enum": [
-                "1.0"
-            ],
             "title": "@Version",
             "type": "string"
         },
