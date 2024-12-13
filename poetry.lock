@@ -1060,4 +1060,4 @@ docs = ["Sphinx", "elementpath (>=4.4.0,<5.0.0)", "jinja2", "sphinx-rtd-theme"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.11,<3.13"
-content-hash = "b91466328a1d6fa7adb4ca8e8a15415b55d1323f2bcb27d9c3f5d2292b3aee0c"
+content-hash = "a20e2ae0edc0ab044bd1fd7d4e7f758f06a41515dc97d92b5835365a747cde55"
