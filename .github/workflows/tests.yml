@@ -30,9 +30,6 @@ jobs:
           python-version: ${{ matrix.pyversion }}
           cache: 'poetry'
 
-      - name: Install local project
-        run: make init
-
       - name: Unit tests
         run: make test-unit
 
