@@ -119,7 +119,7 @@ def load_json(path: Optional[Path], default: Any) -> Any:
     return json.loads(path.read_text())
 
 
-def json_to_xml(json_data: str, schema_path: Path) -> str:
+def json_to_xml(json_data: str, schema_path: Path = DAC7_SCHEMA) -> str:
     xml_schema = xmlschema.XMLSchema10(schema_path)
 
     xml_data = xmlschema.from_json(json_data, schema=xml_schema, converter=xmlschema.UnorderedConverter)
