@@ -1,5 +1,17 @@
 # Changelog
 
+## [2024.3.0](https://github.com/backmarket-oss/dac7/compare/2024.2.2...2024.3.0) (2024-12-30)
+
+
+### Features
+
+* Move logic to core module ([#45](https://github.com/backmarket-oss/dac7/issues/45)) ([5a5d4de](https://github.com/backmarket-oss/dac7/commit/5a5d4de35f9a22bda5b68d1fe828bbee82c264f6))
+
+
+### Bug Fixes
+
+* release ([#47](https://github.com/backmarket-oss/dac7/issues/47)) ([e9e109b](https://github.com/backmarket-oss/dac7/commit/e9e109b5f83ebfdd6a9e9a4fbdf886523e28610f))
+
 ## [2024.2.2](https://github.com/backmarket-oss/dac7/compare/2024.2.1...2024.2.2) (2024-12-13)
 
 
