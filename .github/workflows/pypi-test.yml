@@ -10,9 +10,14 @@ permissions:
 
 jobs:
 
-  build:
-    name: Build distribution
+  publish-to-testpypi:
+    name: Publish to TestPyPI
     runs-on: ubuntu-latest
+    environment:
+      name: testpypi
+      url: https://test.pypi.org/p/dac7
+    permissions:
+      id-token: write
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
 
@@ -26,31 +31,6 @@ jobs:
 
       - name: Package project
         run: make build
-
-      - name: Store the distribution
-        uses: actions/upload-artifact@6f51ac03b9356f520e9adb1b1b7802705f340c2b # v4
-        with:
-          name: test-python-package-distributions
-          path: dist/
-
-  publish-to-testpypi:
-    name: Publish to TestPyPI
-    needs:
-    - build
-    runs-on: ubuntu-latest
-    environment:
-      name: testpypi
-      url: https://test.pypi.org/p/dac7
-
-    permissions:
-      id-token: write
-
-    steps:
-      - name: Download the distribution
-        uses: actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16 # v4
-        with:
-          name: test-python-package-distributions
-          path: dist/
 
       - name: Publish distribution to TestPyPI
         uses: pypa/gh-action-pypi-publish@release/v1
