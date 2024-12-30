@@ -1,25 +1,24 @@
-import gzip
 import json
 
 from datetime import UTC
 from datetime import datetime
 from pathlib import Path
 from typing import Annotated
-from typing import Any
 from typing import Optional
 from typing import cast
 
 from dac7.constants import Env
 from dac7.constants import FileFormat
-from dac7.encryption import EncryptionService
-from dac7.encryption import KeyInfo
+from dac7.core import DAC7_SCHEMA
+from dac7.core import build_filename_from_xml_data
+from dac7.core import build_json
+from dac7.core import encrypt_data
+from dac7.core import json_to_xml
 from dac7.models.dpi import DpiDeclaration
-from dac7.models.flat import Declaration
 from dac7.models.flat import OtherPlatformOperators
 from dac7.models.flat import PlatformOperator
 from dac7.models.flat import ReportableEntitySeller
 from dac7.models.flat import ReportableIndividualSeller
-from dac7.naming import build_filename
 from dac7.naming import validate_filename
 
 import typer
@@ -28,8 +27,6 @@ import xmlschema
 # from dateutil.parser import parser
 
 app = typer.Typer()
-
-DAC7_SCHEMA = Path(__file__).parent / "schemas" / "DPIXML_v1.1-fr1.xsd"
 
 
 @app.command()
@@ -121,20 +118,16 @@ def name(
     Return the expected name of the declaration file.
     """
 
-    schema = xmlschema.XMLSchema10(schema_path)
-
     with typer.open_file(f"{xml_path}", mode="r") as xml_file:
         xml_data: str = xml_file.read()
 
-    schema.validate(xml_data)
+    filename = build_filename_from_xml_data(
+        xml_data=xml_data,
+        file_format=file_format,
+        schema_path=schema_path,
+    )
 
-    xml_declaration = cast(dict[str, dict[str, str]], schema.decode(xml_data))
-    message_ref_id = xml_declaration["dpi:MessageSpec"]["dpi:MessageRefId"]
-    timestamp = xml_declaration["dpi:MessageSpec"]["dpi:Timestamp"]
-
-    expected_filename = build_filename(message_ref_id=message_ref_id, timestamp=timestamp)
-
-    typer.echo(f"{expected_filename}.{file_format.value.lower()}")
+    typer.echo(filename)
 
 
 @app.command()
@@ -260,28 +253,16 @@ def build(
     The expected schemas for the JSON input files are available, see: dac7 schemas build --help.
     """
 
-    platform_operator = PlatformOperator.model_validate_json(platform_path.read_text())
-
-    other_platform_data = load_json(other_platforms_path, default={})
-    entity_sellers_data = load_json(entity_sellers_path, default=[])
-    individual_sellers_data = load_json(individual_sellers_path, default=[])
-
-    declaration = Declaration(
-        fiscal_year=fiscal_year,
-        declaration_id=declaration_id,
-        timestamp=timestamp or get_timestamp(),
-        platform_operator=platform_operator,
-        other_platform_operators=other_platform_data,
-        reportable_entity_sellers=entity_sellers_data,
-        reportable_individual_sellers=individual_sellers_data,
+    result = build_json(
         env=env,
+        platform_path=platform_path,
+        other_platforms_path=other_platforms_path,
+        entity_sellers_path=entity_sellers_path,
+        individual_sellers_path=individual_sellers_path,
+        declaration_id=declaration_id,
+        fiscal_year=fiscal_year,
+        timestamp=timestamp,
     )
-
-    dpi_declaration = declaration.get_dpi()
-
-    dpi_data = dpi_declaration.model_dump(by_alias=True, exclude_defaults=True, mode="json")
-    dpi_json = json.dumps(dpi_data, indent=4, ensure_ascii=True)
-    result = dpi_json.strip()
 
     if output_format == FileFormat.XML:
         result = json_to_xml(result, schema_path=DAC7_SCHEMA)
@@ -339,24 +320,14 @@ def encrypt(
     Requires GnuPG to be installed.
     """
 
-    # Read
-
     with typer.open_file(f"{input_file_path}", mode="rb") as input_file:
         input_data: bytes = input_file.read()
 
-    # Compress
-
-    if compression_requested:
-        input_data = gzip.compress(input_data)
-
-    # Encrypt
-
-    key_info = KeyInfo.for_env(env)
-    service = EncryptionService(key_info=key_info)
-
-    result = service.encrypt_data(input_data)
-
-    # Write
+    result = encrypt_data(
+        env=env,
+        input_data=input_data,
+        compression_requested=compression_requested,
+    )
 
     with typer.open_file(f"{output_file_path or '-'}", mode="wb") as output_file:
         output_file.write(result)
@@ -496,25 +467,3 @@ def show_individual_sellers_schema():
     JSON schema for --individual-sellers input.
     """
     typer.echo(json.dumps(ReportableIndividualSeller.model_json_schema(), indent=4))
-
-
-def get_timestamp() -> datetime:
-    return datetime.now(UTC).replace(tzinfo=None)
-
-
-def load_json(path: Optional[Path], default: Any) -> Any:
-    if path is None:
-        return default
-    return json.loads(path.read_text())
-
-
-def json_to_xml(json_data: str, schema_path: Path) -> str:
-    xml_schema = xmlschema.XMLSchema10(schema_path)
-
-    xml_data = xmlschema.from_json(json_data, schema=xml_schema, converter=xmlschema.UnorderedConverter)
-    xml_content: str = xmlschema.etree_tostring(  # type: ignore[assignment]
-        xml_data,  # type: ignore[arg-type]
-        namespaces={"dpi": "urn:oecd:ties:dpi", "stf": "urn:oecd:ties:dpistf"},
-        encoding="unicode",
-    )
-    return f'<?xml version="1.0" encoding="UTF-8"?>\n{xml_content}\n'
