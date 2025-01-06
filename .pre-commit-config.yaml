@@ -39,7 +39,7 @@ repos:
             args: ['-x']
 
     - repo: https://github.com/astral-sh/ruff-pre-commit
-      rev: 'v0.8.6'
+      rev: 'v0.8.4'
       hooks:
           - id: ruff
             args: ['--exit-non-zero-on-fix']
@@ -75,7 +75,7 @@ repos:
             args: ["--max-average=A", "--max-modules=A", "--max-absolute=A"]
 
     - repo: https://github.com/python-poetry/poetry
-      rev: '1.8.5'
+      rev: '1.8.5'  # renovate: poetry
       hooks:
           - id: poetry-check
           - id: poetry-lock

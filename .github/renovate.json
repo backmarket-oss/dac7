@@ -38,13 +38,13 @@
   "customManagers": [
     {
       "customType": "regex",
-      "description": "Update poetry",
+      "description": "Update poetry in YAML files",
       "fileMatch": [
-        "^.+\\.yml$",
-        "^Dockerfile$"
+        "^.+\\.ya?ml$"
       ],
       "matchStrings": [
-        "pipx install --force poetry==(?<currentValue>\\S+?)\\s"
+        "pipx install --force poetry==(?<currentValue>\\S+?)\\s",
+        "rev: '(?<currentValue>\\S+?)'  # renovate: poetry\\s"
       ],
       "depNameTemplate": "poetry",
       "datasourceTemplate": "pypi"
