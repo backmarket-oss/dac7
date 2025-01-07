@@ -32,7 +32,7 @@ dac7 encrypt -z -E PROD ${filename} > ${filename}.gz.gpg
 
 This repository is focused on the French version of DAC7, the requirements of
 which have been published by the _Direction générale des Finances publiques_,
-or DGFiP, on October 24, 2024 ([_cahier des charges_ v1.4][dgfip-cdc],
+or DGFiP, on January 6, 2025 ([_cahier des charges_ v1.5][dgfip-cdc],
 [schema v1.1][dgfip-schema]
 :fr:).
 They differ from the
@@ -357,7 +357,7 @@ make schemas
   - a "naming convention" for the file
 
 [dgfip]: https://www.impots.gouv.fr/transfert-dinformations-en-application-des-dispositifs-dpi-dac7-plateformes-deconomie-collaborative
-[dgfip-cdc]: https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/tiers_declarants/cdc_td_bilateral/cdc-dac7-v.1.4.pdf
+[dgfip-cdc]: https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/tiers_declarants/cdc_td_bilateral/cdc-dac7-v.1.5.pdf
 [dgfip-naming]: https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/tiers_declarants/cdc_td_bilateral/nommage_collecte-dpi-dac7.pdf
 [dgfip-schema]: https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/tiers_declarants/cdc_td_bilateral/schema-xsd-de-collecte-dpi-dac7---revenus-2024.zip
 [oecd]: https://www.oecd.org/tax/exchange-of-tax-information/model-rules-for-reporting-by-platform-operators-with-respect-to-sellers-in-the-sharing-and-gig-economy.htm
