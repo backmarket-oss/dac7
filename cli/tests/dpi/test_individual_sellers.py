@@ -6,6 +6,7 @@ from dac7.models.flat import ReportableIndividualSeller
 @pytest.mark.parametrize(
     ("country_code", "value"),
     [
+        # EU
         ("AT", "999999999"),
         ("BG", "9999999999"),
         ("CY", "09999999L"),
@@ -63,6 +64,8 @@ from dac7.models.flat import ReportableIndividualSeller
         ("SI", "99999999"),
         ("SK", "999999999"),
         ("SK", "9999999999"),
+        # Non-EU
+        ("AR", "20258743991"),
     ],
 )
 def test_tax_identification_numbers(mock_declaration, build_individual_seller_data, country_code, value):
