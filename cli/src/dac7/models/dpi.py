@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import re
+
 from datetime import date
 from typing import Literal
 from typing import Optional
@@ -86,6 +88,34 @@ class DpiBirthInfo(DpiBase):
     birth_place: Optional[DpiBirthPlace] = pydantic.Field(default=None, alias="dpi:BirthPlace")
 
 
+INDIVIDUAL_TIN_PATTERNS = {
+    "AT": r"^[0-9]{9}$",
+    "BG": r"^[0-9]{10}$",
+    "CY": r"^[0-9]{8}[A-Z]$",
+    "CZ": r"^[0-9]{9,10}$",
+    "DE": r"^[0-9]{11}$",
+    "DK": r"^[0-9]{10}$",
+    "EE": r"^[0-9]{11}$",
+    "ES": r"^[0-9LKXYZM][0-9]{7}[A-Z]$",
+    "FI": r"^[0-9]{6}(\+|-|A)[0-9]{3}[0-9A-Z]$",
+    "FR": r"^([0-3][0-9]{12})|[0-9]{14}|[0-9]{9}$",
+    "HR": r"^[0-9]{11}$",
+    "IE": r"^[0-9]{7}[A-Z]{1,2}$",
+    "IT": r"^[A-Z]{6}[0-9]{2}[A-Z][0-9]{2}[A-Z][0-9]{3}[A-Z]$",
+    "LT": r"^[0-9]{11}$",
+    "LU": r"^[0-9]{13}$",
+    "LV": r"^([0-3][0-9][0-1][0-9][0-9]{2}[0-2]-?[0-9]{4}|3[2-9][0-9]{4}-?[0-9]{5})$",
+    "MT": r"^[0-9]{7}([MGAPLHBZ]|[0-9]{2})$",
+    "NL": r"^[0-9]{9}$",
+    "PL": r"^[0-9]{10,11}$",
+    "PT": r"^[0-9]{9}$",
+    "RO": r"^[0-9]{13}$",
+    "SE": r"^[0-9]{6}(\+|-)[0-9]{4}$",
+    "SI": r"^[0-9]{8}$",
+    "SK": r"^[0-9]{9,10}$",
+}
+
+
 class DpiPersonParty(DpiBase):
     residence_country_code: EUCountryCode = pydantic.Field(alias="dpi:ResCountryCode")
     tax_identification_numbers: list[DpiTaxIdentificationNumber] = pydantic.Field(alias="dpi:TIN", min_length=1)
@@ -102,7 +132,21 @@ class DpiPersonParty(DpiBase):
         unknown_tins = [tin for tin in tax_identification_numbers if tin.unknown]
         if len(tax_identification_numbers) > len(unknown_tins) > 0:
             raise ValueError("Unknown TIN mixed with known TINs")
+
+        for tin in tax_identification_numbers:
+            cls._check_tax_identification_number(tin)
+
         return tax_identification_numbers
+
+    @classmethod
+    def _check_tax_identification_number(cls, tin: DpiTaxIdentificationNumber) -> None:
+        if tin.unknown or tin.issued_by is None:
+            return
+        expected_pattern = INDIVIDUAL_TIN_PATTERNS.get(tin.issued_by.value)
+        if expected_pattern is None:
+            return
+        if not re.match(expected_pattern, tin.value):
+            raise ValueError(f"TIN value does not match expected pattern for country {tin.issued_by}")
 
     @pydantic.model_validator(mode="after")
     def check_tax_identification_numbers_and_birth_place(self) -> DpiPersonParty:
