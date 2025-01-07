@@ -1,5 +1,12 @@
 # Changelog
 
+## [2024.4.0](https://github.com/backmarket-oss/dac7/compare/2024.3.0...2024.4.0) (2025-01-07)
+
+
+### Features
+
+* French requirements 1.5 ([#53](https://github.com/backmarket-oss/dac7/issues/53)) ([0ee5cae](https://github.com/backmarket-oss/dac7/commit/0ee5cae3f669276c2f7f706413b1762bb9ad192a))
+
 ## [2024.3.0](https://github.com/backmarket-oss/dac7/compare/2024.2.2...2024.3.0) (2024-12-30)
 
 
