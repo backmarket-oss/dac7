@@ -1,30 +1,32 @@
-[tool.poetry]
+[project]
 name = "dac7"
 version = "2024.4.0"
 description = "Tooling for DAC7"
 readme = "README.md"
-license = "LICENSE.md"
+license = { file = "LICENSE.md" }
 authors = [
-    "Nicolas Bonnotte <nicolas.bonnotte@backmarket.com>",
+  { name="Nicolas Bonnotte", email="nicolas.bonnotte@backmarket.com>" },
 ]
+requires-python = ">=3.11"
+dependencies = [
+  "typer (>=0.15.0,<0.16.0)",
+  "xmlschema (>=3.0.0,<4.0.0)",
+  "pydantic (>=2.5.2,<3.0.0)",
+  "annotated-types (>=0.7.0,<0.8.0)",
+  "python-gnupg (>=0.5.2,<0.6.0)",
+  "requests (>=2.31.0,<3.0.0)",
+]
+
+[project.scripts]
+dac7 = "dac7.main:app"
+
+[tool.poetry]
 packages = [
   { include = "dac7", from = "cli/src" },
 ]
 include = [
-    "cli/src/dac7/schemas/*.xsd"
+  { path = "cli/src/dac7/schemas/*.xsd", format = ["sdist", "wheel"] },
 ]
-
-[tool.poetry.scripts]
-dac7 = "dac7.main:app"
-
-[tool.poetry.dependencies]
-python = ">=3.11,<3.14"
-typer = "^0.15.0"
-xmlschema = "^3.0.0"
-pydantic = "^2.5.2"
-annotated-types = "^0.7.0"
-python-gnupg = "^0.5.2"
-requests = "^2.31.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.0.0"

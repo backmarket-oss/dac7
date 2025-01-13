@@ -328,6 +328,9 @@ dac7 build -E PROD \
 
 ## Development
 
+> [!WARNING]
+> This project is using Poetry v2.
+
 PRs are welcome! But please take notice of the
 [code of conduct](./CODE_OF_CONDUCT.md).
 
