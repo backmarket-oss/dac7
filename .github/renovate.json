@@ -29,6 +29,10 @@
         "psf/black-pre-commit-mirror"
       ],
       "changelogUrl": "https://github.com/psf/black"
+    },
+    {
+      "matchPackageNames": ["poetry", "python-poetry/poetry"],
+      "groupName": ["poetry-version"]
     }
   ],
   "ignoreDeps": [
