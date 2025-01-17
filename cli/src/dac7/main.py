@@ -90,6 +90,15 @@ def name(
             show_default=False,
         ),
     ],
+    declaration_id: Annotated[
+        int,
+        typer.Option(
+            "--declaration-id",
+            "-d",
+            metavar="ID",
+            help="Unique id or serial number.",
+        ),
+    ] = 1,
     file_format: Annotated[
         FileFormat,
         typer.Option(
@@ -125,6 +134,7 @@ def name(
         xml_data=xml_data,
         file_format=file_format,
         schema_path=schema_path,
+        declaration_id=declaration_id,
     )
 
     typer.echo(filename)
