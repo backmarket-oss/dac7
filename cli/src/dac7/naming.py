@@ -16,6 +16,7 @@ def validate_filename(file_path: Path, message_ref_id: str, timestamp: str) -> N
     messagespec_vars = MessageSpecVars.from_messagespec(
         message_ref_id=message_ref_id,
         timestamp=timestamp,
+        declaration_id=filename_vars.declaration_id,
     )
 
     if filename_vars.declaration_year != messagespec_vars.declaration_year:
@@ -28,19 +29,20 @@ def validate_filename(file_path: Path, message_ref_id: str, timestamp: str) -> N
         raise FilenameValidationError("Timestamp inconsistent with content of file")
 
 
-def build_filename(message_ref_id: str, timestamp: str) -> str:
+def build_filename(message_ref_id: str, timestamp: str, declaration_id: int) -> str:
     ms_vars = MessageSpecVars.from_messagespec(
         message_ref_id=message_ref_id,
         timestamp=timestamp,
+        declaration_id=declaration_id,
     )
-    return f"DPIDAC7_{ms_vars.declaration_year}_{ms_vars.platform_id}_{ms_vars.declaration_id}_{ms_vars.timestamp}"
+    return f"DPIDAC7_{ms_vars.declaration_year}_{ms_vars.platform_id}_{ms_vars.declaration_id:03}_{ms_vars.timestamp}"
 
 
 @dataclass
 class ExpectedVars:
     declaration_year: str
     platform_id: str
-    declaration_id: str
+    declaration_id: int
     timestamp: str
 
 
@@ -59,7 +61,7 @@ class FilenameVars(ExpectedVars):
         return cls(
             declaration_year=match.group("declaration_year"),
             platform_id=match.group("platform_id"),
-            declaration_id=match.group("declaration_id"),
+            declaration_id=int(match.group("declaration_id")),
             timestamp=match.group("timestamp"),
         )
 
@@ -68,7 +70,7 @@ class MessageSpecVars(ExpectedVars):
     REGEX: ClassVar[str] = r"^OP_(?P<declaration_year>[0-9]{4})_(?P<platform_id>[0-9]{9})_"
 
     @classmethod
-    def from_messagespec(cls, message_ref_id: str, timestamp: str) -> MessageSpecVars:
+    def from_messagespec(cls, message_ref_id: str, timestamp: str, declaration_id: int) -> MessageSpecVars:
         match = re.match(cls.REGEX, message_ref_id)
         if not match:
             raise Exception
@@ -76,6 +78,6 @@ class MessageSpecVars(ExpectedVars):
         return cls(
             declaration_year=match.group("declaration_year"),
             platform_id=match.group("platform_id"),
-            declaration_id="001",
+            declaration_id=declaration_id,
             timestamp=re.sub("[^0-9]", "", timestamp)[:14],
         )

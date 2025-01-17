@@ -25,6 +25,7 @@ DAC7_SCHEMA = Path(__file__).parent / "schemas" / "DPIXML_v1.1-fr1.xsd"
 
 def build_filename_from_xml_data(
     xml_data: str,
+    declaration_id: int,
     file_format: FileFormat = FileFormat.XML,
     schema_path: Path = DAC7_SCHEMA,
 ) -> str:
@@ -40,7 +41,11 @@ def build_filename_from_xml_data(
     message_ref_id = xml_declaration["dpi:MessageSpec"]["dpi:MessageRefId"]
     timestamp = xml_declaration["dpi:MessageSpec"]["dpi:Timestamp"]
 
-    expected_filename = build_filename(message_ref_id=message_ref_id, timestamp=timestamp)
+    expected_filename = build_filename(
+        message_ref_id=message_ref_id,
+        timestamp=timestamp,
+        declaration_id=declaration_id,
+    )
 
     return f"{expected_filename}.{file_format.value.lower()}"
 
