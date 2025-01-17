@@ -641,7 +641,7 @@ class Declaration(WithReportableSellers):
                     "dpi:MessageRefId": f"{self.ref_id_prefix}_d{self.declaration_id}",
                     "dpi:MessageTypeIndic": f"{message_type_indic}",
                     "dpi:ReportingPeriod": f"{self.fiscal_year}-12-31",
-                    "dpi:Timestamp": self.timestamp.isoformat()[:-3],
+                    "dpi:Timestamp": self.get_timestamp_dpi(),
                 },
                 "dpi:DPIBody": {
                     "dpi:PlatformOperator": self.platform_operator.get_platform_dpi(declaration=self),
@@ -650,6 +650,9 @@ class Declaration(WithReportableSellers):
                 },
             }
         )
+
+    def get_timestamp_dpi(self) -> str:
+        return self.timestamp.isoformat()[:-3]
 
 
 class WithGetDpi(Protocol):
