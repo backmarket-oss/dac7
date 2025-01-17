@@ -14,6 +14,7 @@ from typing import Sequence
 from typing import Union
 from typing import cast
 from typing import overload
+from zoneinfo import ZoneInfo
 
 from dac7.constants import Env
 from dac7.models.dpi import DpiAddress
@@ -641,7 +642,7 @@ class Declaration(WithReportableSellers):
                     "dpi:MessageRefId": f"{self.ref_id_prefix}_d{self.declaration_id}",
                     "dpi:MessageTypeIndic": f"{message_type_indic}",
                     "dpi:ReportingPeriod": f"{self.fiscal_year}-12-31",
-                    "dpi:Timestamp": self.timestamp.isoformat()[:-3],
+                    "dpi:Timestamp": self.get_timestamp_dpi(),
                 },
                 "dpi:DPIBody": {
                     "dpi:PlatformOperator": self.platform_operator.get_platform_dpi(declaration=self),
@@ -650,6 +651,11 @@ class Declaration(WithReportableSellers):
                 },
             }
         )
+
+    def get_timestamp_dpi(self) -> str:
+        paris_tz = ZoneInfo("Europe/Paris")
+        timestamp = self.timestamp.replace(tzinfo=self.timestamp.tzinfo or paris_tz).astimezone(paris_tz)
+        return timestamp.strftime(r"%Y-%m-%dT%H:%M:%S.%f")[:-3]
 
 
 class WithGetDpi(Protocol):

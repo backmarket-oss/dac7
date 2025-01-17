@@ -70,7 +70,7 @@ def build_json(
     declaration = Declaration(
         fiscal_year=fiscal_year,
         declaration_id=declaration_id,
-        timestamp=timestamp or get_timestamp(),
+        timestamp=timestamp or datetime.now(UTC),
         platform_operator=platform_operator,
         other_platform_operators=other_platform_data,
         reportable_entity_sellers=entity_sellers_data,
@@ -107,10 +107,6 @@ def encrypt_data(
     service = EncryptionService(key_info=key_info)
 
     return service.encrypt_data(input_data)
-
-
-def get_timestamp() -> datetime:
-    return datetime.now(UTC).replace(tzinfo=None)
 
 
 def load_json(path: Optional[Path], default: Any) -> Any:

@@ -7,7 +7,7 @@
 ## Quick-start
 
 ```sh
-poetry install
+pipx install dac7
 
 # Build a XML declaration from dedicated JSON files
 dac7 build -E PROD -f XML \
