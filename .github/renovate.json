@@ -31,8 +31,11 @@
       "changelogUrl": "https://github.com/psf/black"
     },
     {
-      "matchPackageNames": ["poetry", "python-poetry/poetry"],
-      "groupName": ["poetry-version"]
+      "matchPackageNames": [
+        "poetry",
+        "python-poetry/poetry"
+      ],
+      "groupName": "poetry-version"
     }
   ],
   "ignoreDeps": [
