@@ -56,7 +56,7 @@ test-e2e-case:
 		OTHERS_JSON=$(wildcard examples/$(CASE)/input/other_platform_operators.json) \
 		INDIVIDUAL_SELLERS_JSON=$(wildcard examples/$(CASE)/input/individual_sellers.json) \
 		OUTPUT_DIR=$(TEST_OUTPUT_DIR)/$(CASE) \
-		bash cli/tests/scripts/build_file.sh
+		bash cli/tests/e2e/scripts/build_file.sh
 	cat $(TEST_OUTPUT_DIR)/$(CASE)/*.xml | cmp examples/$(CASE)/declaration.xml -
 
 
