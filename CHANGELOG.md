@@ -1,5 +1,13 @@
 # Changelog
 
+## [2024.4.1](https://github.com/backmarket-oss/dac7/compare/2024.4.0...2024.4.1) (2025-01-20)
+
+
+### Bug Fixes
+
+* Allow non-naive timestamps ([#57](https://github.com/backmarket-oss/dac7/issues/57)) ([a637d83](https://github.com/backmarket-oss/dac7/commit/a637d83aaa19b4a5a817550bb64b588f6d866e78))
+* Allow to set declaration_id when building filename from data ([#60](https://github.com/backmarket-oss/dac7/issues/60)) ([9e7360c](https://github.com/backmarket-oss/dac7/commit/9e7360c166cb6034ad24e5ed7b58d1eb899b4023))
+
 ## [2024.4.0](https://github.com/backmarket-oss/dac7/compare/2024.3.0...2024.4.0) (2025-01-07)
 
 
