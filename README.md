@@ -238,7 +238,7 @@ included in the DGFiP specification documents
 
 #### 1. Entity and individual sellers for immovable properties
 
-[Example 1](./examples/examples/1_initial_immovable_properties) is an initial
+[Example 1](./examples/1_initial_immovable_properties) is an initial
 declaration for a platform operator with one entity seller and one individual
 seller, both for immovable properties.
 
