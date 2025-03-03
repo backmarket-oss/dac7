@@ -1,5 +1,12 @@
 # Changelog
 
+## [2024.4.2](https://github.com/backmarket-oss/dac7/compare/2024.4.1...2024.4.2) (2025-03-03)
+
+
+### Bug Fixes
+
+* Fix link to first example in README ([#65](https://github.com/backmarket-oss/dac7/issues/65)) ([a799665](https://github.com/backmarket-oss/dac7/commit/a799665a1d3e2d17f113519065a91ca55d4014c2))
+
 ## [2024.4.1](https://github.com/backmarket-oss/dac7/compare/2024.4.0...2024.4.1) (2025-01-20)
 
 
