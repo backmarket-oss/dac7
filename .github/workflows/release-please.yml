@@ -19,7 +19,7 @@ jobs:
       name: pypi
       url: https://pypi.org/p/dac7
     steps:
-      - uses: googleapis/release-please-action@7987652d64b4581673a76e33ad5e98e3dd56832f # v4
+      - uses: googleapis/release-please-action@a02a34c4d625f9be7cb89156071d8567266a2445 # v4
         id: release
         with:
           # this is a built-in strategy in release-please, see "Action Inputs"
