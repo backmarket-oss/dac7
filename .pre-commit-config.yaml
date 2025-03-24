@@ -39,7 +39,7 @@ repos:
             args: ['-x']
 
     - repo: https://github.com/astral-sh/ruff-pre-commit
-      rev: 'v0.9.7'
+      rev: 'v0.11.2'
       hooks:
           - id: ruff
             args: ['--exit-non-zero-on-fix']
