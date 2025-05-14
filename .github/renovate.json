@@ -46,8 +46,8 @@
     {
       "customType": "regex",
       "description": "Update poetry in YAML files",
-      "fileMatch": [
-        "^.+\\.ya?ml$"
+      "managerFilePatterns": [
+        "/^.+\\.ya?ml$/"
       ],
       "matchStrings": [
         "pipx install --force poetry==(?<currentValue>\\S+?)\\s",
