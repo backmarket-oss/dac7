@@ -290,25 +290,6 @@ python-dateutil = ">=2.4"
 typing-extensions = "*"
 
 [[package]]
-name = "fancycompleter"
-version = "0.11.0"
-description = "colorful TAB completion for Python prompt"
-optional = false
-python-versions = ">=3.8"
-files = [
-    {file = "fancycompleter-0.11.0-py3-none-any.whl", hash = "sha256:a4712fdda8d7f3df08511ab2755ea0f1e669e2c65701a28c0c0aa2ff528521ed"},
-    {file = "fancycompleter-0.11.0.tar.gz", hash = "sha256:632b265b29dd0315b96d33d13d83132a541d6312262214f50211b3981bb4fa00"},
-]
-
-[package.dependencies]
-pyreadline3 = {version = "*", markers = "platform_system == \"Windows\""}
-pyrepl = {version = ">=0.11.3", markers = "python_version < \"3.13\""}
-
-[package.extras]
-dev = ["fancycompleter[tests]", "mypy", "ruff (==0.11.2)"]
-tests = ["pytest", "pytest-cov"]
-
-[[package]]
 name = "filelock"
 version = "3.13.1"
 description = "A platform independent file lock."
@@ -499,24 +480,6 @@ files = [
     {file = "packaging-23.2-py3-none-any.whl", hash = "sha256:8c491190033a9af7e1d931d0b5dacc2ef47509b34dd0de67ed209b5203fc88c7"},
     {file = "packaging-23.2.tar.gz", hash = "sha256:048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"},
 ]
-
-[[package]]
-name = "pdbpp"
-version = "0.11.5"
-description = "pdb++, a drop-in replacement for pdb"
-optional = false
-python-versions = "*"
-files = [
-    {file = "pdbpp-0.11.5-py3-none-any.whl", hash = "sha256:aec6495b74e2bdd3fe3e7e72b41b2d0c162940feda9aff20804bdc8a2422b512"},
-    {file = "pdbpp-0.11.5.tar.gz", hash = "sha256:3f383b0305f0d0bf54dd53c0f485290f3d92ac2cb07c59f45b28e8a68e2930fe"},
-]
-
-[package.dependencies]
-fancycompleter = ">=0.11.0"
-pygments = "*"
-
-[package.extras]
-testing = ["ipython", "pexpect", "pytest", "pytest-cov"]
 
 [[package]]
 name = "platformdirs"
@@ -712,35 +675,6 @@ files = [
 [package.extras]
 plugins = ["importlib-metadata"]
 windows-terminal = ["colorama (>=0.4.6)"]
-
-[[package]]
-name = "pyreadline3"
-version = "3.5.4"
-description = "A python implementation of GNU readline."
-optional = false
-python-versions = ">=3.8"
-files = [
-    {file = "pyreadline3-3.5.4-py3-none-any.whl", hash = "sha256:eaf8e6cc3c49bcccf145fc6067ba8643d1df34d604a1ec0eccbf7a18e6d3fae6"},
-    {file = "pyreadline3-3.5.4.tar.gz", hash = "sha256:8d57d53039a1c75adba8e50dd3d992b28143480816187ea5efbd5c78e6c885b7"},
-]
-
-[package.extras]
-dev = ["build", "flake8", "mypy", "pytest", "twine"]
-
-[[package]]
-name = "pyrepl"
-version = "0.11.3.post1"
-description = "A library for building flexible command line interfaces"
-optional = false
-python-versions = ">=3.8"
-files = [
-    {file = "pyrepl-0.11.3.post1-py3-none-any.whl", hash = "sha256:59fcd67588892731dc6e7aff106c380d303d54324ff028827804a2b056223d92"},
-    {file = "pyrepl-0.11.3.post1.tar.gz", hash = "sha256:0ca7568c8be919b69f99644d29d31738a5b1a87750d06dd36564bcfad278d402"},
-]
-
-[package.extras]
-dev = ["pyrepl[tests]", "ruff (==0.9.3)"]
-tests = ["pexpect", "pytest", "pytest-coverage", "pytest-timeout"]
 
 [[package]]
 name = "pytest"
@@ -1101,4 +1035,4 @@ docs = ["jinja2", "sphinx", "sphinx_rtd_theme"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.11,<3.14"
-content-hash = "ff45c3f56aac61de96e43d8dd64363b738ada163473dddc9eaeae46ec7770fcd"
+content-hash = "358743729dbf198c2149354251764afb8c6ab655f638dcea7a296830d95dda94"
