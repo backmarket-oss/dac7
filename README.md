@@ -1,4 +1,4 @@
-# DAC7 (France report for 2024 earnings)
+# DAC7 (France report for 2025 earnings)
 
 > [!CAUTION]
 > All content shared in this repository is provided "as is" without any warranty of any kind from its authors.
@@ -32,8 +32,8 @@ dac7 encrypt -z -E PROD ${filename} > ${filename}.gz.gpg
 
 This repository is focused on the French version of DAC7, the requirements of
 which have been published by the _Direction générale des Finances publiques_,
-or DGFiP, on January 6, 2025 ([_cahier des charges_ v1.5][dgfip-cdc],
-[schema v1.1][dgfip-schema]
+or DGFiP, on November 5, 2025 ([_cahier des charges_ v1.6][dgfip-cdc],
+[schema v1.6][dgfip-schema]
 :fr:).
 They differ from the
 [original OECD standard][oecd]
@@ -64,7 +64,7 @@ on at least the following points:
 
 For this reason, the French tax authority has provided its own XSD schema.
 Unfortunately, its
-[version v1.1][dgfip-schema]
+[version v1.6][dgfip-schema]
 :fr:
 does not implement all the requirements stated in the
 [specification document][dgfip-cdc] :fr: released at the same time.
@@ -74,13 +74,14 @@ For this reason, we provide a revised version of the French schema in the
 checks:
 
 1. The `version` attribute of the `<dpi:DPI_OECD>` element is mandatory, and
-   its value must be `1.0`, even in the version v1.1 of the DGFiP schema
+   its value must be `1.0`, even in the version v1.6 of the DGFiP schema
 1. The value in a `<dpi:MessageRefId>` element must have between 1 and
    88 characters and contain the SIREN of the platform
 1. The value in a `<ConsQn>`, `<NumbQn>`, `<FeesQn>`, or `<TaxesQn>` element
    must be greater or equal to zero
 1. The value in a `<dpi:ResCountryCode>` element must be a country covered by
    DAC7, i.e. within the EU
+1. The `nexus` field of a platform operator is always required
 
 Those schemas are adapted from the schemas included in the DGFiP specification
 documents ([_Cahier des charges DPI-DAC7_][dgfip-cdc]), which are published under the
@@ -357,7 +358,7 @@ make schemas
   - a "naming convention" for the file
 
 [dgfip]: https://www.impots.gouv.fr/transfert-dinformations-en-application-des-dispositifs-dpi-dac7-plateformes-deconomie-collaborative
-[dgfip-cdc]: https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/tiers_declarants/cdc_td_bilateral/cdc-dac7-v.1.5.pdf
+[dgfip-cdc]: https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/tiers_declarants/cdc_td_bilateral/cdc-dac7-v.1.6.pdf
 [dgfip-naming]: https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/tiers_declarants/cdc_td_bilateral/nommage_collecte-dpi-dac7.pdf
-[dgfip-schema]: https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/tiers_declarants/cdc_td_bilateral/schema-xsd-de-collecte-dpi-dac7---revenus-2024.zip
+[dgfip-schema]: https://www.impots.gouv.fr/sites/default/files/media/1_metier/3_partenaire/tiers_declarants/cdc_td_bilateral/schema-xsd-de-collecte-dpi-dac7---revenus-2025.zip
 [oecd]: https://www.oecd.org/tax/exchange-of-tax-information/model-rules-for-reporting-by-platform-operators-with-respect-to-sellers-in-the-sharing-and-gig-economy.htm

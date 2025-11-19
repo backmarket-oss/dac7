@@ -14,8 +14,8 @@ from dac7.models.flat import WithReportableSellers
 @pytest.mark.parametrize(
     ("env", "expected_message_ref_indic"),
     [
-        (Env.PROD, "OP_2024_123456789_d1"),
-        (Env.TEST, "OP_2024_123456789_t1_d1"),
+        (Env.PROD, "OP_2025_123456789_d1"),
+        (Env.TEST, "OP_2025_123456789_t1_d1"),
     ],
 )
 def test_get_dpi(mock_dpi_declaration_class: MagicMock, env: Env, expected_message_ref_indic: str) -> None:
@@ -29,7 +29,7 @@ def test_get_dpi(mock_dpi_declaration_class: MagicMock, env: Env, expected_messa
     declaration = Declaration.model_construct(
         reportable_entity_sellers=mock_reportable_entity_sellers,
         reportable_individual_sellers=mock_reportable_individual_sellers,
-        fiscal_year=2024,
+        fiscal_year=2025,
         declaration_id=1,
         timestamp=mock_timestamp,
         platform_operator=mock_platform_operator,
@@ -60,7 +60,7 @@ def test_get_dpi(mock_dpi_declaration_class: MagicMock, env: Env, expected_messa
                 "dpi:MessageType": "DPI",
                 "dpi:MessageRefId": expected_message_ref_indic,
                 "dpi:MessageTypeIndic": "DPI403",
-                "dpi:ReportingPeriod": "2024-12-31",
+                "dpi:ReportingPeriod": "2025-12-31",
                 "dpi:Timestamp": mock_get_timestamp_dpi.return_value,
             },
             "dpi:DPIBody": {
@@ -96,7 +96,7 @@ def test_get_timestamp_dpi(timezone: ZoneInfo | None, expected_timestamp_dpi: st
     declaration = Declaration.model_construct(
         reportable_entity_sellers=mock_reportable_entity_sellers,
         reportable_individual_sellers=mock_reportable_individual_sellers,
-        fiscal_year=2024,
+        fiscal_year=2025,
         declaration_id=1,
         timestamp=timestamp,
         platform_operator=mock_platform_operator,

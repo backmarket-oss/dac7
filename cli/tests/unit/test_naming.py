@@ -3,7 +3,7 @@ from dac7.naming import build_filename
 
 def test_build_filename():
     # Given
-    message_ref_id = "OP_2024_123456789_doesntmatter"
+    message_ref_id = "OP_2025_123456789_doesntmatter"
     timestamp = "2025-01-02T03:04:05.678"
     declaration_id = 1
 
@@ -15,4 +15,4 @@ def test_build_filename():
     )
 
     # Then
-    assert result_filename == "DPIDAC7_2024_123456789_001_20250102030405"
+    assert result_filename == "DPIDAC7_2025_123456789_001_20250102030405"

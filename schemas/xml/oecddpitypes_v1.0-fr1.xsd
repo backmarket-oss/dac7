@@ -2,7 +2,7 @@
 <!--
 Based on a schema published by the Direction Générale des Finances Publiques
 https://www.impots.gouv.fr/transfert-dinformations-en-application-des-dispositifs-dpi-dac7-plateformes-deconomie-collaborative
-Last updated in April 2024, retrieved in November 2024
+Last updated in November 2025, retrieved in November 2025
 
 SPDX-License-Identifier: etalab-2.0
 -->
@@ -10,6 +10,27 @@ SPDX-License-Identifier: etalab-2.0
     xmlns:stf="urn:oecd:ties:dpistf"
     targetNamespace="urn:oecd:ties:dpistf"
     elementFormDefault="qualified">
+
+    <!-- -->
+    <xsd:complexType name="DocSpec_Type">
+        <xsd:sequence>
+            <xsd:element name="DocTypeIndic" type="stf:OECDDocTypeIndic_EnumType" />
+            <xsd:element name="DocRefId">
+                <xsd:simpleType>
+                    <xsd:restriction base="stf:StringMin1Max200_Type">
+                        <xsd:pattern value="[\da-zA-Z+-.:=_]{1,200}" />
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="CorrDocRefId" minOccurs="0">
+                <xsd:simpleType>
+                    <xsd:restriction base="stf:StringMin1Max200_Type">
+                        <xsd:pattern value="[\da-zA-Z+-.:=_]{1,200}" />
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
 
     <!-- Defines a string with minimum length 1 and maximum length of 10 -->
     <xsd:simpleType name="StringMin1Max10_Type">
@@ -43,7 +64,7 @@ SPDX-License-Identifier: etalab-2.0
             <xsd:maxLength value="200" />
         </xsd:restriction>
     </xsd:simpleType>
-    <!-- -->
+    <!--    -->
     <!-- Defines an integer with up to 4 digits -->
     <xsd:simpleType name="IntegerMax4Digits_Type">
         <xsd:annotation>
@@ -54,7 +75,7 @@ SPDX-License-Identifier: etalab-2.0
             <xsd:maxInclusive value="9999" />
         </xsd:restriction>
     </xsd:simpleType>
-    <!-- -->
+    <!--    -->
     <!-- Defines a string with minimum length 1 and maximum length of 400 -->
     <xsd:simpleType name="StringMin1Max400_Type">
         <xsd:annotation>
@@ -65,7 +86,7 @@ SPDX-License-Identifier: etalab-2.0
             <xsd:maxLength value="400" />
         </xsd:restriction>
     </xsd:simpleType>
-    <!-- -->
+    <!--    -->
     <!-- Defines a string with minimum length 1 and maximum length of 4000 -->
     <xsd:simpleType name="StringMin1Max4000_Type">
         <xsd:annotation>
@@ -199,25 +220,4 @@ SPDX-License-Identifier: etalab-2.0
             </xsd:enumeration>
         </xsd:restriction>
     </xsd:simpleType>
-
-    <!-- -->
-    <xsd:complexType name="DocSpec_Type">
-        <xsd:sequence>
-            <xsd:element name="DocTypeIndic" type="stf:OECDDocTypeIndic_EnumType" />
-            <xsd:element name="DocRefId">
-                <xsd:simpleType>
-                    <xsd:restriction base="stf:StringMin1Max200_Type">
-                        <xsd:pattern value="[\da-zA-Z+-.:=_]{1,200}" />
-                    </xsd:restriction>
-                </xsd:simpleType>
-            </xsd:element>
-            <xsd:element name="CorrDocRefId" minOccurs="0">
-                <xsd:simpleType>
-                    <xsd:restriction base="stf:StringMin1Max200_Type">
-                        <xsd:pattern value="[\da-zA-Z+-.:=_]{1,200}" />
-                    </xsd:restriction>
-                </xsd:simpleType>
-            </xsd:element>
-        </xsd:sequence>
-    </xsd:complexType>
 </xsd:schema>

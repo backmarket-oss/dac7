@@ -6,9 +6,9 @@
         "dpi:TransmittingCountry": "FR",
         "dpi:ReceivingCountry": "FR",
         "dpi:MessageType": "DPI",
-        "dpi:MessageRefId": "OP_2024_555753159_d1",
+        "dpi:MessageRefId": "OP_2025_555753159_d1",
         "dpi:MessageTypeIndic": "DPI401",
-        "dpi:ReportingPeriod": "2024-12-31",
+        "dpi:ReportingPeriod": "2025-12-31",
         "dpi:Timestamp": "2025-01-30T21:48:22.209"
     },
     "dpi:DPIBody": {
@@ -52,7 +52,7 @@
             "dpi:AssumedReporting": false,
             "dpi:DocSpec": {
                 "stf:DocTypeIndic": "OECD1",
-                "stf:DocRefId": "OP_2024_555753159_v1"
+                "stf:DocRefId": "OP_2025_555753159_v1"
             }
         },
         "dpi:OtherPlatformOperators": {
@@ -83,7 +83,7 @@
                     },
                     "dpi:DocSpec": {
                         "stf:DocTypeIndic": "OECD1",
-                        "stf:DocRefId": "OP_2024_555753159_555852446_v1"
+                        "stf:DocRefId": "OP_2025_555753159_555852446_v1"
                     }
                 }
             ]
@@ -214,7 +214,7 @@
                 },
                 "dpi:DocSpec": {
                     "stf:DocTypeIndic": "OECD1",
-                    "stf:DocRefId": "OP_2024_555753159_55de6edc-4913-43c6-8f1f-72b88e2b220f_v1"
+                    "stf:DocRefId": "OP_2025_555753159_55de6edc-4913-43c6-8f1f-72b88e2b220f_v1"
                 }
             },
             {
@@ -340,7 +340,7 @@
                 },
                 "dpi:DocSpec": {
                     "stf:DocTypeIndic": "OECD1",
-                    "stf:DocRefId": "OP_2024_555753159_9f535c1e-73a2-494d-a4f4-e0f7474be679_v1"
+                    "stf:DocRefId": "OP_2025_555753159_9f535c1e-73a2-494d-a4f4-e0f7474be679_v1"
                 }
             }
         ]

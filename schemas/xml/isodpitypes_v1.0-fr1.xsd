@@ -2,13 +2,14 @@
 <!--
 Based on a schema published by the Direction Générale des Finances Publiques
 https://www.impots.gouv.fr/transfert-dinformations-en-application-des-dispositifs-dpi-dac7-plateformes-deconomie-collaborative
-Last updated in Avril 2023, retrieved in November 2024
+Last updated in November 2025, retrieved in November 2025
 
 SPDX-License-Identifier: etalab-2.0
 -->
 <!-- edited with XMLSpy v2012 rel. 2 sp1 (x64) (http://www.altova.com) by Sebastien Michon (OECD) -->
 <xsd:schema xmlns="urn:oecd:ties:dpiisotypes" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-    targetNamespace="urn:oecd:ties:dpiisotypes" elementFormDefault="qualified">
+    targetNamespace="urn:oecd:ties:dpiisotypes"
+    elementFormDefault="qualified">
     <!--  ISO 3166 alpha 2 Country Code
     The following disclaimer refers to all uses of the ISO country code list in the CRS schema: For
     practical reasons, the list is based on the ISO 3166-1 country list which is currently used by
