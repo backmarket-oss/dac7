@@ -10,7 +10,7 @@ TEMP_FILENAME="${OUTPUT_DIR}/.declaration.xml"
 "${DAC7}" build \
     --env="${ENV}" \
     --declaration-id=1 \
-    --fiscal-year=2024 \
+    --fiscal-year=2025 \
     ${TIMESTAMP:+"--timestamp=${TIMESTAMP}"} \
     --platform-operator="${PLATFORM_JSON}" \
     ${OTHERS_JSON:+"--other-platform-operators=${OTHERS_JSON}"} \

@@ -6,9 +6,9 @@
         "dpi:TransmittingCountry": "FR",
         "dpi:ReceivingCountry": "FR",
         "dpi:MessageType": "DPI",
-        "dpi:MessageRefId": "OP_2024_123456789_d1",
+        "dpi:MessageRefId": "OP_2025_123456789_d1",
         "dpi:MessageTypeIndic": "DPI401",
-        "dpi:ReportingPeriod": "2024-12-31",
+        "dpi:ReportingPeriod": "2025-12-31",
         "dpi:Timestamp": "2025-01-28T08:12:00.003"
     },
     "dpi:DPIBody": {
@@ -52,8 +52,8 @@
             "dpi:AssumedReporting": false,
             "dpi:DocSpec": {
                 "stf:DocTypeIndic": "OECD2",
-                "stf:DocRefId": "OP_2024_123456789_v2",
-                "stf:CorrDocRefId": "OP_2024_123456789_v1"
+                "stf:DocRefId": "OP_2025_123456789_v2",
+                "stf:CorrDocRefId": "OP_2025_123456789_v1"
             }
         },
         "dpi:ReportableSeller": [
@@ -287,8 +287,8 @@
                 },
                 "dpi:DocSpec": {
                     "stf:DocTypeIndic": "OECD2",
-                    "stf:DocRefId": "OP_2024_123456789_97d7e524-163f-4bed-b551-67b7b3b8e140_v2",
-                    "stf:CorrDocRefId": "OP_2024_123456789_97d7e524-163f-4bed-b551-67b7b3b8e140_v1"
+                    "stf:DocRefId": "OP_2025_123456789_97d7e524-163f-4bed-b551-67b7b3b8e140_v2",
+                    "stf:CorrDocRefId": "OP_2025_123456789_97d7e524-163f-4bed-b551-67b7b3b8e140_v1"
                 }
             }
         ]

@@ -2,7 +2,7 @@
 <!--
 Based on a schema published by the Direction Générale des Finances Publiques
 https://www.impots.gouv.fr/transfert-dinformations-en-application-des-dispositifs-dpi-dac7-plateformes-deconomie-collaborative
-Last updated in April 2024, retrieved in November 2024
+Last updated in November 2025, retrieved in November 2025
 
 SPDX-License-Identifier: etalab-2.0
 -->
@@ -11,8 +11,8 @@ SPDX-License-Identifier: etalab-2.0
             xmlns:iso="urn:oecd:ties:dpiisotypes"
             targetNamespace="urn:oecd:ties:dpi"
             elementFormDefault="qualified">
-    <xsd:import namespace="urn:oecd:ties:dpistf" schemaLocation="oecddpitypes_v1.0-fr1.xsd"/>
-    <xsd:import namespace="urn:oecd:ties:dpiisotypes" schemaLocation="isodpitypes_v1.0-fr1.xsd"/>
+    <xsd:import namespace="urn:oecd:ties:dpistf" schemaLocation="oecddpitypes_v1.0-fr1.xsd" />
+    <xsd:import namespace="urn:oecd:ties:dpiisotypes" schemaLocation="isodpitypes_v1.0-fr1.xsd" />
 
     <xsd:element name="DPI_OECD">
         <xsd:complexType>
@@ -21,7 +21,7 @@ SPDX-License-Identifier: etalab-2.0
                 <xsd:element name="DPIBody" type="dpi:DPIBody_Type" />
             </xsd:sequence>
             <xsd:attribute name="version" use="required">
-                <!-- Version is a “V” requirement and `1.0` should be the only possible value. See §3.2.1 on page 19. -->
+                <!-- Version is a "V" requirement and `1.0` should be the only possible value. See §3.2.1 on page 19. -->
                 <xsd:simpleType>
                     <xsd:restriction base="stf:StringMin1Max10_Type">
                         <xsd:enumeration value="1.0" />
@@ -30,6 +30,7 @@ SPDX-License-Identifier: etalab-2.0
             </xsd:attribute>
         </xsd:complexType>
     </xsd:element>
+
     <!--     Definition of complex types -->
     <xsd:complexType name="MessageSpec_Type">
         <xsd:sequence>
@@ -54,6 +55,7 @@ SPDX-License-Identifier: etalab-2.0
             <xsd:element name="Timestamp" type="xsd:dateTime" />
         </xsd:sequence>
     </xsd:complexType>
+
     <xsd:complexType name="DPIBody_Type">
         <xsd:sequence>
             <xsd:element name="PlatformOperator" type="dpi:CorrectablePlatformOperator_Type" />
@@ -61,9 +63,10 @@ SPDX-License-Identifier: etalab-2.0
             <xsd:element name="ReportableSeller" type="dpi:CorrectableReportableSeller_Type" minOccurs="0" maxOccurs="unbounded" />
         </xsd:sequence>
     </xsd:complexType>
+
     <xsd:complexType name="CorrectablePlatformOperator_Type">
         <xsd:sequence>
-            <xsd:element name="ResCountryCode" type="iso:CountryCode_Type" minOccurs="0" />
+            <xsd:element name="ResCountryCode" type="iso:CountryCode_Type" />
             <xsd:element name="TIN" maxOccurs="unbounded" type="dpi:TIN_PlatformOperator_Type" />
             <!-- 04/04/2023 "TIN" type spécifique au PlatformOperator -->
             <xsd:element name="IN" minOccurs="0" maxOccurs="unbounded" type="dpi:IN_Type" />
@@ -77,11 +80,13 @@ SPDX-License-Identifier: etalab-2.0
             <xsd:element name="PlatformBusinessName" type="stf:StringMin1Max200_Type" />
             <!-- 30/03/2023 "PlatformBusinessName" obligatoire non répétable -->
             <xsd:element name="Address" type="dpi:Address_Type" maxOccurs="unbounded" />
+            <!-- Nexus was optional in the 2025 schema but still marked as "(F) oblig". See §2.1.8 on page 28 -->
             <xsd:element name="Nexus" type="dpi:Nexus_EnumType" />
             <xsd:element name="AssumedReporting" type="xsd:boolean" />
             <xsd:element name="DocSpec" type="stf:DocSpec_Type" />
         </xsd:sequence>
     </xsd:complexType>
+
     <xsd:complexType name="OtherPlatformOperators_Type">
         <xsd:sequence>
             <xsd:choice>
@@ -90,6 +95,7 @@ SPDX-License-Identifier: etalab-2.0
             </xsd:choice>
         </xsd:sequence>
     </xsd:complexType>
+
     <xsd:complexType name="CorrectableReportableSeller_Type">
         <xsd:sequence>
             <xsd:element name="Identity">
@@ -104,17 +110,20 @@ SPDX-License-Identifier: etalab-2.0
             <xsd:element name="DocSpec" type="stf:DocSpec_Type" />
         </xsd:sequence>
     </xsd:complexType>
+
     <!--     Definition of simple types -->
     <xsd:simpleType name="FR_EnumType">
         <xsd:restriction base="xsd:string">
             <xsd:enumeration value="FR" />
         </xsd:restriction>
     </xsd:simpleType>
+
     <xsd:simpleType name="MessageType_EnumType">
         <xsd:restriction base="xsd:string">
             <xsd:enumeration value="DPI" />
         </xsd:restriction>
     </xsd:simpleType>
+
     <xsd:simpleType name="Nexus_EnumType">
         <xsd:restriction base="xsd:string">
             <xsd:enumeration value="RPONEX1">
@@ -144,7 +153,7 @@ SPDX-License-Identifier: etalab-2.0
                 <xsd:annotation>
                     <xsd:documentation>
                         L'opérateur de plateforme déclarant n'est pas domicilié fiscalement, mais possède un établissement stable dans
-                        l'État membre de l'Union européenne et n'est pas un opérateur de plateforme qualifié non ressortissant de l'Union .
+                        l'État membre de l'Union européenne et n'est pas un opérateur de plateforme qualifié non ressortissant de l'Union.
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:enumeration>
@@ -161,6 +170,7 @@ SPDX-License-Identifier: etalab-2.0
             </xsd:enumeration>
         </xsd:restriction>
     </xsd:simpleType>
+
     <xsd:simpleType name="DPIMessageTypeIndic_EnumType">
         <xsd:restriction base="xsd:string">
             <xsd:enumeration value="DPI401">
@@ -180,6 +190,7 @@ SPDX-License-Identifier: etalab-2.0
             </xsd:enumeration>
         </xsd:restriction>
     </xsd:simpleType>
+
     <xsd:simpleType name="INType_EnumType">
         <xsd:restriction base="stf:StringMin1Max200_Type">
             <xsd:enumeration value="LEI">
@@ -209,6 +220,7 @@ SPDX-License-Identifier: etalab-2.0
             </xsd:enumeration>
         </xsd:restriction>
     </xsd:simpleType>
+
     <xsd:complexType name="CorrectableOtherRPO_Type">
         <xsd:sequence>
             <xsd:element name="ResCountryCode" type="iso:CountryCode_Type" />
@@ -219,6 +231,7 @@ SPDX-License-Identifier: etalab-2.0
             <xsd:element name="DocSpec" type="stf:DocSpec_Type" />
         </xsd:sequence>
     </xsd:complexType>
+
     <xsd:complexType name="TIN_PlatformOperator_Type">
         <xsd:simpleContent>
             <xsd:extension base="stf:StringMin1Max200_Type">
@@ -227,6 +240,7 @@ SPDX-License-Identifier: etalab-2.0
             </xsd:extension>
         </xsd:simpleContent>
     </xsd:complexType>
+
     <xsd:complexType name="TIN_Type">
         <xsd:simpleContent>
             <xsd:extension base="stf:StringMin1Max200_Type">
@@ -235,6 +249,7 @@ SPDX-License-Identifier: etalab-2.0
             </xsd:extension>
         </xsd:simpleContent>
     </xsd:complexType>
+
     <xsd:complexType name="IN_Type">
         <xsd:simpleContent>
             <xsd:extension base="dpi:StringSansSeulsCaractEspaceTabCRLF200">
@@ -243,6 +258,7 @@ SPDX-License-Identifier: etalab-2.0
             </xsd:extension>
         </xsd:simpleContent>
     </xsd:complexType>
+
     <xsd:complexType name="RelevantActivities_Type">
         <xsd:sequence>
             <xsd:element name="ImmovableProperty" minOccurs="0">
@@ -257,6 +273,7 @@ SPDX-License-Identifier: etalab-2.0
                                     <xsd:element name="NumberOfActivities" type="dpi:NumberOfActivities_Type" />
                                     <xsd:element name="Fees" type="dpi:Fees_Type" />
                                     <xsd:element name="Taxes" type="dpi:Taxes_Type" />
+                                    <!-- PropertyType was optional in the 2025 schema but marked as "(F) oblig". See §2.3.2.1.1.7 on page 53 -->
                                     <xsd:element name="PropertyType" type="dpi:PropertyType_Type" />
                                     <!--  only if PropertyType DPI910 is selected  -->
                                     <xsd:element name="OtherPropertyType" type="stf:StringMin1Max200_Type" minOccurs="0" />
@@ -299,6 +316,7 @@ SPDX-License-Identifier: etalab-2.0
             </xsd:element>
         </xsd:sequence>
     </xsd:complexType>
+
     <xsd:simpleType name="PropertyType_Type">
         <xsd:restriction base="stf:StringMin1Max10_Type">
             <xsd:enumeration value="DPI901">
@@ -353,6 +371,7 @@ SPDX-License-Identifier: etalab-2.0
             </xsd:enumeration>
         </xsd:restriction>
     </xsd:simpleType>
+
     <xsd:complexType name="Consideration_Type">
         <xsd:sequence>
             <xsd:element name="ConsQ1" type="dpi:MonAmnt_Type" />
@@ -361,15 +380,17 @@ SPDX-License-Identifier: etalab-2.0
             <xsd:element name="ConsQ4" type="dpi:MonAmnt_Type" />
         </xsd:sequence>
     </xsd:complexType>
+
     <xsd:complexType name="NumberOfActivities_Type">
         <xsd:sequence>
-            <!-- Values must be >= according to 2nd-level rule 3. See §5.3.2.1 on page 107 -->
+            <!-- Values must be >= according to 2nd-level rule 3. See §5.3.2.1 on page 108 -->
             <xsd:element name="NumbQ1" type="xsd:nonNegativeInteger" />
             <xsd:element name="NumbQ2" type="xsd:nonNegativeInteger" />
             <xsd:element name="NumbQ3" type="xsd:nonNegativeInteger" />
             <xsd:element name="NumbQ4" type="xsd:nonNegativeInteger" />
         </xsd:sequence>
     </xsd:complexType>
+
     <xsd:complexType name="Fees_Type">
         <xsd:sequence>
             <xsd:element name="FeesQ1" type="dpi:MonAmnt_Type" />
@@ -378,6 +399,7 @@ SPDX-License-Identifier: etalab-2.0
             <xsd:element name="FeesQ4" type="dpi:MonAmnt_Type" />
         </xsd:sequence>
     </xsd:complexType>
+
     <xsd:complexType name="Taxes_Type">
         <xsd:sequence>
             <xsd:element name="TaxesQ1" type="dpi:MonAmnt_Type" />
@@ -386,6 +408,7 @@ SPDX-License-Identifier: etalab-2.0
             <xsd:element name="TaxesQ4" type="dpi:MonAmnt_Type" />
         </xsd:sequence>
     </xsd:complexType>
+
     <xsd:complexType name="EntitySeller_Type">
         <!-- 25/04/2023 "GVS" non autorisé, "standard" seule balise possible  -->
         <xsd:sequence>
@@ -400,10 +423,11 @@ SPDX-License-Identifier: etalab-2.0
             </xsd:element>
         </xsd:sequence>
     </xsd:complexType>
+
     <xsd:complexType name="OrganisationParty_Type">
         <xsd:sequence>
-            <!-- ResCountryCode must be a country covered by DAC7, i.e. within the EU according to 2nd-level rule 8. See §5.3.2.1 on page 107. -->
-            <xsd:element name="ResCountryCode" type="iso:EUCountryCode_Type"/>
+            <!-- ResCountryCode must be a country covered by DAC7, i.e. within the EU according to 2nd-level rule 8. See §5.3.2.1 on page 108. -->
+            <xsd:element name="ResCountryCode" type="iso:EUCountryCode_Type" />
             <!-- 30/03/2023 "ResCountryCode" obligatoire non répétable -->
             <xsd:element name="TIN" type="dpi:TIN_Type" maxOccurs="unbounded" />
             <xsd:element name="IN" type="dpi:IN_Type" minOccurs="0" maxOccurs="unbounded" />
@@ -412,10 +436,11 @@ SPDX-License-Identifier: etalab-2.0
             <xsd:element name="Address" type="dpi:Address_Type" maxOccurs="unbounded" />
         </xsd:sequence>
     </xsd:complexType>
+
     <xsd:complexType name="PersonParty_Type">
         <xsd:sequence>
-            <!-- ResCountryCode must be a country covered by DAC7, i.e. within the EU according to 2nd-level rule 8. See §5.3.2.1 on page 107. -->
-            <xsd:element name="ResCountryCode" type="iso:EUCountryCode_Type"/>
+            <!-- ResCountryCode must be a country covered by DAC7, i.e. within the EU according to 2nd-level rule 8. See §5.3.2.1 on page 108. -->
+            <xsd:element name="ResCountryCode" type="iso:EUCountryCode_Type" />
             <!-- 30/03/2023 "ResCountryCode" obligatoire non répétable -->
             <xsd:element name="TIN" type="dpi:TIN_Type" maxOccurs="unbounded" />
             <!-- 20/10/2023 "IN" non autorisé pour les vendeurs physiques -->
@@ -449,12 +474,14 @@ SPDX-License-Identifier: etalab-2.0
             </xsd:element>
         </xsd:sequence>
     </xsd:complexType>
+
     <xsd:complexType name="PermanentEstablishments_Type">
-        <!-- Permanent establishment countries must be within the EU according to the 2nd-level rule 31. See §5.3.2.1 on page 110. -->
+        <!-- Permanent establishment countries must be within the EU according to the 2nd-level rule 31. See §5.3.2.1 on page 113. -->
         <xsd:sequence>
-            <xsd:element name="PermanentEstablishment" type="iso:EUCountryCode_Type" maxOccurs="unbounded"/>
+            <xsd:element name="PermanentEstablishment" type="iso:EUCountryCode_Type" maxOccurs="unbounded" />
         </xsd:sequence>
     </xsd:complexType>
+
     <xsd:complexType name="FinancialIdentifier_Type">
         <xsd:sequence>
             <xsd:element name="Identifier">
@@ -471,6 +498,7 @@ SPDX-License-Identifier: etalab-2.0
             <xsd:element name="OtherInfo" type="stf:StringMin1Max400_Type" minOccurs="0" />
         </xsd:sequence>
     </xsd:complexType>
+
     <xsd:complexType name="IndividualSeller_Type">
         <!-- 25/04/2023 "GVS" non autorisé, "standard" seule balise possible  -->
         <xsd:sequence>
@@ -484,6 +512,7 @@ SPDX-License-Identifier: etalab-2.0
             </xsd:element>
         </xsd:sequence>
     </xsd:complexType>
+
     <xsd:complexType name="NamePerson_Type">
         <xsd:sequence>
             <xsd:element name="PrecedingTitle" type="stf:StringMin1Max200_Type" minOccurs="0" />
@@ -530,14 +559,16 @@ SPDX-License-Identifier: etalab-2.0
         </xsd:sequence>
         <xsd:attribute name="nameType" type="stf:OECDNameType_EnumType" />
     </xsd:complexType>
+
     <xsd:complexType name="MonAmnt_Type">
         <xsd:simpleContent>
-            <!-- Values must be >= according to 2nd-level rules 2, 4, and 5. See §5.3.2.1 on page 107 -->
+            <!-- Values must be >= according to 2nd-level rules 2, 4, and 5. See §5.3.2.1 on page 108 -->
             <xsd:extension base="xsd:nonNegativeInteger">
-                <xsd:attribute name="currCode" type="iso:currCode_Type" use="required"/>
+                <xsd:attribute name="currCode" type="iso:currCode_Type" use="required" />
             </xsd:extension>
         </xsd:simpleContent>
     </xsd:complexType>
+
     <!--  Organisation name  -->
     <xsd:complexType name="NameOrganisation_Type">
         <xsd:annotation>
@@ -584,6 +615,7 @@ SPDX-License-Identifier: etalab-2.0
         </xsd:sequence>
     </xsd:complexType>
     <!--    -->
+
     <!--  création d'un type pour restreindre les champs texte  -->
     <xsd:simpleType name="StringSansSeulsCaractEspaceTabCRLF200">
         <xsd:annotation>
