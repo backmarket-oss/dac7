@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "dac7"
-version = "2024.4.1"
+version = "2025.0.0"
 description = "Tooling for DAC7"
 readme = "README.md"
 license = "LICENSE.md"

@@ -1,5 +1,21 @@
 # Changelog
 
+## [2025.0.0](https://github.com/backmarket-oss/dac7/compare/2024.4.1...2025.0.0) (2025-11-28)
+
+
+### ⚠ BREAKING CHANGES
+
+* French requirements 1.6 for 2025 earnings ([#100](https://github.com/backmarket-oss/dac7/issues/100))
+
+### Features
+
+* French requirements 1.6 for 2025 earnings ([#100](https://github.com/backmarket-oss/dac7/issues/100)) ([394bc75](https://github.com/backmarket-oss/dac7/commit/394bc7587921e7ecc5ba5d14040a934928e0bddf))
+
+
+### Bug Fixes
+
+* Fix link to first example in README ([#65](https://github.com/backmarket-oss/dac7/issues/65)) ([a799665](https://github.com/backmarket-oss/dac7/commit/a799665a1d3e2d17f113519065a91ca55d4014c2))
+
 ## [2024.4.1](https://github.com/backmarket-oss/dac7/compare/2024.4.0...2024.4.1) (2025-01-20)
 
 
