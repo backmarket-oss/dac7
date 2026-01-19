@@ -45,4 +45,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Markup Link Checker (mlc)
-        uses: becheran/mlc@18a06b3aa2901ca197de59c8b0b1f54fdba6b3fa # v1.0.0
+        uses: becheran/mlc@7ec24825cefe0c9c8c6bac48430e1f69e3ec356e # v1.2.0
