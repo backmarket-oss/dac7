@@ -33,7 +33,7 @@ mypy = "^1.7.1"
 pre-commit = "^4.0.0"
 xenon = "^0.9.1"
 pytest-mock = "^3.12.0"
-virtualenv = "^20.26.2"
+virtualenv = "^21.0.0"
 types-requests = "^2.31.0"
 factory-boy = "^3.3.1"
 
