@@ -11,6 +11,7 @@
     "group:allNonMajor"
   ],
   "rebaseWhen": "conflicted",
+  "minimumReleaseAge": "7 days",
   "packageRules": [
     {
       "matchPackageNames": [
