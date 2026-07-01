@@ -11,24 +11,26 @@
     "group:allNonMajor"
   ],
   "rebaseWhen": "conflicted",
-  "minimumReleaseAge": "7 days",
   "packageRules": [
     {
       "matchPackageNames": [
         "shellcheck-py/shellcheck-py"
       ],
+      "minimumReleaseAge": "7 days",
       "versioning": "loose"
     },
     {
       "matchPackageNames": [
         "astral-sh/ruff-pre-commit"
       ],
+      "minimumReleaseAge": "7 days",
       "changelogUrl": "https://github.com/astral-sh/ruff"
     },
     {
       "matchPackageNames": [
         "psf/black-pre-commit-mirror"
       ],
+      "minimumReleaseAge": "7 days",
       "changelogUrl": "https://github.com/psf/black"
     },
     {
@@ -36,6 +38,7 @@
         "poetry",
         "python-poetry/poetry"
       ],
+      "minimumReleaseAge": "7 days",
       "groupName": "poetry-version"
     }
   ],
