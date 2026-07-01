@@ -1,5 +1,12 @@
 # Changelog
 
+## [2025.0.1](https://github.com/backmarket-oss/dac7/compare/2025.0.0...2025.0.1) (2026-07-01)
+
+
+### Bug Fixes
+
+* **renovate:** Fix minimum release age 7 days ([4f88cc5](https://github.com/backmarket-oss/dac7/commit/4f88cc5c7ae99f94fb29f5a14eee6b3c867d2a54))
+
 ## [2025.0.0](https://github.com/backmarket-oss/dac7/compare/2024.4.1...2025.0.0) (2025-11-28)
 
 
