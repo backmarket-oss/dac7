@@ -31,7 +31,7 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}
 
       - name: Install poetry
-        run: pipx install --force poetry==1.8.5
+        run: pipx install --force poetry==2.4.1
         if: ${{ steps.release.outputs.release_created }}
 
       - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
