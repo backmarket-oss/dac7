@@ -4,7 +4,14 @@
             "release-type": "python",
             "include-v-in-tag": false,
             "include-component-in-tag": false,
-            "always-update": true
+            "always-update": true,
+            "extra-files": [
+                {
+                    "path": "uv.lock",
+                    "type": "toml",
+                    "jsonpath": "$.package[?(@.name.value=='dac7')].version"
+                }
+            ]
         }
     },
     "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"

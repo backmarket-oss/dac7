@@ -15,15 +15,21 @@ TEST_OUTPUT_DIR = tests/output
 
 .PHONY: init
 init:  ## Bootstrap for local development
-	poetry install
-	poetry run pre-commit install
+	uv sync
+	uv run pre-commit install
+
+# Lock
+
+.PHONY: lock
+lock:  ## Update the lock file without upgrading dependencies
+	uv lock
 
 # Build
 
 .PHONY: build
 build: init schemas  # Build package
 	rm -rf dist
-	poetry build -vvv
+	uv build
 
 # Tests
 
@@ -32,7 +38,7 @@ test: init test-unit test-e2e  ## Launch all the test tasks (unit, end-to-end)
 
 .PHONY: test-unit
 test-unit: build ## Launch unit tests
-	poetry run pytest --cov $(PYTEST_ARGS)
+	uv run pytest --cov $(PYTEST_ARGS)
 
 .PHONY: test-e2e
 test-e2e: prepare-test-env  ## Launch end-to-end tests
@@ -64,7 +70,7 @@ test-e2e-case:
 prepare-test-env: build
 	@echo -e "$(YELLOW)Preparting tests$(NO_COLOR)"
 	rm -rf $(TEST_ENV_DIR)
-	poetry run virtualenv $(TEST_ENV_DIR)
+	uv run virtualenv $(TEST_ENV_DIR)
 	$(TEST_ENV_DIR)/bin/pip install dist/*.whl
 	rm -rf $(TEST_OUTPUT_DIR)
 	mkdir -p $(TEST_OUTPUT_DIR)
@@ -84,11 +90,11 @@ cli/src/dac7/schemas/%.xsd: schemas/xml/%.xsd
 
 .PHONY: schemas-json
 schemas-json:
-	poetry run dac7 schemas json2xml > schemas/json/DPIXML_v1.1-fr1.json
-	poetry run dac7 schemas build platform-operator > schemas/json/partial/platform_operator.json
-	poetry run dac7 schemas build other-platform-operators > schemas/json/partial/other_platform_operators.json
-	poetry run dac7 schemas build entity-sellers > schemas/json/partial/entity_sellers.json
-	poetry run dac7 schemas build individual-sellers > schemas/json/partial/individual_sellers.json
+	uv run dac7 schemas json2xml > schemas/json/DPIXML_v1.1-fr1.json
+	uv run dac7 schemas build platform-operator > schemas/json/partial/platform_operator.json
+	uv run dac7 schemas build other-platform-operators > schemas/json/partial/other_platform_operators.json
+	uv run dac7 schemas build entity-sellers > schemas/json/partial/entity_sellers.json
+	uv run dac7 schemas build individual-sellers > schemas/json/partial/individual_sellers.json
 
 # Implements this pattern for autodocumenting Makefiles:
 # https://marmelab.com/blog/2016/02/29/auto-documented-makefile.html

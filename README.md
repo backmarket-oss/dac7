@@ -113,7 +113,7 @@ The corresponding JSON schemas are included in the
 
 To run the `dac7` CLI, you need:
 
-- Python 3.11 or 3.12 or 3.13
+- Python 3.11 or 3.12 or 3.13 or 3.14
 - GnuPG, if you want to encrypt the declaration file
 
 It may work with other versions, maybe. Don't hesitate to open a PR to update
@@ -335,7 +335,7 @@ PRs are welcome! But please take notice of the
 Use the `make` command to set up your local environment and run the tests:
 
 ```sh
-# Creates the virtual environment with poetry
+# Creates the virtual environment with uv
 # Install the project and all the dependencies
 # Configure the pre-commit hook
 make init
