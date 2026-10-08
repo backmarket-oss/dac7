@@ -21,6 +21,7 @@ from dac7.models.flat import ReportableEntitySeller
 from dac7.models.flat import ReportableIndividualSeller
 from dac7.naming import validate_filename
 
+import click
 import typer
 import xmlschema
 
@@ -66,7 +67,7 @@ def validate(
 
     schema = xmlschema.XMLSchema10(schema_path)
 
-    with typer.open_file(f"{xml_path}", mode="r") as xml_file:
+    with click.open_file(f"{xml_path}", mode="r") as xml_file:
         xml_data: str = xml_file.read()
 
     schema.validate(xml_data)
@@ -127,7 +128,7 @@ def name(
     Return the expected name of the declaration file.
     """
 
-    with typer.open_file(f"{xml_path}", mode="r") as xml_file:
+    with click.open_file(f"{xml_path}", mode="r") as xml_file:
         xml_data: str = xml_file.read()
 
     filename = build_filename_from_xml_data(
@@ -277,7 +278,7 @@ def build(
     if output_format == FileFormat.XML:
         result = json_to_xml(result, schema_path=DAC7_SCHEMA)
 
-    with typer.open_file(f"{output_file_path or '-'}", mode="w") as output_file:
+    with click.open_file(f"{output_file_path or '-'}", mode="w") as output_file:
         output_file.write(result)
 
 
@@ -330,7 +331,7 @@ def encrypt(
     Requires GnuPG to be installed.
     """
 
-    with typer.open_file(f"{input_file_path}", mode="rb") as input_file:
+    with click.open_file(f"{input_file_path}", mode="rb") as input_file:
         input_data: bytes = input_file.read()
 
     result = encrypt_data(
@@ -339,7 +340,7 @@ def encrypt(
         compression_requested=compression_requested,
     )
 
-    with typer.open_file(f"{output_file_path or '-'}", mode="wb") as output_file:
+    with click.open_file(f"{output_file_path or '-'}", mode="wb") as output_file:
         output_file.write(result)
 
 
@@ -378,7 +379,7 @@ def json2xml(
     Transform a JSON file following the DAC7 schema into XML.
     """
 
-    with typer.open_file(f"{json_path}") as json_file:
+    with click.open_file(f"{json_path}") as json_file:
         json_data: str = json_file.read()
 
     DpiDeclaration.model_validate_json(json_data)

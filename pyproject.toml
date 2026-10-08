@@ -19,10 +19,10 @@ dac7 = "dac7.main:app"
 
 [tool.poetry.dependencies]
 python = ">=3.11,<3.14"
-typer = "^0.24.0"
+typer = "^0.27.0"
 xmlschema = "^4.0.0"
 pydantic = "^2.5.2"
-annotated-types = "^0.7.0"
+annotated-types = "^0.8.0"
 python-gnupg = "^0.5.2"
 requests = "^2.31.0"
 
