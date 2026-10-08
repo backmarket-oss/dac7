@@ -3,6 +3,7 @@ __pycache__
 .mypy_cache
 .pytest_cache
 .ruff_cache
+.python-version
 *.json
 *.xml
 *.xml.gz
