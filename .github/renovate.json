@@ -35,30 +35,17 @@
     },
     {
       "matchPackageNames": [
-        "poetry",
-        "python-poetry/poetry"
+        "astral-sh/setup-uv",
+        "astral-sh/uv-pre-commit",
+        "ghcr.io/astral-sh/uv",
+        "uv"
       ],
       "minimumReleaseAge": "7 days",
-      "groupName": "poetry-version"
+      "groupName": "uv-version"
     }
   ],
   "ignoreDeps": [
     "python",
     "requests"
-  ],
-  "customManagers": [
-    {
-      "customType": "regex",
-      "description": "Update poetry in YAML files",
-      "managerFilePatterns": [
-        "/^.+\\.ya?ml$/"
-      ],
-      "matchStrings": [
-        "pipx install --force poetry==(?<currentValue>\\S+?)\\s",
-        "rev: '(?<currentValue>\\S+?)'  # renovate: poetry\\s"
-      ],
-      "depNameTemplate": "poetry",
-      "datasourceTemplate": "pypi"
-    }
   ]
 }

@@ -335,7 +335,7 @@ PRs are welcome! But please take notice of the
 Use the `make` command to set up your local environment and run the tests:
 
 ```sh
-# Creates the virtual environment with poetry
+# Creates the virtual environment with uv
 # Install the project and all the dependencies
 # Configure the pre-commit hook
 make init

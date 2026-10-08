@@ -1,45 +1,62 @@
-[tool.poetry]
+[project]
 name = "dac7"
-version = "2025.0.0"
+version = "2025.0.0" # x-release-please-version
 description = "Tooling for DAC7"
 readme = "README.md"
-license = "LICENSE.md"
+license-files = [
+    "LICENSE.md",
+]
 authors = [
-    "Nicolas Bonnotte <nicolas.bonnotte@backmarket.com>",
+    { name = "Nicolas Bonnotte", email = "nicolas.bonnotte@backmarket.com" },
 ]
-packages = [
-  { include = "dac7", from = "cli/src" },
+requires-python = ">=3.11,<3.15"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
 ]
-include = [
-    "cli/src/dac7/schemas/*.xsd"
+dependencies = [
+    "click>=8.5.0,<9.0.0",
+    "annotated-types>=0.8.0,<0.9.0",
+    "pydantic>=2.5.2,<3.0.0",
+    "python-gnupg>=0.5.2,<0.6.0",
+    "requests>=2.31.0,<3.0.0",
+    "typer>=0.27.0,<0.28.0",
+    "xmlschema>=4.0.0,<5.0.0",
 ]
 
-[tool.poetry.scripts]
+[project.urls]
+Homepage = "https://github.com/BackMarket-oss/dac7"
+
+[project.scripts]
 dac7 = "dac7.main:app"
 
-[tool.poetry.dependencies]
-python = ">=3.11,<3.14"
-typer = "^0.27.0"
-xmlschema = "^4.0.0"
-pydantic = "^2.5.2"
-annotated-types = "^0.8.0"
-python-gnupg = "^0.5.2"
-requests = "^2.31.0"
+[dependency-groups]
+dev = [
+    "factory-boy>=3.3.1,<4.0.0",
+    "mypy>=2.0.0,<3.0.0",
+    "pre-commit>=4.0.0,<5.0.0",
+    "pytest>=9.0.0,<10.0.0",
+    "pytest-cov>=7.0.0,<8.0.0",
+    "pytest-mock>=3.12.0,<4.0.0",
+    "types-requests>=2.31.0,<3.0.0",
+    "virtualenv>=21.0.0,<22.0.0",
+    "xenon>=0.9.1,<0.10.0",
+]
 
-[tool.poetry.group.dev.dependencies]
-pytest = "^9.0.0"
-pytest-cov = "^7.0.0"
-mypy = "^2.0.0"
-pre-commit = "^4.0.0"
-xenon = "^0.9.1"
-pytest-mock = "^3.12.0"
-virtualenv = "^21.0.0"
-types-requests = "^2.31.0"
-factory-boy = "^3.3.1"
+[tool.uv]
+keyring-provider = "subprocess"
+exclude-newer = "1 week"
+
+[tool.uv.build-backend]
+module-name = "dac7"
+module-root = "cli/src"
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
 
 [tool.bandit]
 exclude_dirs = ["cli/tests"]
@@ -84,7 +101,9 @@ module = []
 
 [tool.pytest.ini_options]
 # Make sure that warnings raise errors, to handle things like deprecations as soon as possible.
-filterwarnings = ["error"]
+filterwarnings = [
+    "error",
+]
 
 [tool.ruff]
 fix = true

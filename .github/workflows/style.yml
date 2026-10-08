@@ -19,16 +19,18 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
-      - name: Install pre-commit
-        run: pipx install --force poetry==1.8.5
-
       - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
         with:
           python-version: '3.11'
-          cache: 'poetry'
+
+      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+        with:
+          version: '0.12.5'
+          python-version: '3.11'
+          enable-cache: true
 
       - name: Install dependencies
-        run: poetry install
+        run: uv sync
 
       - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
         env:
@@ -38,7 +40,7 @@ jobs:
           key: ${{ env.cache-name }}-${{ hashFiles('.pre-commit-config.yaml') }}
 
       - name: Run pre-commit
-        run: SKIP=poetry-lock poetry run pre-commit run --show-diff-on-failure --all-files
+        run: uv run pre-commit run --show-diff-on-failure --all-files
 
   broken-links:
     name: Broken Links Check
