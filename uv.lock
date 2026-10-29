@@ -329,7 +329,7 @@ toml = [
 
 [[package]]
 name = "dac7"
-version = "2025.0.0"
+version = "2025.0.1"
 source = { editable = "." }
 dependencies = [
     { name = "annotated-types" },
