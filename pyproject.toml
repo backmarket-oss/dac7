@@ -1,6 +1,6 @@
 [project]
 name = "dac7"
-version = "2025.0.0" # x-release-please-version
+version = "2025.0.1" # x-release-please-version
 description = "Tooling for DAC7"
 readme = "README.md"
 license-files = [
