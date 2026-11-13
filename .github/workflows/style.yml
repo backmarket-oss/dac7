@@ -25,7 +25,7 @@ jobs:
 
       - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
         with:
-          version: '0.12.23'
+          version: '0.13.8'
           python-version: '3.11'
           enable-cache: true
 
@@ -47,4 +47,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Markup Link Checker (mlc)
-        uses: becheran/mlc@b0d0d353e04fcbcfd1d86716103d78a61e5b25dd # v1.2.2
+        uses: becheran/mlc@d791bd6ae91ea883f02172e21f453ba8da45dfcd # v1.3.0
