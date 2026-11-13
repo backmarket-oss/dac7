@@ -75,7 +75,7 @@ repos:
             args: ["--max-average=A", "--max-modules=A", "--max-absolute=A"]
 
     - repo: https://github.com/astral-sh/uv-pre-commit
-      rev: '0.12.5'  # renovate: uv
+      rev: '0.13.7'  # renovate: uv
       hooks:
           - id: uv-lock
             args: ["--locked"]
